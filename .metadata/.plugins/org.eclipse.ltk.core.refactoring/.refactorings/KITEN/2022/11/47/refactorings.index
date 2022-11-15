@@ -1,0 +1,36 @@
+1668417635432	Delete element
+1668417854857	Rename package 'semi.project.kiten'
+1668419827712	Move file
+1668424286983	Delete element
+1668425024860	Delete element
+1668428798924	Move file
+1668494459884	Delete element
+1668496526157	Rename resource 'images'
+1668498121022	Rename package 'com.javassem.controller'
+1668498141727	Rename type 'BoardController'
+1668498317030	Rename package 'com.javassem.dao'
+1668498320836	Rename package 'com.javassem.service'
+1668498327005	Rename package 'com.javassem.domain'
+1668498334827	Rename resource 'BoardMapper.xml'
+1668498343759	Rename type 'BoardDAO'
+1668498349735	Rename type 'BoardDAOImpl'
+1668498353882	Rename type 'BoardVO'
+1668498357357	Rename type 'BoardService'
+1668498361281	Rename type 'BoardServiceImpl'
+1668499605786	Delete elements
+1668499923463	Delete elements
+1668501194505	Delete element
+1668501459890	Delete element
+1668501686395	Delete element
+1668501791040	Delete element
+1668501810226	Delete element
+1668502013568	Delete element
+1668503123418	Delete element
+1668503245602	Delete element
+1668503330530	Delete element
+1668503495506	Delete element
+1668503597624	Delete element
+1668503708959	Delete element
+1668503768848	Rename resource 'getBoard.jsp'
+1668503770853	Rename resource 'getBoardList.jsp'
+1668503772721	Rename resource 'insertBoard.jsp'
