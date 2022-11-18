@@ -20,76 +20,64 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
 
-<link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/stylem.css">
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
 	<header class="header_area">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<div class="container">
-					<a class="navbar-brand logo_h" href="index.html"><img src="<%=pjName%>/resources/img/logo.png" alt=""></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-						aria-label="Toggle navigation">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-					</button>
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item active submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-								</ul></li>
-							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul></li>
-							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-									<li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
-								</ul></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-						</ul>
+      <div class="main_menu">
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <a class="navbar-brand logo_h" href="index.html"><img src="<%=pjName%>/resources/img/logo.png" alt=""></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+               </button>
+               <!-- .navbar-brand logo_h랑 겹쳐 있는 애? -->
+               <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                     <li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
+                           <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
+                           <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
+                           <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
+                           <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
+                        </ul></li>
+                     <li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                           <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                        </ul></li>
+                     <li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                           <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                           <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                        </ul></li>
+                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                  </ul>
 
-						<ul class="nav-shop">
-							<li class="nav-item"><button>
-									<i class="ti-search"></i>
-								</button></li>
-							<li class="nav-item"><button>
-									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
-								</button></li>
-							<li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
+                  <ul class="nav-shop">
+                     <li class="nav-item"><button>
+                           <i class="ti-location-pin"></i>
+                        </button></li>
+                     <li class="nav-item"><button>
+                           <i class="ti-heart"></i>
+                        </button></li>
+                     <li class="nav-item"><button>
+                           <i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
+                        </button></li>
+                  </ul>   
+               </div>
+            </div>
+         </nav>
+      </div>
+   </header>
 	<!--================ End Header Menu Area =================-->
 
 	<!-- ================ start banner area ================= -->
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>Shopping Cart</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
-						</ol>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</section>
+	
 	<!-- ================ end banner area ================= -->
 
 
@@ -101,11 +89,17 @@
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
+						<tr>
+						
+						<td ><input type="checkbox" class="check1" value="check1" checked>&nbsp전체 선택
+						 </td>
+						
+						</tr>
 							<tr>
-								<th scope="col">Product</th>
-								<th scope="col">Price</th>
-								<th scope="col">Quantity</th>
-								<th scope="col">Total</th>
+								<th scope="col">상품</th>
+								<th scope="col">가격</th>
+								<th scope="col">수량</th>
+								<th scope="col">합계</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -113,15 +107,17 @@
 								<td>
 									<div class="media">
 										<div class="d-flex">
+										    <input type="checkbox" class="check1" value="check1" checked>
+										    	
 											<img src="<%=pjName%>/resources/img/cart/cart1.png" alt="">
 										</div>
 										<div class="media-body">
-											<p>Minimalistic shop for multipurpose use</p>
+											<p>귀엽게 생긴 것 </p>
 										</div>
 									</div>
 								</td>
 								<td>
-									<h5>$360.00</h5>
+									<h5>36,000원</h5>
 								</td>
 								<td>
 									<div class="product_count">
@@ -136,22 +132,24 @@
 									</div>
 								</td>
 								<td>
-									<h5>$720.00</h5>
+									<h5>36,000원 <button class=close> </button></h5>
 								</td>
+				
 							</tr>
 							<tr>
 								<td>
 									<div class="media">
 										<div class="d-flex">
+										<input type="checkbox" class="check1" value="check1" checked>
 											<img src="<%=pjName%>/resources/img/cart/cart2.png" alt="">
 										</div>
 										<div class="media-body">
-											<p>Minimalistic shop for multipurpose use</p>
+											<p>신발이지롱</p>
 										</div>
 									</div>
 								</td>
 								<td>
-									<h5>$360.00</h5>
+									<h5>36,000원</h5>
 								</td>
 								<td>
 									<div class="product_count">
@@ -166,22 +164,24 @@
 									</div>
 								</td>
 								<td>
-									<h5>$720.00</h5>
+									<h5>36,000원 <button class=close> </button></h5>
 								</td>
+								
 							</tr>
 							<tr>
 								<td>
 									<div class="media">
 										<div class="d-flex">
+										<input type="checkbox" class="check1" value="check1" checked>
 											<img src="<%=pjName%>/resources/img/cart/cart3.png" alt="">
 										</div>
 										<div class="media-body">
-											<p>Minimalistic shop for multipurpose use</p>
+											<p>차지롱</p>
 										</div>
 									</div>
 								</td>
 								<td>
-									<h5>$360.00</h5>
+									<h5>36,000원 </h5>
 								</td>
 								<td>
 									<div class="product_count">
@@ -196,68 +196,65 @@
 									</div>
 								</td>
 								<td>
-									<h5>$720.00</h5>
+									<h5>36,000원 <button class=close> </button></h5>
 								</td>
+
 							</tr>
 							<tr class="bottom_button">
-								<td><a class="button" href="#">Update Cart</a></td>
 								<td></td>
 								<td></td>
+								<td></td>
+								<td></td>
+								
 								<td>
-									<div class="cupon_text d-flex align-items-center">
-										<input type="text" placeholder="Coupon Code"> <a class="primary-btn" href="#">Apply</a> <a class="button" href="#">Have a Coupon?</a>
+									<div class="cupon_text d-flex align-items-center" >
+										 <a class="btn" href="#">선택주문</a> <a class="primary-btn" href="#" style="float: right">전체주문</a>
 									</div>
 								</td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
+								
+								<td></td>
 								<td>
-									<h5>Subtotal</h5>
+
 								</td>
 								<td>
-									<h5>$2160.00</h5>
+									<h5></h5>
 								</td>
 							</tr>
 							<tr class="shipping_area">
 								<td class="d-none d-md-block"></td>
+								
 								<td></td>
-								<td>
-									<h5>Shipping</h5>
+								<td class="t_name">
+								<p> &nbsp상품 금액</p> 
+								<p> &nbsp배송비 </p>
+								<p> &nbsp결제 예정 금액</p>
 								</td>
+								
+								<td class="t_value">
+								
+								<p>30,000 원</p> 
+								<p>3,000 원</p> 
+								<p>33,000 원</p> 
+								
+								</td>
+							</tr>
+							<tr class="bottom_button">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
 								<td>
-									<div class="shipping_box">
-										<ul class="list">
-											<li><a href="#">Flat Rate: $5.00</a></li>
-											<li><a href="#">Free Shipping</a></li>
-											<li><a href="#">Flat Rate: $10.00</a></li>
-											<li class="active"><a href="#">Local Delivery: $2.00</a></li>
-										</ul>
-										<h6>
-											Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i>
-										</h6>
-										<select class="shipping_select">
-											<option value="1">Bangladesh</option>
-											<option value="2">India</option>
-											<option value="4">Pakistan</option>
-										</select> <select class="shipping_select">
-											<option value="1">Select a State</option>
-											<option value="2">Select a State</option>
-											<option value="4">Select a State</option>
-										</select> <input type="text" placeholder="Postcode/Zipcode"> <a class="gray_btn" href="#">Update Details</a>
+									<div class="cupon_text d-flex align-items-center" >
+										 <a class="btn" href="#">쇼핑 하기</a> <a class="primary-btn" href="#" style="float: right">메인 화면</a>
 									</div>
 								</td>
 							</tr>
-							<tr class="out_button_area">
-								<td class="d-none-l"></td>
-								<td class=""></td>
-								<td></td>
-								<td>
-									<div class="checkout_btn_inner d-flex align-items-center">
-										<a class="gray_btn" href="#">Continue Shopping</a> <a class="primary-btn ml-2" href="#">Proceed to checkout</a>
-									</div>
-								</td>
-							</tr>
+							<tr>
 						</tbody>
 					</table>
 				</div>

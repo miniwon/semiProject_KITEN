@@ -1,0 +1,15 @@
+
+11월 17, 2022 09:45:43.672 NEW SESSION
+11월 17, 2022 09:45:43.673 [6688:4960:1117/094543.671:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+11월 17, 2022 09:45:53.172 [8044:16808:1117/094553.172:ERROR:device_event_log_impl.cc(215)] [09:45:53.172] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 17, 2022 09:46:51.64 [8044:12408:1117/094651.064:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+11월 17, 2022 12:59:25.65 [8044:16808:1117/125925.065:ERROR:device_event_log_impl.cc(215)] [12:59:24.814] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 17, 2022 14:46:51.78 [8044:11540:1117/144651.077:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+11월 17, 2022 19:46:50.961 [8044:6888:1117/194650.960:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+11월 17, 2022 21:13:34.911 [8044:16808:1117/211334.910:ERROR:CONSOLE(1)] "Uncaught RangeError: Field is not present in this state", source: devtools://devtools/bundled/devtools-frontend/front_end/third_party/codemirror.next/chunk/codemirror.js (1)
+
+11월 18, 2022 09:38:07.112 NEW SESSION
+11월 18, 2022 09:38:07.112 [2732:5584:1118/093807.112:ERROR:device_event_log_impl.cc(215)] [09:38:07.119] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 18, 2022 09:39:05.22 [2732:8992:1118/093905.022:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+11월 18, 2022 12:10:09.197 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 18, 2022 14:39:04.639 [2732:15152:1118/143904.639:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

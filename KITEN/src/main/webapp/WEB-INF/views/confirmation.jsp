@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
 
-<link rel="stylesheet" href="<%=pjName%>/resources/css/style.css" />
+<link rel="stylesheet" href="<%=pjName%>/resources/css/stylem.css" />
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
@@ -73,174 +73,160 @@
 	<!--================ End Header Menu Area =================-->
 
 	<!-- ================ start banner area ================= -->
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>Order Confirmation</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Shop Category</li>
-						</ol>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</section>
+
 	<!-- ================ end banner area ================= -->
 
 	<!--================Order Details Area =================-->
 	<section class="order_details section-margin--small">
 		<div class="container">
-			<p class="text-center billing-alert">Thank you. Your order has been received.</p>
+			<p class="text-center billing-alert">결제 완료</p>
 			<div class="row mb-5">
 				<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
 					<div class="confirmation-card">
-						<h3 class="billing-title">Order Info</h3>
+						<h3 class="billing-title">주문정보</h3>
 						<table class="order-rable">
 							<tr>
-								<td>Order number</td>
+								<td>주문번호</td>
 								<td>: 60235</td>
 							</tr>
 							<tr>
-								<td>Date</td>
-								<td>: Oct 03, 2017</td>
+								<td>보내는분</td>
+								<td>: 김상현</td>
 							</tr>
 							<tr>
-								<td>Total</td>
-								<td>: USD 2210</td>
+								<td>결제 수단</td>
+								<td>: 카드</td>
 							</tr>
 							<tr>
-								<td>Payment method</td>
-								<td>: Check payments</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-				<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-					<div class="confirmation-card">
-						<h3 class="billing-title">Billing Address</h3>
-						<table class="order-rable">
-							<tr>
-								<td>Street</td>
-								<td>: 56/8 panthapath</td>
-							</tr>
-							<tr>
-								<td>City</td>
-								<td>: Dhaka</td>
-							</tr>
-							<tr>
-								<td>Country</td>
-								<td>: Bangladesh</td>
-							</tr>
-							<tr>
-								<td>Postcode</td>
-								<td>: 1205</td>
+								<td>구매일</td>
+								<td>: 2022-07-05</td>
 							</tr>
 						</table>
 					</div>
 				</div>
 				<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
 					<div class="confirmation-card">
-						<h3 class="billing-title">Shipping Address</h3>
+						<h3 class="billing-title">배송정보</h3>
 						<table class="order-rable">
 							<tr>
-								<td>Street</td>
-								<td>: 56/8 panthapath</td>
+								<td>받는분</td>
+								<td>: 김상현</td>
 							</tr>
 							<tr>
-								<td>City</td>
-								<td>: Dhaka</td>
+								<td>핸드폰</td>
+								<td>: 010-7578-7897</td>
 							</tr>
 							<tr>
-								<td>Country</td>
-								<td>: Bangladesh</td>
+								<td>주소</td>
+								<td>: 서울시 어디구 어디로 </td>
 							</tr>
 							<tr>
-								<td>Postcode</td>
-								<td>: 1205</td>
+								<td>받을장소</td>
+								<td>: 문 앞</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+					<div class="confirmation-card">
+						<h3 class="billing-title">결제정보</h3>
+						<table class="order-rable">
+							<tr>
+								<td>상품금액</td>
+								<td>: 28,000원</td>
+							</tr>
+							<tr>
+								<td>배송비</td>
+								<td>: 3,000원</td>
+							</tr>
+							<tr>
+								<td>결제금액</td>
+								<td>: 28,000원</td>
+							</tr>
+							<tr>
+								<td>적립금액</td>
+								<td>: 2,800원</td>
 							</tr>
 						</table>
 					</div>
 				</div>
 			</div>
 			<div class="order_details_table">
-				<h2>Order Details</h2>
+				<h2>상세주문서</h2>
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">Product</th>
-								<th scope="col">Quantity</th>
-								<th scope="col">Total</th>
+								<th scope="col">상품</th>
+								<th scope="col">수량</th>
+								<th scope="col">합계</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>
-									<p>Pixelstore fresh Blackberry</p>
+									<p>맛 좋은 사과</p>
+								</td>
+								<td>
+									<h5>x 03</h5>
+								</td>
+								<td>
+									<p>45,000 원</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>맛 좋은 포도</p>
+								</td>
+								<td>
+									<h5>x 04</h5>
+								</td>
+								<td>
+									<p>60,000 원</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>맛 없는 감귤</p>
 								</td>
 								<td>
 									<h5>x 02</h5>
 								</td>
 								<td>
-									<p>$720.00</p>
+									<p>30,000 원</p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<p>Pixelstore fresh Blackberry</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Pixelstore fresh Blackberry</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h4>Subtotal</h4>
+									<h4>상품 총금액</h4>
 								</td>
 								<td>
 									<h5></h5>
 								</td>
 								<td>
-									<p>$2160.00</p>
+									<p>135,000 원</p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<h4>Shipping</h4>
+									<h4>배송비</h4>
 								</td>
 								<td>
 									<h5></h5>
 								</td>
 								<td>
-									<p>Flat rate: $50.00</p>
+									<p>3,000 원</p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<h4>Total</h4>
+									<h4>총합</h4>
 								</td>
 								<td>
 									<h5></h5>
 								</td>
 								<td>
-									<h4>$2210.00</h4>
+									<h4>138,000 원</h4>
 								</td>
 							</tr>
 						</tbody>

@@ -1,0 +1,31 @@
+@import
+	url("https://fonts.googleapis.com/css?family=Oswald:400,500,600");
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+
+
+
+.footer_title.large_title {
+	font-size: 36px;
+	font-weight: 600;
+	color : #333333;
+}
+
+.footer-area {
+	background: #fff;
+	padding: 50px 0px 50px
+}
+
+.s1{
+	
+
+	display: inline-block;
+
+}
+
+
+.ml-40	{
+	
+	display: inline-block;
+	
+}

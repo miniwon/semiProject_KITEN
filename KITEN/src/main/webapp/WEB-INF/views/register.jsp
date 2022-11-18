@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Aroma Shop - Login</title>
+<title>회원 가입</title>
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
 
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrap.min.css">
@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
 
-<link rel="stylesheet" href="<%=pjName%>/resources/css/style.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/stylej.css">
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
@@ -73,62 +73,89 @@
 		</div>
 	</header>
 	<!--================ End Header Menu Area =================-->
-
-	<!-- ================ start banner area ================= -->
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>Register</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Register</li>
-						</ol>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ================ end banner area ================= -->
-
 	<!--================Login Box Area =================-->
 	<section class="login_box_area section-margin">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="login_box_img">
-						<div class="hover">
-							<h4>Already have an account?</h4>
-							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-							<a class="button button-account" href="login.html">Login Now</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
 					<div class="login_form_inner register_form_inner">
-						<h3>Create an account</h3>
+						<h3>회원가입</h3>
 						<form class="row login_form" action="#/" id="register_form">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
-							</div>
-							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="email" name="email" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
-							</div>
-							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
-							</div>
-							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" onfocus="this.placeholder = ''"
-									onblur="this.placeholder = 'Confirm Password'">
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="creat_account">
-									<input type="checkbox" id="f-option2" name="selector"> <label for="f-option2">Keep me logged in</label>
+								<div class="form-label-div">
+									<label class="form-label" for="id">아이디</label>
+								</div>
+								<input type="text" class="form-control" id="id" name="id" placeholder="아이디를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '아이디를 입력해 주세요'">
+								<div class="form-button">
+									<button type="submit" value="submit" class="button button-login">중복 확인</button>
 								</div>
 							</div>
 							<div class="col-md-12 form-group">
-								<button type="submit" value="submit" class="button button-register w-100">Register</button>
+								<div class="form-label-div">
+									<label class="form-label" for="password">비밀번호</label>
+								</div>
+								<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '비밀번호를 입력해 주세요'">
+								<div class="form-button"></div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="form-label-div">
+									<label class="form-label" for="confirmPassword">비밀번호 확인</label>
+								</div>
+								<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="비밀번호를 한 번 더 입력해 주세요" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = '비밀번호를 한 번 더 입력해 주세요'">
+								<div class="form-button"></div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="form-label-div">
+									<label class="form-label" for="name">이름</label>
+								</div>
+								<input type="text" class="form-control" id="name" name="name" placeholder="이름을 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '이름을 입력해 주세요'">
+								<div class="form-button"></div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="form-label-div">
+									<label class="form-label" for="email">이메일</label>
+								</div>
+								<input type="email" class="form-control" id="email" name="email" placeholder="예: mealkit@kiten.com" onfocus="this.placeholder = ''" onblur="this.placeholder = '예: mealkit@kiten.com'">
+								<div class="form-button">
+									<button type="submit" value="submit" class="button button-login">중복 확인</button>
+								</div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="form-label-div">
+									<label class="form-label" for="tel">전화번호</label>
+								</div>
+								<input type="text" class="form-control" id="tel" name="tel" placeholder="-을 제외한 숫자만 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '-을 제외한 숫자만 입력해 주세요'">
+								<div class="form-button"></div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="form-label-div">
+									<label class="form-label" for="address1">주소</label>
+								</div>
+								<input type="text" class="form-control" id="address1" name="address1" placeholder="주소 검색을 위해 클릭해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '주소 검색을 위해 클릭해 주세요'">
+								<div class="form-button"></div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="form-label-div">
+									<label class="form-label" for="address2">상세 주소</label>
+								</div>
+								<input type="text" class="form-control" id="address2" name="address2" placeholder="상세 주소를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '상세 주소를 입력해 주세요'">
+								<div class="form-button"></div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="form-label-div" id="agree">
+									<label class="form-label">이용약관 동의</label>
+								</div>
+								<div class="creat_account">
+									<input type="checkbox" id="f-option" name="selector"> <label for="f-option">어그리?</label><br>
+									<input type="checkbox" id="f-option2" name="selector"> <label for="f-option2">어그리?2</label><br>
+									<input type="checkbox" id="f-option2" name="selector"> <label for="f-option2">어그리?3</label>
+								</div>
+								<div class="form-button"></div>
+							</div>
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="button button-register w-100">가입하기</button>
 							</div>
 						</form>
 					</div>
@@ -213,7 +240,9 @@
 					<p class="col-lg-12 footer-text text-center">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script>
+						<script>
+							document.write(new Date().getFullYear());
+						</script>
 						All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
@@ -224,7 +253,28 @@
 	<!--================ End footer Area  =================-->
 
 
-
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		window.onload = function() {
+			document
+					.getElementById("address1")
+					.addEventListener(
+							"click",
+							function() { //주소입력칸을 클릭하면
+								//카카오 지도 발생
+								new daum.Postcode(
+										{
+											oncomplete : function(data) { //선택시 입력값 세팅
+												document
+														.getElementById("address1").value = data.address; // 주소 넣기
+												document.querySelector(
+														"input[name=address2]")
+														.focus(); //상세입력 포커싱
+											}
+										}).open();
+							});
+		}
+	</script>
 	<script src="<%=pjName%>/resources/vendors/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/skrollr.min.js"></script>

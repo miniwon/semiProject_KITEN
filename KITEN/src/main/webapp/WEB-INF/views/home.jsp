@@ -80,14 +80,14 @@
 				<div class="row no-gutters align-items-center pt-60px">
 					<div class="col-5 d-none d-sm-block">
 						<div class="hero-banner__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/home/hero-banner.png" alt="">
+							<img class="img-fluid" src="<%=pjName%>/resources/img/home/hero-banner.webp" alt="">
 						</div>
 					</div>
 					<div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
 						<div class="hero-banner__content">
-							<h4>Shop is fun</h4>
-							<h1>Browse Our Premium Product</h1>
-							<p>Us which over of signs divide dominion deep fill bring they're meat beho upon own earth without morning over third. Their male dry. They are great appear whose land fly grass.</p>
+							<h4>배달하는 고양이</h4>	<!-- 메인페이지 소제목 -->
+							<h1>왕제목</h1> <!-- 메인페이지 제목 -->
+							<p>블라블라~ 길게 말을함 </p> <!-- 뭐라고 말을 하는중 -->
 							<a class="button button-hero" href="#">Browse Now</a>
 						</div>
 					</div>
@@ -97,37 +97,16 @@
 		<!--================ Hero banner start =================-->
 
 		<!--================ Hero Carousel start =================-->
-		<section class="section-margin mt-0">
-			<div class="owl-carousel owl-theme hero-carousel">
-				<div class="hero-carousel__slide">
-					<img src="<%=pjName%>/resources/img/home/hero-slide1.png" alt="" class="img-fluid"> <a href="#" class="hero-carousel__slideOverlay">
-						<h3>Wireless Headphone</h3>
-						<p>Accessories Item</p>
-					</a>
-				</div>
-				<div class="hero-carousel__slide">
-					<img src="<%=pjName%>/resources/img/home/hero-slide2.png" alt="" class="img-fluid"> <a href="#" class="hero-carousel__slideOverlay">
-						<h3>Wireless Headphone</h3>
-						<p>Accessories Item</p>
-					</a>
-				</div>
-				<div class="hero-carousel__slide">
-					<img src="<%=pjName%>/resources/img/home/hero-slide3.png" alt="" class="img-fluid"> <a href="#" class="hero-carousel__slideOverlay">
-						<h3>Wireless Headphone</h3>
-						<p>Accessories Item</p>
-					</a>
-				</div>
-			</div>
-		</section>
+		
 		<!--================ Hero Carousel end =================-->
 
 		<!-- ================ trending product section start ================= -->
 		<section class="section-margin calc-60px">
 			<div class="container">
 				<div class="section-intro pb-60px">
-					<p>Popular Item in the market</p>
+					<p>새로 들어온 제품들	</p>
 					<h2>
-						Trending <span class="section-intro__style">Product</span>
+						주목해야할 <span class="section-intro__style">신상품</span>
 					</h2>
 				</div>
 				<div class="row">
@@ -346,7 +325,6 @@
 							<h3>Up To 50% Off</h3>
 							<h4>Winter Sale</h4>
 							<p>Him she'd let them sixth saw light</p>
-							<a class="button button--active mt-3 mt-xl-4" href="#">Shop Now</a>
 						</div>
 					</div>
 				</div>
@@ -358,9 +336,9 @@
 		<section class="section-margin calc-60px">
 			<div class="container">
 				<div class="section-intro pb-60px">
-					<p>Popular Item in the market</p>
+					<p>제일 잘나감</p>
 					<h2>
-						Best <span class="section-intro__style">Sellers</span>
+						베스트 <span class="section-intro__style">랭킹</span>
 					</h2>
 				</div>
 				<div class="owl-carousel owl-theme" id="bestSellerCarousel">
@@ -633,28 +611,7 @@
 		<!-- ================ Blog section end ================= -->
 
 		<!-- ================ Subscribe section start ================= -->
-		<section class="subscribe-position">
-			<div class="container">
-				<div class="subscribe text-center">
-					<h3 class="subscribe__title">Get Update From Anywhere</h3>
-					<p>Bearing Void gathering light light his eavening unto dont afraid</p>
-					<div id="mc_embed_signup">
-						<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
-							<div class="form-group ml-sm-auto">
-								<input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
-								<div class="info"></div>
-							</div>
-							<button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-							<div style="position: absolute; left: -5000px;">
-								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-							</div>
-
-						</form>
-					</div>
-
-				</div>
-			</div>
-		</section>
+		
 		<!-- ================ Subscribe section end ================= -->
 
 
