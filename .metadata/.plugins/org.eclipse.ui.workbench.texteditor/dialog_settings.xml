@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="sidebar-filter"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="resources/img/category/s-p1.jpg"/>
+			<item value="resources/img/product/product1.png"/>
+			<item value="/KITEN/resources/img/product/product1.png"/>
 			<item value="sidebar-filter"/>
 			<item value="format"/>
 			<item value="step"/>
@@ -20,9 +23,6 @@
 			<item value=".sidebar-filter .top-filter-head"/>
 			<item value="justify-content-between"/>
 			<item value=".section-margin--small .col-xl-3 .cat-list"/>
-			<item value="common-filter"/>
-			<item value=".widget_title"/>
-			<item value="title"/>
 		</list>
 		<list key="replacehistory">
 			<item value="src=&quot;&lt;%=pjName%&gt;/resources/img/"/>

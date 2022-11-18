@@ -13,3 +13,7 @@
 11월 18, 2022 09:39:05.22 [2732:8992:1118/093905.022:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
 11월 18, 2022 12:10:09.197 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
 11월 18, 2022 14:39:04.639 [2732:15152:1118/143904.639:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+11월 18, 2022 18:56:40.390 NEW SESSION
+11월 18, 2022 18:56:40.390 [16748:5176:1118/185640.390:ERROR:device_event_log_impl.cc(215)] [18:56:40.402] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 18, 2022 18:57:38.306 [16748:15920:1118/185738.305:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
