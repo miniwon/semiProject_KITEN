@@ -2,16 +2,16 @@ package semi.kiten.dao;
 
 import java.util.List;
 
-import semi.kiten.domain.KitenVO;
+import semi.kiten.vo.exampleVO;
 
 public interface KitenDAO {
-	public void insertBoard(KitenVO vo);
+	public void insertBoard(exampleVO vo);
 
-	public void updateBoard(KitenVO vo) ;
+	public void updateBoard(exampleVO vo) ;
 
-	public void deleteBoard(KitenVO vo);
+	public void deleteBoard(exampleVO vo);
 
-	public KitenVO getBoard(KitenVO vo) ;
+	public exampleVO getBoard(exampleVO vo) ;
 
-	public List<KitenVO> getBoardList(KitenVO vo) ;
+	public List<exampleVO> getBoardList(exampleVO vo) ;
 }

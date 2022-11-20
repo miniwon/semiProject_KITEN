@@ -1,0 +1,21 @@
+	window.onload = function(){
+		document.getElementById('loginForm').onclick = check;
+	}
+	
+	function check(){
+		if(document.form.m_id.value==""){
+			alert("아이디를 입력해 주세요")
+			document.form.m_id.focus();
+			return;
+		}
+		
+		if(document.form.userPass.value==""){
+			alert("패스워드를 입력하세요.")
+			document.form.userPass.focus();
+			return false;
+		}
+		
+		document.form.submit(); //전송
+		
+	}
+	

@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="loginForm."/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="form."/>
+			<item value="form"/>
+			<item value=".login_form .form-group input"/>
+			<item value=".form-control"/>
+			<item value="form-control"/>
+			<item value=".w-100"/>
+			<item value="중복"/>
+			<item value="name"/>
+			<item value="agree"/>
+			<item value="id"/>
+			<item value="pass"/>
+			<item value="item"/>
+			<item value="m_pass"/>
+			<item value="KitenVO"/>
 			<item value="resources/img/category/s-p1.jpg"/>
-			<item value="resources/img/product/product1.png"/>
-			<item value="/KITEN/resources/img/product/product1.png"/>
-			<item value="sidebar-filter"/>
-			<item value="format"/>
-			<item value="step"/>
-			<item value="step:"/>
-			<item value="/*! nouislider - 10.0.0 - 2017-05-28 14:52:49 */"/>
-			<item value=".price-range-area .noUi-connect"/>
-			<item value="col-md-6 col-lg-4"/>
-			<item value="search"/>
-			<item value="widget_title"/>
-			<item value=".sidebar-filter .top-filter-head"/>
-			<item value="justify-content-between"/>
-			<item value=".section-margin--small .col-xl-3 .cat-list"/>
 		</list>
 		<list key="replacehistory">
+			<item value="loginForm."/>
+			<item value=","/>
+			<item value="MemberVO"/>
 			<item value="src=&quot;&lt;%=pjName%&gt;/resources/img/"/>
 			<item value="=&quot;&lt;%=pjName%&gt;/resources/vendors/"/>
 			<item value="src=&quot;&lt;%=pjName%&gt;/resources/vendors/"/>
@@ -35,8 +38,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="478"/>
-		<item key="DIALOG_Y_ORIGIN" value="221"/>
+		<item key="DIALOG_X_ORIGIN" value="166"/>
+		<item key="DIALOG_Y_ORIGIN" value="230"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="428"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

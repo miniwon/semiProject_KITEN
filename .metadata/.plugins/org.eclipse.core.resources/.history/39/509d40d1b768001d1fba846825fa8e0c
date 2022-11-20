@@ -1,0 +1,5 @@
+package semi.kiten.controller;
+
+public class MemberController {
+
+}

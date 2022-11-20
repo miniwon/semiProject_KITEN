@@ -12,8 +12,8 @@
 	<a href="home.do">HOME</a><br>
 	<a href="cart.do">장바구니</a><br>
 	<a href="product-list.do">상품 목록</a><br>
-	<a href="login.do">로그인</a><br>	
-	<a href="register.do">회원 가입</a><br>
+	<a href="user/userLogin.do">로그인</a><br>	
+	<a href="user/userJoin.do">회원 가입</a><br>
 	<a href="single-product.do">상품 상세</a><br>
 	<a href="blog.do">블로그</a><br>
 	<a href="order.do">주문서</a><br>

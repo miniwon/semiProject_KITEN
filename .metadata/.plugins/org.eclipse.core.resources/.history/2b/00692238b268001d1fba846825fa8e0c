@@ -1,0 +1,17 @@
+package semi.kiten.dao;
+
+import java.util.List;
+
+import semi.kiten.vo.MemberVO;
+
+public interface KitenDAO {
+	public void insertBoard(MemberVO vo);
+
+	public void updateBoard(MemberVO vo) ;
+
+	public void deleteBoard(MemberVO vo);
+
+	public MemberVO getBoard(MemberVO vo) ;
+
+	public List<MemberVO> getBoardList(MemberVO vo) ;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+
+
+	<!-- 회원가입 시 정보 DB에 넣기 -->
+	<insert id="userInsert" parameterType="MemberVO">
+		INSERT INTO member
+		(m_id, m_password, m_name, m_tel, m_address1, m_address2, m_email)
+		VALUES (#{m_id}, #{m_password}, #{m_name}, #{m_tel}, #{m_address1}, #{m_address2}, #{m_email})
+	</insert>
+
+	<select id="getBoardList" resultType="MemberVO">
+		<![CDATA[
+		SELECT * FROM uploadtemp ORDER BY b_id DESC
+		]]>
+	</select>
+	
+	<update id="updateBoard"  parameterType="MemberVO">
+		UPDATE uploadtemp SET
+		b_title = #{b_title},
+		b_content = #{b_content}
+		WHERE b_id = #{b_id}
+	</update>
+	
+	<delete id="deleteBoard"  parameterType="MemberVO">
+		DELETE FROM uploadtemp
+		WHERE b_id = #{b_id}
+	</delete>
+	
+	<select id="getBoard"  parameterType="MemberVO" resultType="MemberVO">
+		SELECT *
+		FROM uploadtemp
+		WHERE b_id = #{b_id}
+	</select>
+	
+
+</mapper>

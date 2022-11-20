@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import semi.kiten.dao.KitenDAOImpl;
-import semi.kiten.domain.KitenVO;
+import semi.kiten.vo.exampleVO;
 
 
 @Service("boardService")
@@ -14,24 +14,24 @@ public class KitenServiceImpl implements KitenService {
 	@Autowired
 	private KitenDAOImpl boardDAO;
 
-	public void insertBoard(KitenVO vo) {
+	public void insertBoard(exampleVO vo) {
 
 		boardDAO.insertBoard(vo);
 	}
 
-	public void updateBoard(KitenVO vo) {
+	public void updateBoard(exampleVO vo) {
 		boardDAO.updateBoard(vo);
 	}
 
-	public void deleteBoard(KitenVO vo) {
+	public void deleteBoard(exampleVO vo) {
 		boardDAO.deleteBoard(vo);
 	}
 
-	public KitenVO getBoard(KitenVO vo) {
+	public exampleVO getBoard(exampleVO vo) {
 		return boardDAO.getBoard(vo);
 	}
 
-	public List<KitenVO> getBoardList(KitenVO vo) {
+	public List<exampleVO> getBoardList(exampleVO vo) {
 		return boardDAO.getBoardList(vo);
 	}
 }

@@ -1,0 +1,5 @@
+package semi.kiten.service;
+
+public interface MemberService {
+
+}

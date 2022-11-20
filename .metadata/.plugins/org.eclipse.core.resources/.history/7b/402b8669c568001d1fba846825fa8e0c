@@ -1,0 +1,15 @@
+package semi.kiten.vo;
+
+public class MemberVO {
+	
+	private int		m_number;
+	private String	m_id;
+	private String	m_password;
+	private String	m_name;
+	private String	m_tel;
+	private String	m_address1;
+	private String	m_address2;
+	private String	m_email;
+	
+
+}

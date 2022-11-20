@@ -1,0 +1,11 @@
+1668934958556	Rename package 'semi.kiten.domain'
+1668934961464	Rename package 'semi.kiten.doma'
+1668934970741	Rename type 'KitenVO'
+1668935017416	Rename type 'MemberVO'
+1668936828724	Rename resource 'register.jsp'
+1668936833967	Rename resource 'login.jsp'
+1668936859937	Move files
+1668936879258	Rename type 'KitenController'
+1668937341639	Rename type 'MemberController'
+1668944271983	Rename resource 'KitenMapper.xml'
+1668964971287	Rename resource 'login_ok.jsp'

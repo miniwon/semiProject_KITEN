@@ -1,0 +1,8 @@
+package semi.kiten.service;
+
+public interface MemberService {
+	
+	// 회원 가입
+	public int userInsert(MemberVO vo);
+
+}

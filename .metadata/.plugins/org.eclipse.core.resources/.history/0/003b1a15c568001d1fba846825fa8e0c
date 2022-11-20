@@ -1,0 +1,5 @@
+package semi.kiten.vo;
+
+public class MemberVO {
+
+}

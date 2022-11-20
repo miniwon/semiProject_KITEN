@@ -1,0 +1,37 @@
+package semi.kiten.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import semi.kiten.dao.KitenDAOImpl;
+import semi.kiten.vo.MemberVO;
+
+
+@Service("boardService")
+public class KitenServiceImpl implements KitenService {
+	@Autowired
+	private KitenDAOImpl boardDAO;
+
+	public void insertBoard(MemberVO vo) {
+
+		boardDAO.insertBoard(vo);
+	}
+
+	public void updateBoard(MemberVO vo) {
+		boardDAO.updateBoard(vo);
+	}
+
+	public void deleteBoard(MemberVO vo) {
+		boardDAO.deleteBoard(vo);
+	}
+
+	public MemberVO getBoard(MemberVO vo) {
+		return boardDAO.getBoard(vo);
+	}
+
+	public List<MemberVO> getBoardList(MemberVO vo) {
+		return boardDAO.getBoardList(vo);
+	}
+}

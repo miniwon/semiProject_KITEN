@@ -1777,6 +1777,11 @@ pre code {
 	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
+.col-lg-6 .login_form_inner .form-control {
+
+	width: 80%;
+}
+
 @media screen and (prefers-reduced-motion:reduce) {
 	.form-control {
 		transition: none
@@ -7356,7 +7361,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .
 }
 
 .w-100 {
-	width: 100% !important
+	width: 80% !important
 }
 
 .w-auto {
