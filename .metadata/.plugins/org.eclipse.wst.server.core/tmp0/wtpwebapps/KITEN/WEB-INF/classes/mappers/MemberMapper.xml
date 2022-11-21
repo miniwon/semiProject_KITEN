@@ -24,6 +24,42 @@
 			AND m_password = #{m_password}
 		</if>
 	</select>
+	
+	
+	<!-- id 정보 통해 다른 정보 가져오기 -->
+	<select id="idSelect" parameterType="string"
+		resultType="MemberVO">
+		SELECT *
+		FROM member
+		WHERE m_id = #{m_id}
+		
+	</select>
+	
+	
+	<!-- 회원 정보 수정  -->
+	<update id="userUpdate" parameterType="MemberVO">
+
+		UPDATE member SET
+		M_TEL = #{m_tel},
+		M_address1 = #{m_address1},
+		m_address2 = #{m_address2},
+		m_email = #{m_email}	
+		WHERE m_id = #{m_id}
+
+	</update>
+	
+	<update id="userUpdate2" parameterType="MemberVO">
+
+		UPDATE member SET
+		
+		m_password = #{m_password},
+		m_tel = #{m_tel},
+		m_address1 = #{m_address1},
+		m_address2 = #{m_address2},
+		m_email = #{m_email}	
+		WHERE m_id = #{m_id}
+
+	</update>
 
 
 </mapper>

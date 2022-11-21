@@ -125,7 +125,7 @@
 						<div class="card_area d-flex align-items-center">
 						<a></a>
 						 <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-						 <a class="button primary-btn" href="#">구매하기</a>
+						 <a class="button primary-btn" href="#">장바구니</a>
 						</div>
 					</div>
 				</div>

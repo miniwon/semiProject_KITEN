@@ -27,7 +27,7 @@
 	</beans:bean>
 
 	<context:component-scan
-		base-package="semi.kiten" />
+		base-package="semi.kiten.*" />
 
 	<!-- ##################################################### -->
 	<!-- 파일업로드 하려면 MultipartResolver를 등록해야 함 -->

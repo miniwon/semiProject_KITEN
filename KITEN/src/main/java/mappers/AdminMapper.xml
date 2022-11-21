@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+
+
+	<!-- 회원가입 시 정보 DB에 넣기 -->
+	<insert id="productInsert" parameterType="ProductVO">
+		INSERT INTO product (
+		p_name, p_stock, p_price, p_state, p_brand,
+		p_weight, categoryname, p_shortcontent,
+		p_time, p_storage, p_due,
+		p_list, p_allergy
+		<if test="p_list_fname != null">
+			, p_list_fname, p_list_realfname, p_list_fsize, p_detail_fname,
+			p_detail_realfname, p_detail_fsize
+		</if>
+		)
+		VALUES (
+		#{p_name}, #{p_stock}, #{p_price}, #{p_state}, #{p_brand},
+		#{p_weight}, #{categoryname}, #{p_shortcontent},
+		#{p_time},
+		#{p_storage}, #{p_due}, #{p_list}, #{p_allergy}
+		<if test="p_list_fname != null">
+			, #{p_list_fname}, #{p_list_realfname}, #{p_list_fsize},
+			#{p_detail_fname}, #{p_detail_realfname}, #{p_detail_fsize}
+		</if>
+		)
+	</insert>
+
+</mapper>

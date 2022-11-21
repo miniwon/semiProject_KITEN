@@ -1,5 +1,7 @@
 package semi.kiten.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +23,27 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO idCheck_Login(MemberVO vo) {
 		return memberDAO.idCheck(vo);
 	}
+	
+	
+	// 회원 정보 수정 메서드
+	public int userUpdate(MemberVO vo) {
+		
+		return memberDAO.memberupdate(vo);
+	}
+
+	@Override
+	public MemberVO idSelect(String userId) {
+		
+		return memberDAO.idSelect(userId);
+	}
+
+	@Override
+	public int userUpdate2(MemberVO vo) {
+		
+		return memberDAO.memberupdate2(vo);
+		
+	}
+
+
 
 }

@@ -21,6 +21,9 @@
 	<a href="contact.do">연락처</a><br>
 	<a href="single-blog.do">블로그 상세</a><br>
 	<a href="tracking-order.do">주문 추적</a><br>
-	<a href="mypage.do">마이 페이지</a><br>	
+	<a href="mypage.do">마이 페이지</a><br>
+	<a href="admin/adminLogin.do">관리자 로그인</a><br>
+	<a href="admin/productRegister.do">상품 등록</a><br>
+	<a href="user/userModify.do">회원 정보 수정</a>
 </body>
 </html>

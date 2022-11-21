@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="loginForm."/>
-		<item key="wrap" value="true"/>
+		<item key="selection" value="&lt;form"/>
+		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="form."/>
-			<item value="form"/>
-			<item value=".login_form .form-group input"/>
-			<item value=".form-control"/>
-			<item value="form-control"/>
-			<item value=".w-100"/>
-			<item value="중복"/>
-			<item value="name"/>
-			<item value="agree"/>
-			<item value="id"/>
-			<item value="pass"/>
-			<item value="item"/>
-			<item value="m_pass"/>
-			<item value="KitenVO"/>
-			<item value="resources/img/category/s-p1.jpg"/>
+			<item value="&lt;form"/>
+			<item value="css"/>
+			<item value="회원"/>
+			<item value="숫자만"/>
+			<item value="숫자"/>
+			<item value="상태"/>
+			<item value="enctype"/>
+			<item value="Basic"/>
+			<item value="basic"/>
+			<item value="col-lg-6"/>
+			<item value="container-fluid"/>
+			<item value="Credit Card"/>
+			<item value="Pay Invoice"/>
+			<item value="inline"/>
+			<item value="class=&quot;col-lg-6&quot;"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&lt;%=pjName%&gt;/resources/vendors/admin/"/>
+			<item value="dfsf"/>
 			<item value="loginForm."/>
 			<item value=","/>
 			<item value="MemberVO"/>
@@ -38,8 +40,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="166"/>
-		<item key="DIALOG_Y_ORIGIN" value="230"/>
+		<item key="DIALOG_X_ORIGIN" value="461"/>
+		<item key="DIALOG_Y_ORIGIN" value="262"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="428"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

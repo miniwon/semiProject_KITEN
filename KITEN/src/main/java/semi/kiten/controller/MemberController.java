@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,6 +43,7 @@ public class MemberController {
 	         System.out.println("로그인 성공");
 	         //세션에 저장
 	         session.setAttribute("userId", vo.getM_id());
+	         
 //	         return "home";
 	         return "/user/userLogin_ok";
 
@@ -83,5 +85,51 @@ public class MemberController {
 		
 		return message;
 	}
+	
+	@RequestMapping(value="userModify.do", produces="application/text;charset=utf-8")
+	public MemberVO idSelect(HttpSession session, Model m) {
+		Object sess_userId = session.getAttribute("userId");
+		String userId = "";
+		if(sess_userId != null) userId = (String)sess_userId; 
+		System.out.println("userId: " +  userId);
+		MemberVO result = memberService.idSelect(userId);
+		m.addAttribute("member",result);
+		System.out.println("result => "+result.getM_name());
+		return result;
+	}
+	
+	
+	@RequestMapping(value="userModify_ok.do", produces="application/text;charset=utf-8")
+	public ModelAndView Update(MemberVO vo) {
+		
+		System.out.println("메렁" + vo.getM_password() + "메롱");
+		
+		
+		int result =0;
+		String message = "수정 성공";
+	
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/userModify_ok");
+		mv.addObject("message", message);
+		
+		if(vo.getM_password().equals("")) {
+			result = memberService.userUpdate(vo);
+			return mv;
+		}else{
+			result = memberService.userUpdate2(vo);
+			return mv;
+	}
+		
+		
+	
+	
 
+}
+	
+
+	
+	
+	
+	
 }
