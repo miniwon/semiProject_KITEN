@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+
+	<select id="getProductList" resultType="ProductVO">
+
+		SELECT p_number, p_brand,
+		p_name, p_price, p_list_realfname
+		FROM product
+		WHERE p_state = 1
+		ORDER BY
+		p_number desc
+
+	</select>
+
+	<select id="getProductDetail" parameterType="ProductVO"
+		resultType="ProductVO">
+
+		SELECT *
+		FROM product
+		WHERE p_number = #{p_number}
+
+	</select>
+
+	<select id="searchProductList" parameterType="String"
+		resultType="ProductVO">
+
+		SELECT p_number, p_brand,
+		p_name, p_price, p_list_realfname
+		FROM product
+		WHERE p_name like '%${value}%' or p_brand like
+		'%${value}%'
+		ORDER BY p_number desc
+
+	</select>
+
+	<select id="getFilterCount" resultType="FilterVO">
+
+		SELECT categoryname,
+		count(*) AS count
+		FROM product
+		GROUP BY categoryname
+
+	</select>
+
+	<select id="getWholeCount" resultType="int">
+
+		SELECT count(*) as count
+		FROM product
+
+	</select>
+	<select id="getCategoryList" parameterType="String"
+		resultType="ProductVO">
+
+		SELECT p_number, p_brand,
+		p_name, p_price, p_list_realfname
+		FROM product
+		WHERE categoryname like '${value}'
+		ORDER BY p_number desc
+
+	</select>
+
+
+</mapper>

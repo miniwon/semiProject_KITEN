@@ -484,6 +484,14 @@
 													<input type="file" id="p_detail_image" name="p_detail_image" class="form-control-file">
 												</div>
 											</div>
+																						<div class="row form-group">
+												<div class="col col-md-3">
+													<label for="text-input" class=" form-control-label">등록 일자</label>
+												</div>
+												<div class="col-3 col-md-3">
+													<input type="date" id="p_registerdate" name="p_registerdate" placeholder="등록 일자를 입력해 주세요" class="form-control"><small class="form-text text-muted">등록 일자를 선택해 주세요</small>
+												</div>
+											</div>
 											<div class="card-footer">
 												<button type="submit" id="productSubmit" class="btn btn-primary btn-sm">
 													<i class="fa fa-dot-circle-o"></i> Submit
@@ -492,6 +500,7 @@
 													<i class="fa fa-ban"></i> Reset
 												</button>
 											</div>
+											
 										</form>
 									</div>
 								</div>

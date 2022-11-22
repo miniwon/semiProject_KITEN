@@ -1,12 +1,17 @@
 package semi.kiten.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import semi.kiten.service.AdminService;
+import semi.kiten.vo.MemberVO;
 import semi.kiten.vo.ProductVO;
+
 
 @Controller
 @RequestMapping("admin")
@@ -25,6 +30,7 @@ public class AdminController {
 		return "/admin/productRegister";
 	}
 	
+
 	/* 가입하기 버튼 클릭 -> 
 	 * 요청 : /admin/productInsert.do
 	 * 뷰페이지 : /admin/productRegister_ok.jsp
@@ -42,6 +48,64 @@ public class AdminController {
 		mv.addObject("message", message);
 		return mv;
 	}
+	
+	@RequestMapping("memberTable.do")
+	public String memberList(Model m) {
+		
+		List<MemberVO> list = adminService.memberList();
+		m.addAttribute("list",list);
+		return "/admin/memberTable";
+		
+	}
+	
+	@RequestMapping("memberDelete.do")
+	public String deleteBoard(MemberVO vo) {
+		System.out.println(vo);
+	adminService.deleteMember(vo);
+	return "redirect:/admin/memberTable.do";
+
+	}
+	
+	@RequestMapping("productTable.do")
+	public String productList(Model m) {
+		
+		List<ProductVO> list = adminService.productList();
+		m.addAttribute("list",list);
+		return "/admin/productTable";
+		
+	}
+	
+	@RequestMapping("productDelete.do")
+	public String deleteProduct(ProductVO vo) {
+		System.out.println(vo);
+	adminService.deleteProduct(vo);
+	return "redirect:/admin/productTable.do";
+
+	}
+	
+	@RequestMapping("memberModify.do")
+	public ModelAndView memberModify(MemberVO vo) {
+
+		
+		String message = "수정 성공";
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/productTable");
+		mv.addObject("message", message);
+
+		int result = adminService.memberModify(vo);
+		return mv;
+		
+
+
+
+	
+
+}
+	
+	
+	
+
 
 
 }

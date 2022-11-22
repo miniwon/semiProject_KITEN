@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="&lt;form"/>
+		<item key="selection" value="forEach"/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="forEach"/>
+			<item value="필터"/>
+			<item value="상품 필터"/>
+			<item value="상품"/>
+			<item value="sidebar-filter"/>
+			<item value="검색어를"/>
+			<item value="input-group filter-bar-search"/>
+			<item value="Detail"/>
+			<item value="상세 설명"/>
+			<item value="장가"/>
+			<item value="총각"/>
+			<item value="date"/>
 			<item value="&lt;form"/>
 			<item value="css"/>
 			<item value="회원"/>
-			<item value="숫자만"/>
-			<item value="숫자"/>
-			<item value="상태"/>
-			<item value="enctype"/>
-			<item value="Basic"/>
-			<item value="basic"/>
-			<item value="col-lg-6"/>
-			<item value="container-fluid"/>
-			<item value="Credit Card"/>
-			<item value="Pay Invoice"/>
-			<item value="inline"/>
-			<item value="class=&quot;col-lg-6&quot;"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&lt;%=pjName%&gt;/resources/vendors/admin/"/>

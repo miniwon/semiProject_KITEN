@@ -1,11 +1,6 @@
 package semi.kiten.dao;
 
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
-
 import semi.kiten.vo.MemberVO;
-import semi.kiten.vo.exampleVO;
 
 public interface MemberDAO {
 	

@@ -42,6 +42,7 @@
 			<list>
 				<value>semi.kiten.vo.MemberVO</value>
 				<value>semi.kiten.vo.ProductVO</value>
+				<value>semi.kiten.vo.FilterVO</value>
 			</list>
 		</property>
 	</bean>

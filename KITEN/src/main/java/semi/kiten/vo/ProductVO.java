@@ -28,7 +28,9 @@ public class ProductVO {
 	private String	p_detail_fname;
 	private String	p_detail_realfname;
 	private long	p_detail_fsize;
+	private String	p_registerdate;
 	
+
 	MultipartFile p_list_image;
 	MultipartFile p_detail_image;
 	
@@ -201,8 +203,12 @@ public class ProductVO {
 	public void setP_detail_fsize(int p_detail_fsize) {
 		this.p_detail_fsize = p_detail_fsize;
 	}
-	
-	
+	public String getP_registerdate() {
+		return p_registerdate;
+	}
+	public void setP_registerdate(String p_registerdate) {
+		this.p_registerdate = p_registerdate;
+	}
 	
 
 	
