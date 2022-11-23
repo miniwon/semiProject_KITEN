@@ -4,28 +4,84 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
 
 
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
 .footer_title.large_title {
-	font-size: 36px;
+	font-family: 'LINESeedKR-Bd';
+	font-size: 28px;
 	font-weight: 600;
 	color : #333333;
 }
 
 .footer-area {
 	background: #fff;
-	padding: 50px 0px 50px
+	padding: 50px 0px 50px;
+	font-size : 12px;
+}
+
+
+.ss{
+	display:inline-block;
+	display: flex;
 }
 
 .s1{
 	
-
+	
 	display: inline-block;
+	float: left;
+	margin-left: 350px;
+	
 
 }
 
 
 .ml-40	{
 	
+	margin-left: 220px;
 	display: inline-block;
+	float: right
 	
 }
+
+
+.loginul {
+    list-style:none;
+    color: #FD6F22;
+}
+
+.loginli {
+	
+     margin-left : 10px;
+    padding: 50 50 50 50;
+    border : 0;
+    float: left;
+	
+	}
+	
+.foot-link {
+	
+     color: #FD6F22;
+	
+	}	
+	
+.loginli2 {
+	
+     margin-left : 70px;
+    padding: 50 50 50 50;
+    border : 0;
+    float: left;
+	
+	}	
+	
+	
+	
+
+
+
+

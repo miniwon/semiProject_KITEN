@@ -19,18 +19,21 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	// 로그인 페이지 들어가기
 	@RequestMapping("userLogin.do")
 	public String loginPage() {
 		return "/user/userLogin";
 		// "/user/"를 안쓰면 [/WEB-INF/views/userLogin.jsp]로 받아서 404오류 발생
 	}
-
+	
+	// 회원가입 페이지 들어가기
 	@RequestMapping("userJoin.do")
 	public String joinPage() {
 		return "/user/userJoin";
 		// "/user/"를 안쓰면 [/WEB-INF/views/userLogin.jsp]로 받아서 404오류 발생
 	}
 	
+	// 로그인 실행
 	@RequestMapping("login.do")
 	//*************************
 	// 세션 사용 -> 인자에 HttpSession 변수 선언
@@ -42,7 +45,8 @@ public class MemberController {
 		}else {
 	         System.out.println("로그인 성공");
 	         //세션에 저장
-	         session.setAttribute("userId", vo.getM_id());
+	         session.setAttribute("userId", result.getM_id());
+	         session.setAttribute("userNo", result.getM_number());
 	         
 //	         return "home";
 	         return "/user/userLogin_ok";
@@ -50,6 +54,10 @@ public class MemberController {
 		}
 	}
 	
+	@RequestMapping("userLogout.do")
+	public String logout() {
+  return  "/user/userLogout";
+	}
 	/* 가입하기 버튼 클릭 -> 
 	 * 요청 : /user/userInsert.do
 	 * 뷰페이지 : user/userJoin_ok.jsp
@@ -58,9 +66,9 @@ public class MemberController {
 	public ModelAndView userInsert(MemberVO memberVO) {
 		
 		int result = memberService.userInsert(memberVO);
-		String message = "가입에 실패하였습니다";
+		String message = "회원 가입에 실패하였습니다";
 		
-		if(result==1) message = memberVO.getM_id() + "님 가입을 축하합니다.";
+		if(result==1) message = memberVO.getM_id() + " 님의 회원 가입이 완료되었습니다!";
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/userJoin_ok");

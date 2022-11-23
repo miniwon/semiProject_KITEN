@@ -31,6 +31,7 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.memberupdate(vo);
 	}
 
+	
 	@Override
 	public MemberVO idSelect(String userId) {
 		

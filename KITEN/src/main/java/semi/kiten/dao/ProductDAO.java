@@ -2,6 +2,7 @@ package semi.kiten.dao;
 
 import java.util.List;
 
+import semi.kiten.vo.CartVO;
 import semi.kiten.vo.FilterVO;
 import semi.kiten.vo.ProductVO;
 
@@ -17,4 +18,12 @@ public interface ProductDAO {
 	public int getWholeCount();
 	
 	public List<ProductVO> getCategoryList(String categoryname);
+	
+	public int count();
+	
+	public List<ProductVO> listPage(int displayPost, int postNum);
+	
+	public int addCart(CartVO vo);
+	
+	
 }
