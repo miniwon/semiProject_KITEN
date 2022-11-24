@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import semi.kiten.dao.ProductDAOImpl;
-import semi.kiten.vo.CartVO;
 import semi.kiten.vo.FilterVO;
 import semi.kiten.vo.ProductVO;
 
@@ -52,8 +51,5 @@ public class ProductServiceImpl implements ProductService {
 		public List<ProductVO> listPage(int displayPost, int postNum) {
 			return productDAO.listPage(displayPost, postNum);
 		}
-		
-		public int addCart(CartVO vo) {
-			return productDAO.addCart(vo);
-		}
+
 }

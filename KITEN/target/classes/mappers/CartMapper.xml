@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+
+	<select id="checkCart" parameterType="CartVO" resultType="int">
+		select
+		count(*) as count
+		from cart
+		where m_number = #{m_number} and p_number = #{p_number} and c_state = 1;
+
+	</select>
+
+	<insert id="addCart" parameterType="CartVO">
+
+		INSERT INTO cart (
+		m_number,
+		p_number, c_quantity
+		)
+		VALUES (
+		#{m_number}, #{p_number}, #{c_quantity}
+		)
+
+	</insert>
+
+	<update id="updateCart" parameterType="CartVO">
+		UPDATE cart
+		SET c_quantity
+		= c_quantity + #{c_quantity}
+		WHERE m_number = #{m_number} and p_number
+		= #{p_number}
+	</update>
+	
+	<select id="getCartList" parameterType="CartVO"
+		resultType="CartVO">
+
+select c.c_number as c_number, c.m_number as m_number, c.p_number as p_number, c.c_quantity as c_quantity, c.c_state as c_state, c.o_number as o_number, p.p_list_realfname as p_list_realfname, p.p_name as p_name, p.p_price as p_price 
+from (		SELECT *
+		FROM cart
+		WHERE m_number = #{m_number} and c_state = 1) as c inner join product as p
+on c.p_number = p.p_number
+
+	</select>
+
+
+
+</mapper>

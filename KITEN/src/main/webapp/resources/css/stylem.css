@@ -45,7 +45,9 @@ a:hover {
 button {
 	cursor: pointer
 }
-
+.cartImage {
+	width: 150px;
+}
 button:focus {
 	outline: 0;
 	box-shadow: none
@@ -2432,6 +2434,10 @@ body {
 	font-size: 20px
 }
 
+.cartTh {
+	background: #FD9F28;
+}
+
 .contact-info .media-body h3 {
 	font-size: 16px;
 	margin-bottom: 0
@@ -2444,6 +2450,8 @@ body {
 .contact-info .media-body p {
 	color: #999999
 }
+
+.media-body p a:link { color:black; }
 
 .form-contact .form-group {
 	margin-bottom: 10px
@@ -3933,8 +3941,9 @@ absolute
 	border-top: 0px;
 	font-size: 16px;
 	font-weight: 500;
-	font-family: "Oswald", sans-serif;
+	font-family: 'LINESeedKR-Bd';
 	color: #222;
+	text-align: center;
 	border-bottom: 0px !important
 }
 
@@ -3972,7 +3981,7 @@ absolute
 .cart_inner .table tbody tr td h5 {
 	font-size: 15px;
 	color: #222;
-	font-family: "Roboto", sans-serif;
+	font-family: 'SLEIGothicTTF';
 	margin-bottom: 0px
 }
 
@@ -3991,7 +4000,7 @@ absolute
 .cart_inner .table tbody tr td .product_count .increase {
 	top: -2px
 }
-
+/*
 .cart_inner .table tbody tr td .product_count .increase:before {
 	content: "";
 	height: 40px;
@@ -4011,7 +4020,7 @@ absolute
 	top: 22px;
 	background: #eeeeee
 }
-
+*/
 .cart_inner .table tbody tr td .product_count .reduced {
 	bottom: -6px
 }
@@ -4383,7 +4392,7 @@ absolute
 }
 
 .s_product_text h2 {
-	font-family: "Roboto", sans-serif;
+	font-family: 'SLEIGothicTTF';
 	font-size: 24px;
 	font-weight: 700;
 	color: #FD9F28;

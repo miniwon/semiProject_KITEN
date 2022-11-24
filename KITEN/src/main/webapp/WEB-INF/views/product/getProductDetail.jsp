@@ -36,9 +36,10 @@
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-							<li class="nav-item submenu dropdown"><a href="<%=pjName%>/product/getProductList.do" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false">쇼핑하기</a>
 								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do">전체 상품 보기</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=한식">한식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=중식">중식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=일식">일식</a></li>
@@ -60,7 +61,7 @@
 							</c:if>
 							<!-- 로그인 시 출력할 헤더 -->
 							<c:if test="${not empty sessionScope.userId}">
-								<li class="nav-item active submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
+								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="#">주문 내역</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">찜한 상품</a></li>
@@ -84,7 +85,7 @@
 									<i class="ti-heart"></i>
 								</button></li>
 							<li class="nav-item"><button>
-									<i class="ti-shopping-cart"></i><span class="nav-shop__circle" id="cartQuantity">3</span>
+									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
 								</button></li>
 						</ul>
 					</div>
@@ -134,6 +135,7 @@
 						<form id="addCartForm" name="addCartForm">
 							<input type="hidden" id="m_number" name="m_number" value="${sessionScope.userNo}" /> 
 							<input type="hidden" id="p_number" name="p_number" value="${product.p_number}" />
+							<input type="hidden" id="p_name" name="p_name" value="${product.p_name}" />
 							<div class="product_count">
 								<label for="qty">수량:</label>
 								<button onclick="var result = document.getElementById('c_quantity'); var c_quantity = result.value; if( !isNaN( c_quantity ) &amp;&amp; c_quantity > 1 ) result.value--;return false;"

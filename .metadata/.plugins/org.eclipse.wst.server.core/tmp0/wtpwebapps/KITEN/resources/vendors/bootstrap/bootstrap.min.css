@@ -158,14 +158,14 @@ sup {
 }
 
 a {
-	color: #007bff;
+	color: #222222;
 	text-decoration: none;
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects
 }
 
 a:hover {
-	color: #0056b3;
+	color: #FD9F28;
 	text-decoration: underline
 }
 
@@ -1506,9 +1506,11 @@ pre code {
 .table td, .table th {
 	padding: .75rem;
 	vertical-align: top;
-	border-top: 1px solid #dee2e6
 }
 
+.table td {
+		border-top: 1px solid #dee2e6;
+}
 .table thead th {
 	vertical-align: bottom;
 	border-bottom: 2px solid #dee2e6

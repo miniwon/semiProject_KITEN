@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="c_quantity"/>
+		<item key="selection" value=".table td, .table th"/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value=".table td, .table th"/>
+			<item value="imgOverlay"/>
+			<item value="card-product__imgOverlay"/>
+			<item value="card-product"/>
+			<item value=" card-product"/>
+			<item value="card text-center card-product"/>
+			<item value="#FD9F28"/>
+			<item value="#007bff"/>
+			<item value="sans"/>
+			<item value=".cart_inner .table thead tr th"/>
+			<item value=".cart_inner .table tbody tr td .product_count .increase:before"/>
+			<item value="ti-shopping-cart"/>
+			<item value="active"/>
+			<item value="nav"/>
 			<item value="sst"/>
-			<item value="nav-item"/>
-			<item value="필터"/>
-			<item value=".section-margin--small .col-xl-3 .widget_title"/>
-			<item value=".card-product__imgOverlay li button "/>
-			<item value=".card-product__imgOverlay li button"/>
-			<item value=".login_form_inne"/>
-			<item value="중복 확인"/>
-			<item value="Pseu"/>
-			<item value="Pseudo"/>
-			<item value="Pu"/>
-			<item value="Psu"/>
-			<item value="Pse"/>
-			<item value="forEach"/>
-			<item value="상품 필터"/>
 		</list>
 		<list key="replacehistory">
 			<item value="c_quantity"/>
@@ -42,8 +42,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="567"/>
-		<item key="DIALOG_Y_ORIGIN" value="76"/>
+		<item key="DIALOG_X_ORIGIN" value="6"/>
+		<item key="DIALOG_Y_ORIGIN" value="95"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="428"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

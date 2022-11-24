@@ -7,7 +7,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import semi.kiten.vo.CartVO;
 import semi.kiten.vo.FilterVO;
 import semi.kiten.vo.ProductVO;
 
@@ -45,11 +44,6 @@ public class ProductDAOImpl implements ProductDAO {
 	public List<ProductVO> getCategoryList(String categoryname){
 		System.out.println("===> Mybatis getCategoryList() 호출");
 		return mybatis.selectList("product.getCategoryList", categoryname);
-	}
-	
-	public int addCart(CartVO vo) {
-		System.out.println("===> Mybatis getCart() 호출");
-		return mybatis.selectOne("product.addCart", vo);
 	}
 
 	@Override

@@ -23,7 +23,4 @@ public interface ProductDAO {
 	
 	public List<ProductVO> listPage(int displayPost, int postNum);
 	
-	public int addCart(CartVO vo);
-	
-	
 }

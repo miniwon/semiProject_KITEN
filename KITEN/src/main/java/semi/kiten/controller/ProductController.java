@@ -58,6 +58,7 @@ public class ProductController {
 		return "/product/getProductList";
 	}
 	
+	// 상품 상세 정보 보기
 	@RequestMapping("getProductDetail.do")
 	public void getProductDetail(ProductVO productVO, Model m) {
 		ProductVO resultVO = productService.getProductDetail(productVO);

@@ -3,17 +3,6 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product">
 
-	<insert id="addCart" parameterType="CartVO">
-	
-	INSERT INTO cart (
-		m_number, p_number, c_quantity
-	)
-	VALUES (
-	#{m_number}, #{p_number}, #{c_quantity}
-	)	
-	
-	</insert>
-
 	<select id="getProductList" resultType="ProductVO">
 
 		SELECT p_number, p_brand,
@@ -23,7 +12,7 @@
 		ORDER BY
 		p_number desc
 		limit 10 offset 1;
-		
+
 
 	</select>
 
@@ -78,21 +67,25 @@
 	<!-- 게시물 총 갯수 -->
 	<select id="count" resultType="int">
 		SELECT count(*) as count
-		FROM product
+		FROM
+		product
 	</select>
 
 	<!-- 게시물 목록 + 페이징 -->
-	
+
 	<select id="listPage" parameterType="hashMap"
 		resultType="ProductVO">
-		
+
 		SELECT p_number, p_brand,
 		p_name, p_price, p_list_realfname
 		FROM product
-		WHERE p_state = 1
+		WHERE
+		p_state = 1
 		ORDER BY p_number desc
-		limit #{postNum} offset #{displayPost};
-		
+		limit #{postNum}
+		offset
+		#{displayPost};
+
 	</select>
 
 
