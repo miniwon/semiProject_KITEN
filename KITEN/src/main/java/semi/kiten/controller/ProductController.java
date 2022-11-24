@@ -67,15 +67,12 @@ public class ProductController {
 	
 	@RequestMapping("getProductListPage.do")
 	public void getProductListPage(Model m) {
-		
-		
 		List<FilterVO> filterList = productService.getFilterCount();
 		List<ProductVO> list = productService.getProductList();
 		int wholeCount = productService.getWholeCount();
 		m.addAttribute("productList", list);
 		m.addAttribute("filterList", filterList);
 		m.addAttribute("wholeCount", wholeCount);
-		
 	}
 
 	

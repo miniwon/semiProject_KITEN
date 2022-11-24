@@ -164,7 +164,7 @@ a {
 	-webkit-text-decoration-skip: objects
 }
 
-a:hover {
+.cart_area a:hover {
 	color: #FD9F28;
 	text-decoration: underline
 }

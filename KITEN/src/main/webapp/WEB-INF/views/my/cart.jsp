@@ -20,7 +20,6 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
-
 <link rel="stylesheet" href="<%=pjName%>/resources/css/stylem.css">
 </head>
 <body>
@@ -138,13 +137,13 @@
 									<td>
 										<div class="product_count">
 											<button class="reduced items-count" type="button">▼</button>
-											<input type="text" name="c_quantity" id="c_quantity" size="2" maxlength="12" value="${cart.c_quantity}" title="Quantity:" class="input-text qty cartQuantity">
+											<input type="text" name="c_quantity" size="2" maxlength="12" value="${cart.c_quantity}" title="Quantity:" class="input-text qty cartQuantity">
 											<button class="increase items-count" type="button">▲</button>
 										</div>
 									</td>
 									<td>
 										<h5>
-											<span class="sumPrice" pattern="###,###,###"></span> 원
+											<span class="sumPrice"></span> 원
 											<button class=close></button>
 										</h5>
 									</td>
@@ -308,5 +307,6 @@
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
 	<script src="<%=pjName%>/resources/js/cartPage.js"></script>
+
 </body>
 </html>
