@@ -170,7 +170,7 @@ h4 {
 														<i class="ti-shopping-cart" data-pname="${product.p_name}" data-user="${sessionScope.userNo}" data-value="${product.p_number}"></i>
 													</button></li>
 												<li><button>
-														<i class="ti-heart"></i>
+														<i class="ti-heart" data-pname="${product.p_name}" data-user="${sessionScope.userNo}" data-value="${product.p_number}"></i>
 													</button></li>
 											</ul>
 										</div>

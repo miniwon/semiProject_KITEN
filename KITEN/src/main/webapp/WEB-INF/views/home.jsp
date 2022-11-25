@@ -32,6 +32,7 @@
     -moz-box-shadow: 0 0 0px #ccc;
     -webkit-box-shadow: 0 0 0px #ccc;
     box-shadow: 0 0 0px #ccc0;
+    border: 0px;
     }
     </style>
 
@@ -100,9 +101,9 @@
 							<li class="nav-item"><button>
 									<i class="ti-location-pin"></i>
 								</button></li>
-							<li class="nav-item"><button>
+							<li class="nav-item"><a href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}"><button>
 									<i class="ti-heart"></i>
-								</button></li>
+								</button></a></li>
 							<li class="nav-item"><a href="<%=pjName%>/my/cart.do?m_number=${sessionScope.userNo}"><button>
 									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
 								</button></a></li>

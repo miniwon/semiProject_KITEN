@@ -7,7 +7,8 @@
 		select
 		count(*) as count
 		from cart
-		where m_number = #{m_number} and p_number = #{p_number} and c_state = 1;
+		where m_number = #{m_number} and p_number =
+		#{p_number} and c_state = 1;
 
 	</select>
 
@@ -28,30 +29,59 @@
 		SET c_quantity
 		= c_quantity + #{c_quantity}
 		WHERE m_number = #{m_number} and p_number
-		= #{p_number}
+		= #{p_number} and c_state = 1;
 	</update>
-	
-	<select id="getCartList" parameterType="CartVO"
-		resultType="CartVO">
 
-select c.c_number as c_number, c.m_number as m_number, c.p_number as p_number, c.c_quantity as c_quantity, c.c_state as c_state, c.o_number as o_number, p.p_list_realfname as p_list_realfname, p.p_name as p_name, p.p_price as p_price 
-from (		SELECT *
-		FROM cart
-		WHERE m_number = #{m_number} and c_state = 1) as c inner join product as p
-on c.p_number = p.p_number
+	<select id="checkWish" parameterType="WishVO" resultType="int">
+		select
+		count(*) as count
+		from wishlist
+		where m_number = #{m_number} and
+		p_number = #{p_number} and w_state = 1;
 
 	</select>
 	
-		<update id="updateCartQuantity" parameterType="CartVO">
+		<insert id="addWish" parameterType="WishVO">
+
+		INSERT INTO wishlist (
+		m_number,
+		p_number
+		)
+		VALUES (
+		#{m_number}, #{p_number}
+		)
+
+	</insert>
+
+	<select id="getCartList" parameterType="CartVO"
+		resultType="CartVO">
+
+		select c.c_number as c_number, c.m_number as m_number, c.p_number as
+		p_number, c.c_quantity as c_quantity, c.c_state as c_state, c.o_number
+		as o_number, p.p_list_realfname as p_list_realfname, p.p_name as
+		p_name, p.p_price as p_price
+		from ( SELECT *
+		FROM cart
+		WHERE m_number = #{m_number} and c_state = 1) as c
+		inner join product as p
+		on c.p_number = p.p_number
+
+	</select>
+
+	<update id="updateCartQuantity" parameterType="CartVO">
 		UPDATE cart
-		SET c_quantity = #{c_quantity}
-		WHERE m_number = #{m_number} and p_number = #{p_number}
+		SET
+		c_quantity = #{c_quantity}
+		WHERE m_number = #{m_number} and p_number =
+		#{p_number} and c_state = 1;
 	</update>
-	
-		<update id="cartDeleteOne" parameterType="CartVO">
+
+	<update id="cartDeleteOne" parameterType="CartVO">
 		UPDATE cart
-		SET c_state = 0
-		WHERE m_number = #{m_number} and p_number = #{p_number} and c_state = 1
+		SET c_state
+		= 0
+		WHERE m_number = #{m_number} and p_number = #{p_number} and c_state
+		= 1
 	</update>
 
 

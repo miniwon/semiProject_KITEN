@@ -145,7 +145,7 @@
 									type="button">▲</button>
 							</div>
 							<div class="card_area d-flex align-items-center">
-								<a></a> <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a> <a class="button primary-btn" id="addCart" href="#">장바구니</a>
+								<a></a> <a id="addWish" class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a> <a class="button primary-btn" id="addCart" href="#">장바구니</a>
 							</div>
 						</form>
 					</div>

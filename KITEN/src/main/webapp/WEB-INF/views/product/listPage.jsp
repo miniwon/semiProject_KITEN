@@ -154,7 +154,7 @@ h4 {
 					<!-- Start Best Seller -->
 					<section class="lattest-product-area pb-40 category-list">
 						<div class="row">
-							<c:forEach items="${List}" var="product">
+							<c:forEach items="${productList}" var="product">
 								<div class="col-md-6 col-lg-4">
 									<div class="card text-center card-product">
 										<div class="card-product__img">
@@ -164,10 +164,10 @@ h4 {
 															<i class="ti-search"></i>
 														</button></a></li>
 												<li><button>
-														<i class="ti-shopping-cart"></i>
+														<i class="ti-shopping-cart" data-pname="${product.p_name}" data-user="${sessionScope.userNo}" data-value="${product.p_number}"></i>
 													</button></li>
 												<li><button>
-														<i class="ti-heart"></i>
+														<i class="ti-heart" data-pname="${product.p_name}" data-user="${sessionScope.userNo}" data-value="${product.p_number}"></i>
 													</button></li>
 											</ul>
 										</div>
@@ -181,26 +181,10 @@ h4 {
 									</div>
 								</div>
 							</c:forEach>
-						
 
 						</div>
-						<c:if test="${prev}">
-									<span> <a class= "pagenum" href="listPage.do?num=${startPageNum - 1}">이전</a> 
-									</span>
-								</c:if>
 
-								<c:forEach begin="${startPageNum}" end="${endPageNum}" var="num">
-									<span> <a class= "pagenum" href="listPage.do?num=${num}">${num}</a>
-									</span>
-								</c:forEach>
 
-								<c:if test="${next}">
-									<span> <a class= "pagenum" href="listPage.do?num=${endPageNum + 1}">다음</a> 
-									</span>
-								</c:if></div>
-
-						</div>
-					
 					</section>
 					<!-- End Best Seller -->
 				</div>
@@ -301,5 +285,6 @@ h4 {
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
+	<script src="<%=pjName%>/resources/js/addCart.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import semi.kiten.dao.CartDAOImpl;
 import semi.kiten.vo.CartVO;
+import semi.kiten.vo.WishVO;
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -25,5 +26,10 @@ public class CartServiceImpl implements CartService {
 	}
 	public int cartDeleteOne(CartVO vo) {
 		return cartDAO.cartDeleteOne(vo);
+	}
+	
+	public int addWish(WishVO vo) {
+		if(cartDAO.checkWish(vo) == 1) return 10;
+		else return cartDAO.addWish(vo);
 	}
 }

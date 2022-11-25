@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String pjName = "/KITEN";
 %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>KITEN - 상품 목록</title>
+<title>KITEN - 찜 목록</title>
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
 
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrap.min.css">
@@ -20,14 +20,7 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
-
-<link rel="stylesheet" href="<%=pjName%>/resources/css/stylej.css">
-<link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
-<style type="text/css">
-h4 {
-	margin-bottom: 0;
-}
-</style>
+<link rel="stylesheet" href="<%=pjName%>/resources/css/stylem.css">
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
@@ -42,9 +35,9 @@ h4 {
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-							<li class="nav-item submenu dropdown"><a href="<%=pjName%>/product/getProductDetail.do" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								aria-expanded="false">쇼핑하기</a>
+							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">쇼핑하기</a>
 								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do">전체 상품 보기</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=한식">한식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=중식">중식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=일식">일식</a></li>
@@ -66,7 +59,7 @@ h4 {
 							</c:if>
 							<!-- 로그인 시 출력할 헤더 -->
 							<c:if test="${not empty sessionScope.userId}">
-								<li class="nav-item active submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
+								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="#">주문 내역</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">찜한 상품</a></li>
@@ -80,15 +73,18 @@ h4 {
 						</ul>
 
 						<ul class="nav-shop">
-							<li class="nav-item"><button>
-									<i class="ti-location-pin"></i>
-								</button></li>
-							<li class="nav-item"><button>
-									<i class="ti-heart"></i>
-								</button></li>
-							<li class="nav-item"><button>
-									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
-								</button></li>
+							<c:if test="${not empty sessionScope.userId}">
+								<li class="nav-item">${sessionScope.userId}님</li>
+								<li class="nav-item"><button>
+										<i class="ti-location-pin"></i>
+									</button></li>
+								<li class="nav-item"><a href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}"><button>
+											<i class="ti-heart"></i>
+										</button></a></li>
+								<li class="nav-item"><a href="<%=pjName%>/my/cart.do?m_number=${sessionScope.userNo}"><button>
+											<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
+										</button></a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -96,137 +92,85 @@ h4 {
 		</div>
 	</header>
 	<!--================ End Header Menu Area =================-->
-	<!-- ================ category section start ================= -->
-	<section class="section-margin--small mb-5">
+
+	<!-- ================ start banner area ================= -->
+
+	<!-- ================ end banner area ================= -->
+
+
+
+	<!--================Cart Area =================-->
+	<section class="cart_area">
 		<div class="container">
-			<div class="row">
-				<div class="col-xl-3 col-lg-4 col-md-5">
-					<h4 class="widget_title">카테고리</h4>
-					<div class="common-filter">
-						<ul class="list cat-list">
-						<li><a href="getProductList.do" class="d-flex justify-content-between">
-										<p>전체 보기</p>
-										<p>${wholeCount}</p>
-								</a></li> 
-							<c:forEach items="${filterList}" var="filter">
-								<li><a href="getCategoryList.do?categoryname=${filter.categoryname}" class="d-flex justify-content-between">
-										<p>${filter.categoryname}</p>
-										<p>${filter.count}</p>
-								</a></li>
-							</c:forEach>
-						</ul>
-					</div>
-					<div class="br"></div>
-					<div class="sidebar-filter">
-						<div class="top-filter-head">상품 필터</div>
-						<div class="common-filter">
-							<div class="head">브랜드</div>
-							<form action="#">
-								<ul>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">이름1<span>(수량)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">이름2<span>(수량)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
-								</ul>
-							</form>
-						</div>
-						<div class="common-filter">
-							<div class="head">가격</div>
-							<div class="price-range-area">
-								<div id="price-range"></div>
-								<div class="value-wrapper d-flex">
-									<div class="price"></div>
-									<div id="lower-value"></div>
-									<span>원</span>
-									<div class="to">~</div>
-									<div id="upper-value"></div>
-									<span>원</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-9 col-lg-8 col-md-7">
-					<!-- Start Filter Bar -->
-					<div class="filter-bar d-flex flex-wrap align-items-center">
-						<div class="sorting">
-							<select>
-								<option value="1">신상품순</option>
-								<option value="1">판매량순</option>
-								<option value="1">낮은 가격순</option>
-								<option value="1">높은 가격순</option>
-							</select>
-						</div>
-						<div class="sorting mr-auto">
-							<select>
-								<option value="1">6개 보기</option>
-								<option value="1">9개 보기</option>
-								<option value="1">12개 보기</option>
-							</select>
-						</div>
-						<div>
-							<form action="searchProductList.do">
-								<div class="input-group filter-bar-search">
-									<input type="text" name="search" placeholder="전체 목록에서 상품 검색">
-									<div class="input-group-append">
-										<button type="submit">
-											<i class="ti-search"></i>
-										</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<!-- End Filter Bar -->
-					<!-- Start Best Seller -->
-					<section class="lattest-product-area pb-40 category-list">
-						<div class="row">
-							<c:forEach items="${productList}" var="product">
-								<div class="col-md-6 col-lg-4">
-									<div class="card text-center card-product">
-										<div class="card-product__img">
-											<img class="card-img" src="<%=pjName%>/resources/upload/${product.p_list_realfname}" alt="">
-											<ul class="card-product__imgOverlay">
-												<li><a href="getProductDetail.do?p_number=${product.p_number}"><button>
-															<i class="ti-search"></i>
-														</button></a></li>
-												<li><button>
-														<i class="ti-shopping-cart" data-pname="${product.p_name}" data-user="${sessionScope.userNo}" data-value="${product.p_number}"></i>
-													</button></li>
-												<li><button>
-														<i class="ti-heart" data-pname="${product.p_name}" data-user="${sessionScope.userNo}" data-value="${product.p_number}"></i>
-													</button></li>
-											</ul>
+			<div class="cart_inner">
+				<div class="table-responsive">
+				<h3>내가 찜한 상품</h3>
+				<br>
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col" class="cartTh">상품</th>
+								<th scope="col" class="cartTh">가격</th>
+								<th scope="col" class="cartTh">담기</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${cartList}" var="cart">
+								<tr>
+									<td>
+										<div class="media">
+											<div class="d-flex">
+												<img src="<%=pjName%>/resources/upload/${cart.p_list_realfname}" alt="" class="cartImage">
+											</div>
+											<div class="media-body">
+												<p>
+													<a href="<%=pjName%>/product/getProductDetail.do?p_number=${cart.p_number}">${cart.p_name}</a>
+												</p>
+											</div>
 										</div>
-										<div class="card-body">
-											<p>${product.p_brand }</p>
-											<h4 class="card-product__title">
-												<a href="getProductDetail.do?p_number=${product.p_number}">${product.p_name}</a>
-											</h4>
-											<p class="card-product__price">${product.p_price}원</p>
-										</div>
-									</div>
-								</div>
+									</td>
+									<td style="text-align: right;">
+										<h5>
+											<span class="p_price" data-price="${cart.p_price}"></span>원
+										</h5>
+									</td>
+
+									<td><div class="cupon_text d-flex align-items-center">
+										<a class="btn" href="<%=pjName%>/product/getProductList.do">장바구니에 담기</a> </div></td>
+
+								</tr>
 							</c:forEach>
-
-						</div>
-
-
-					</section>
-					<!-- End Best Seller -->
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bottom_button">
+								<td></td>
+								<td></td>
+								<td>
+									<div class="cupon_text d-flex align-items-center">
+										<a class="btn" href="<%=pjName%>/product/getProductList.do">쇼핑하러 가기</a> <a class="primary-btn" href="<%=pjName%>/home.do" style="float: right">메인 화면</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- ================ category section end ================= -->
+	<!--================End Cart Area =================-->
+
+
+
 	<!--================ Start footer Area  =================-->
 	<footer>
-		<div class="footer-area">
+		<div class="footer-area footer-only">
 			<div class="container">
 				<div class="row section_gap">
 					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
+						<div class="single-footer-widget tp_widgets ">
 							<h4 class="footer_title large_title">Our Mission</h4>
 							<p>So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved us lan Gathering thing us land years living.</p>
 							<p>So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved</p>
@@ -312,10 +256,10 @@ h4 {
 	<script src="<%=pjName%>/resources/vendors/skrollr.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/owl-carousel/owl.carousel.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/nice-select/jquery.nice-select.min.js"></script>
-	<script src="<%=pjName%>/resources/vendors/nouislider/nouislider.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
-	<script src="<%=pjName%>/resources/js/addCart.js"></script>
+	<script src="<%=pjName%>/resources/js/cartPage.js"></script>
+
 </body>
 </html>

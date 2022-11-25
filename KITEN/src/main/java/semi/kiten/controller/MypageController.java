@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import semi.kiten.service.CartService;
 import semi.kiten.service.MypageService;
 import semi.kiten.vo.CartVO;
+import semi.kiten.vo.WishVO;
 
 @Controller
 @RequestMapping("my")
@@ -35,5 +36,12 @@ public class MypageController {
 		m.addAttribute("cartList", cartList);
 		return "redirect:/my/cart.do?m_number=" + cartVO.getM_number();
 	}
+	
+	@RequestMapping("wish.do")
+	public void myWish(WishVO wishVO, Model m) {
+		List<CartVO> wishList = mypageService.getWishList(wishVO);
+		m.addAttribute("wishList", wishList);
+	}
+
 
 }

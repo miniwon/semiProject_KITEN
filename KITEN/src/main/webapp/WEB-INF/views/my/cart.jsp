@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Aroma Shop - Cart</title>
+<title>KITEN - 장바구니</title>
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
 
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrap.min.css">
@@ -35,8 +35,7 @@
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								aria-expanded="false">쇼핑하기</a>
+							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">쇼핑하기</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do">전체 상품 보기</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=한식">한식</a></li>
@@ -76,15 +75,15 @@
 						<ul class="nav-shop">
 							<c:if test="${not empty sessionScope.userId}">
 								<li class="nav-item">${sessionScope.userId}님</li>
-							<li class="nav-item"><button>
-									<i class="ti-location-pin"></i>
-								</button></li>
-							<li class="nav-item"><button>
-									<i class="ti-heart"></i>
-								</button></li>
-							<li class="nav-item"><a href="<%=pjName%>/my/cart.do?m_number=${sessionScope.userNo}"><button>
-									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
-								</button></a></li>
+								<li class="nav-item"><button>
+										<i class="ti-location-pin"></i>
+									</button></li>
+								<li class="nav-item"><button>
+										<i class="ti-heart"></i>
+									</button></li>
+								<li class="nav-item"><a href="<%=pjName%>/my/cart.do?m_number=${sessionScope.userNo}"><button>
+											<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
+										</button></a></li>
 							</c:if>
 						</ul>
 					</div>
@@ -105,6 +104,8 @@
 		<div class="container">
 			<div class="cart_inner">
 				<div class="table-responsive">
+					<h3>장바구니</h3>
+					<br>
 					<table class="table">
 						<thead>
 							<tr>
@@ -128,18 +129,22 @@
 												<input type="checkbox" class="check1" value="check1" checked> <img src="<%=pjName%>/resources/upload/${cart.p_list_realfname}" alt="" class="cartImage">
 											</div>
 											<div class="media-body">
-												<p><a href="<%=pjName%>/product/getProductDetail.do?p_number=${cart.p_number}">${cart.p_name}</a></p>
+												<p>
+													<a href="<%=pjName%>/product/getProductDetail.do?p_number=${cart.p_number}">${cart.p_name}</a>
+												</p>
 											</div>
 										</div>
 									</td>
 									<td>
-										<h5><span class="p_price" data-price="${cart.p_price}"></span>원</h5>
+										<h5>
+											<span class="p_price" data-price="${cart.p_price}"></span>원
+										</h5>
 									</td>
 									<td>
 										<div class="product_count">
 											<button class="reduced items-count" type="button">▼</button>
-											<input type="text" name="c_quantity" size="2" maxlength="12" value="${cart.c_quantity}" title="Quantity:" class="input-text qty cartQuantity"
-											data-user="${sessionScope.userNo}" data-value="${cart.p_number}">
+											<input type="text" name="c_quantity" size="2" maxlength="12" value="${cart.c_quantity}" title="Quantity:" class="input-text qty cartQuantity" data-user="${sessionScope.userNo}"
+												data-value="${cart.p_number}">
 											<button class="increase items-count" type="button">▲</button>
 										</div>
 									</td>
@@ -174,9 +179,15 @@
 
 								<td class="t_value">
 
-									<p><span class="realSumPrice" data-realsumprice></span> 원</p>
-									<p><span class="shippingFee" data-shippingfee></span> 원</p>
-									<p><span class="paymentPrice" data-paymentprice></span> 원</p>
+									<p>
+										<span class="realSumPrice" data-realsumprice></span> 원
+									</p>
+									<p>
+										<span class="shippingFee" data-shippingfee></span> 원
+									</p>
+									<p>
+										<span class="paymentPrice" data-paymentprice></span> 원
+									</p>
 
 								</td>
 							</tr>
@@ -288,7 +299,9 @@
 					<p class="col-lg-12 footer-text text-center">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script>
+						<script>
+							document.write(new Date().getFullYear());
+						</script>
 						All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
