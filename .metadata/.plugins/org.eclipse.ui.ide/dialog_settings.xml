@@ -127,6 +127,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\semiProject_KITEN"/>
 			<item value="C:\Users\1\Desktop\코딩\semiProject_KITEN"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

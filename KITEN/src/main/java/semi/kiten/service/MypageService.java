@@ -10,4 +10,5 @@ public interface MypageService {
 	// 유저 number로 장바구니 목록 출력
 	List<CartVO> getCartList(CartVO vo);
 
+
 }

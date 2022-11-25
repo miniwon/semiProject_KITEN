@@ -35,7 +35,8 @@
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">쇼핑하기</a>
+							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false">쇼핑하기</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do">전체 상품 보기</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=한식">한식</a></li>
@@ -75,16 +76,16 @@
 						<ul class="nav-shop">
 							<c:if test="${not empty sessionScope.userId}">
 								<li class="nav-item">${sessionScope.userId}님</li>
-							</c:if>
 							<li class="nav-item"><button>
 									<i class="ti-location-pin"></i>
 								</button></li>
 							<li class="nav-item"><button>
 									<i class="ti-heart"></i>
 								</button></li>
-							<li class="nav-item"><button>
+							<li class="nav-item"><a href="<%=pjName%>/my/cart.do?m_number=${sessionScope.userNo}"><button>
 									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
-								</button></li>
+								</button></a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -132,36 +133,25 @@
 										</div>
 									</td>
 									<td>
-										<h5><span class="p_price">${cart.p_price}</span>원</h5>
+										<h5><span class="p_price" data-price="${cart.p_price}"></span>원</h5>
 									</td>
 									<td>
 										<div class="product_count">
 											<button class="reduced items-count" type="button">▼</button>
-											<input type="text" name="c_quantity" size="2" maxlength="12" value="${cart.c_quantity}" title="Quantity:" class="input-text qty cartQuantity">
+											<input type="text" name="c_quantity" size="2" maxlength="12" value="${cart.c_quantity}" title="Quantity:" class="input-text qty cartQuantity"
+											data-user="${sessionScope.userNo}" data-value="${cart.p_number}">
 											<button class="increase items-count" type="button">▲</button>
 										</div>
 									</td>
 									<td>
 										<h5>
-											<span class="sumPrice"></span> 원
-											<button class=close></button>
+											<span class="sumPrice" data-sumprice=""></span> 원
+											<button class="close cartDelete" onclick="location.href='cartDelete.do?m_number=${sessionScope.userNo}&&p_number=${cart.p_number}'"></button>
 										</h5>
 									</td>
 
 								</tr>
 							</c:forEach>
-							<tr class="bottom_button">
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-
-								<td>
-									<div class="cupon_text d-flex align-items-center">
-										<a class="btn" href="#">선택주문</a> <a class="primary-btn" href="#" style="float: right">전체주문</a>
-									</div>
-								</td>
-							</tr>
 							<tr>
 								<td></td>
 								<td></td>
@@ -177,16 +167,16 @@
 
 								<td></td>
 								<td class="t_name">
-									<p>&nbsp상품 금액</p>
-									<p>&nbsp배송비</p>
-									<p>&nbsp결제 예정 금액</p>
+									<p>상품 금액</p>
+									<p>배송비</p>
+									<p>결제 예정 금액</p>
 								</td>
 
 								<td class="t_value">
 
-									<p><span class="realSumPrice"></span> 원</p>
-									<p>3,000 원</p>
-									<p>33,000 원</p>
+									<p><span class="realSumPrice" data-realsumprice></span> 원</p>
+									<p><span class="shippingFee" data-shippingfee></span> 원</p>
+									<p><span class="paymentPrice" data-paymentprice></span> 원</p>
 
 								</td>
 							</tr>
@@ -198,7 +188,19 @@
 
 								<td>
 									<div class="cupon_text d-flex align-items-center">
-										<a class="btn" href="#">쇼핑 하기</a> <a class="primary-btn" href="#" style="float: right">메인 화면</a>
+										<a class="btn" href="#">선택주문</a> <a class="primary-btn" href="#" style="float: right">전체주문</a>
+									</div>
+								</td>
+							</tr>
+							<tr class="bottom_button">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+
+								<td>
+									<div class="cupon_text d-flex align-items-center">
+										<a class="btn" href="<%=pjName%>/product/getProductList.do">쇼핑 더 하기</a> <a class="primary-btn" href="<%=pjName%>/home.do" style="float: right">메인 화면</a>
 									</div>
 								</td>
 							</tr>

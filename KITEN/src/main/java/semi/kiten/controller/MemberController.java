@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -48,7 +50,6 @@ public class MemberController {
 	         session.setAttribute("userId", result.getM_id());
 	         session.setAttribute("userNo", result.getM_number());
 	         
-//	         return "home";
 	         return "/user/userLogin_ok";
 
 		}
@@ -102,16 +103,13 @@ public class MemberController {
 		System.out.println("userId: " +  userId);
 		MemberVO result = memberService.idSelect(userId);
 		m.addAttribute("member",result);
-		System.out.println("result => "+result.getM_name());
+
 		return result;
 	}
 	
 	
 	@RequestMapping(value="userModify_ok.do", produces="application/text;charset=utf-8")
 	public ModelAndView Update(MemberVO vo) {
-		
-		System.out.println("메렁" + vo.getM_password() + "메롱");
-		
 		
 		int result =0;
 		String message = "수정 성공";
@@ -134,10 +132,43 @@ public class MemberController {
 	
 
 }
+	// 회원 탈퇴 전 비밀번호 확인 
+	
+	@RequestMapping(value="userRemove_before.do")
+	public void passChk() {
+	
+	}
 	
 
+	// 회원 탈퇴 하기 
+	
+	@RequestMapping(value="userRemove.do", produces="application/text;charset=utf-8")
+	public String remove(@RequestParam String m_id , @RequestParam String m_password ) {
+
+		boolean result = memberService.passChk(m_id,m_password);	// 패스워드 검사하는 메소드 
+		System.out.println(result);									
+		if(result==true) {
+			memberService.remove(m_id);
+			return "/user/userRemove_ok";
+			
+		}else {
+			
+			return "redirect:/user/userRemove_before.do";
+				
+		}
+		
+		
+	}
+	
+	@RequestMapping(value="userRemove_ok.do")
+	public String userRemove() {
+		return "redirect:/user/userRemove_ok.do";
+	
+	}
 	
 	
+	
+
 	
 	
 }

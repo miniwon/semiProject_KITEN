@@ -14,6 +14,8 @@
 		<org.springframework-version>5.0.8.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
+		  <jcloverslf4j.version>1.7.6</jcloverslf4j.version>
+		 <logback.version>1.1.1</logback.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -34,6 +36,77 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
+
+  <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.1.3</version>
+</dependency>
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-core</artifactId>
+    <version>1.1.3</version>
+</dependency>
+
+	<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+
+ <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+      </dependency>
+      
+      <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+ 
+ 
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.9.9</version>
+</dependency>
+      
+ 
+ 
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.9.9</version>
+</dependency>
+	
+
+
+
+
 
 		<!-- AspectJ -->
 		<dependency>
@@ -214,6 +287,79 @@
 				<version>1.2.1</version>
 				<configuration>
 					<mainClass>org.test.int1.Main</mainClass>
+					<property name="LOGS_ABSOLUTE_PATH" value="./logs" />
+
+					<appender name="STDOUT"
+						class="ch.qos.logback.core.ConsoleAppender">
+						<layout class="ch.qos.logback.classic.PatternLayout">
+							<Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level
+								%logger{36} - %msg%n</Pattern>
+						</layout>
+					</appender>
+
+					<appender name="INFO_LOG"
+						class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+						<file>./logs/info.log</file>
+						<filter class="ch.qos.logback.classic.filter.LevelFilter">
+							<level>INFO</level>
+							<onMatch>ACCEPT</onMatch>
+							<onMismatch>DENY</onMismatch>
+						</filter>
+						<encoder>
+							<pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level
+								%logger{35} - %msg%n</pattern>
+						</encoder>
+						<rollingPolicy
+							class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+							<fileNamePattern>./was-logs/info.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+							<timeBasedFileNamingAndTriggeringPolicy
+								class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+								<maxFileSize>100MB</maxFileSize>
+							</timeBasedFileNamingAndTriggeringPolicy>
+							<maxHistory>180</maxHistory>
+						</rollingPolicy>
+					</appender>
+
+					<appender name="WARN_LOG"
+						class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+						<file>./logs/warn.log</file>
+						<filter class="ch.qos.logback.classic.filter.LevelFilter">
+							<level>WARN</level>
+							<onMatch>ACCEPT</onMatch>
+							<onMismatch>DENY</onMismatch>
+						</filter>
+						<encoder>
+							<pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level
+								%logger{35} - %msg%n</pattern>
+						</encoder>
+						<rollingPolicy
+							class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+							<fileNamePattern>./was-logs/warn.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+							<timeBasedFileNamingAndTriggeringPolicy
+								class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+								<maxFileSize>100MB</maxFileSize>
+							</timeBasedFileNamingAndTriggeringPolicy>
+							<maxHistory>180</maxHistory>
+						</rollingPolicy>
+					</appender>
+
+					<root level="INFO">
+						<appender-ref ref="STDOUT" />
+					</root>
+
+					<logger name="LogController" additivity="false">
+						<level value="DEBUG" />
+						<appender-ref ref="INFO_LOG" />
+						<appender-ref ref="WARN_LOG" />
+					</logger>
+
+					<logger name="org.hibernate.SQL" additivity="false">
+						<level value="DEBUG" />
+						<appender-ref ref="INFO_LOG" />
+					</logger>
+
 				</configuration>
 			</plugin>
 		</plugins>

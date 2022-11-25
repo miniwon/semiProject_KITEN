@@ -1,4 +1,5 @@
  $(function(){
+// 상세 페이지에서 장바구니에 넣었을 때
 	$('#addCart').click(function(){
 $.ajax({
 type: "post",
@@ -16,7 +17,7 @@ error: function(err){alert("error"); console.log(err); }
 }); // ajax
 	}); // addCart.click
 
-
+// 목록 페이지에서 장바구니에 넣었을 때
 $('.ti-shopping-cart').click(function(){
 let form = {
 	m_number : $(this).attr('data-user'),
@@ -25,8 +26,6 @@ let form = {
 }
 
 let p_name = $(this).attr('data-pname');
-
-console.log(form);
 
 $.ajax({
 type: "post",

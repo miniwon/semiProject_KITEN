@@ -1,8 +1,7 @@
 package semi.kiten.dao;
 
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +49,26 @@ public class MemberDAOImpl implements MemberDAO {
 		System.out.println("===> MemberMapper update() 호출");
 		return mybatis.update("user.userUpdate2",vo);
 	}
+
+	@Override
+	public int remove(String m_id) {
+		return mybatis.delete("user.remove",m_id);
+		
+	}
+
+
+
+	@Override
+	public boolean passChk(String m_id, String m_password) {
+		boolean result =false;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("m_id", m_id);
+		map.put("m_password", m_password);
+		int count = mybatis.selectOne("user.passChk",map);
+		if(count ==1) result=true;
+		return result;
+	}
+
 
 
 	

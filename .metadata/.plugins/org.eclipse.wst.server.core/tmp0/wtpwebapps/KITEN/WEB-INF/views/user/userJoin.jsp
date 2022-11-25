@@ -37,9 +37,10 @@
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-							<li class="nav-item submenu dropdown"><a href="<%=pjName%>/product/getProductDetail.do" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false">쇼핑하기</a>
 								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do">전체 상품 보기</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=한식">한식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=중식">중식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=일식">일식</a></li>
@@ -61,7 +62,7 @@
 							</c:if>
 							<!-- 로그인 시 출력할 헤더 -->
 							<c:if test="${not empty sessionScope.userId}">
-								<li class="nav-item active submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
+								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="#">주문 내역</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">찜한 상품</a></li>
@@ -75,15 +76,18 @@
 						</ul>
 
 						<ul class="nav-shop">
+							<c:if test="${not empty sessionScope.userId}">
+								<li class="nav-item">${sessionScope.userId}님</li>
 							<li class="nav-item"><button>
 									<i class="ti-location-pin"></i>
 								</button></li>
 							<li class="nav-item"><button>
 									<i class="ti-heart"></i>
 								</button></li>
-							<li class="nav-item"><button>
+							<li class="nav-item"><a href="<%=pjName%>/my/cart.do?m_number=${sessionScope.userNo}"><button>
 									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
-								</button></li>
+								</button></a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>

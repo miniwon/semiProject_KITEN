@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import semi.kiten.dao.MemberDAOImpl;
 import semi.kiten.vo.MemberVO;
@@ -44,6 +45,23 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.memberupdate2(vo);
 		
 	}
+
+	
+
+	
+
+	@Override
+	public int remove(String m_id) {
+		return memberDAO.remove(m_id);
+	}
+
+	@Override
+	public boolean passChk(String m_id, String m_password) {
+		return memberDAO.passChk(m_id, m_password);
+	}
+
+	
+
 
 
 

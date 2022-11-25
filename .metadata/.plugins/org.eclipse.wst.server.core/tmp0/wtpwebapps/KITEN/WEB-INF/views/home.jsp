@@ -1,7 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
-<%
-	String pjName = "/KITEN";
-%>
+<% String pjName = "/KITEN"; %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -12,6 +10,9 @@
 <title>요리하는 고양이, KITEN</title>
 <!-- 상단에 이름이랑 같이 뜨는 이미지 -->
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
 <link href="<%=pjName%>/resources/vendors/bootstrap/bootstrap.min.css" rel="stylesheet" />
 <link href="<%=pjName%>/resources/vendors/fontawesome/css/all.min.css" rel="stylesheet" type="text/css" />
@@ -19,6 +20,25 @@
 <link href="<%=pjName%>/resources/vendors/nice-select/nice-select.css" rel="stylesheet" type="text/css" />
 <link href="<%=pjName%>/resources/vendors/owl-carousel/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
 <link href="<%=pjName%>/resources/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.slider').bxSlider();
+  });
+</script>
+<style type="text/css">
+.bx-wrapper {
+    -moz-box-shadow: 0 0 0px #ccc;
+    -webkit-box-shadow: 0 0 0px #ccc;
+    box-shadow: 0 0 0px #ccc0;
+    }
+    </style>
+
+
+
+<head>
+
 
 <link rel="stylesheet" href="<%=pjName%>/resources/css/stylej.css" />
 <link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
@@ -98,39 +118,42 @@
 	<main class="site-main">
 
 		<!--================ Hero banner start =================-->
-		<section class="hero-banner">
-			<div class="container">
-				<div class="row no-gutters align-items-center pt-60px">
-					<div class="col-5 d-none d-sm-block">
+
+			
+				
+						<br></br>
 						<div class="hero-banner__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/home/hero-banner.webp" alt="">
-						</div>
+						
+							<ul class="main_bxslider">
+							<div class="slider">
+								<img src="<%=pjName%>/resources/img/home/main1.png" /></li>
+								<img src="<%=pjName%>/resources/img/home/main2.png" /></li>
+								<img src="<%=pjName%>/resources/img/home/main3.png" /></li>
+								<img src="<%=pjName%>/resources/img/home/main4.png" /></li>
+								<img src="<%=pjName%>/resources/img/home/main5.png" /></li>
+								<img src="<%=pjName%>/resources/img/home/main6.png" /></li>
+								<img src="<%=pjName%>/resources/img/home/main7.png" /></li>
+							</div>
+							</ul>
+							
+						
+					
 					</div>
-					<div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
-						<div class="hero-banner__content">
-							<h4>배달하는 고양이</h4>
-							<!-- 메인페이지 소제목 -->
-							<h1>왕제목</h1>
-							<!-- 메인페이지 제목 -->
-							<p>블라블라~ 길게 말을함</p>
-							<!-- 뭐라고 말을 하는중 -->
-							<a class="button button-hero" href="#">Browse Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+
+			
+		
+		
 		<!--================ Hero banner start =================-->
 
 		<!--================ Hero Carousel start =================-->
-
+		
 		<!--================ Hero Carousel end =================-->
 
 		<!-- ================ trending product section start ================= -->
 		<section class="section-margin calc-60px">
 			<div class="container">
 				<div class="section-intro pb-60px">
-					<p>새로 들어온 제품들</p>
+					<p>새로 들어온 제품들	</p>
 					<h2>
 						주목해야할 <span class="section-intro__style">신상품</span>
 					</h2>
@@ -139,7 +162,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product1.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/b8df79d2-7122-4b0c-a7ab-c5c729d105c8_others_list4.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -153,18 +176,18 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Accessories</p>
+								<p>영칼로리</p>
 								<h4 class="card-product__title">
-									<a href="single-product.html">Quartz Belt Watch</a>
+									<a href="single-product.html">바삭 코코넛 쉬림프(1인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">7900원</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product2.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/828cb88b-e03e-480e-aa71-3c545b5e6fc3_others_list3.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -178,18 +201,18 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Beauty</p>
+								<p>상현달</p>
 								<h4 class="card-product__title">
-									<a href="single-product.html">Women Freshwash</a>
+									<a href="single-product.html">모짜렐라 뿌링뿌링 치즈볼(1인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">6900원</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product3.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/55fa6d6a-4ff9-436e-90df-9dd0a749e6a8_others_list2.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -203,18 +226,18 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Decor</p>
+								<p>영칼로리</p>
 								<h4 class="card-product__title">
-									<a href="single-product.html">Room Flash Light</a>
+									<a href="single-product.html">두툼 벌집껍데기(2인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">7900원</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product4.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/a0d45d29-f030-41ed-b5c2-8a6e73a2feff_others_list1.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -228,18 +251,18 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Decor</p>
+								<p>상현달</p>
 								<h4 class="card-product__title">
-									<a href="single-product.html">Room Flash Light</a>
+									<a href="single-product.html">굳지않는 가래떡과 쌀로만든 조청(1인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">4900원</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product5.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/37363b51-faad-4651-b77e-82e838f3eda0_snackfood_list5.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -253,18 +276,18 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Accessories</p>
+								<p>미니언즈</p>
 								<h4 class="card-product__title">
-									<a href="single-product.html">Man Office Bag</a>
+									<a href="single-product.html">우정분식 물떡 어묵탕(2인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">12900원</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product6.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/01a4b08f-cc8b-4335-8b21-26cf967dee37_japanese_list8.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -278,18 +301,18 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Kids Toy</p>
+								<p>오사카맛도리</p>
 								<h4 class="card-product__title">
-									<a href="single-product.html">Charging Car</a>
+									<a href="single-product.html">밀푀유나베(2인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">12900원</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product7.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/f5b470cf-a2c4-4f1c-890d-171da6a58e2c_snackfood_list4.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -303,18 +326,18 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Accessories</p>
+								<p>짱이네분식</p>
 								<h4 class="card-product__title">
-									<a href="single-product.html">Blutooth Speaker</a>
+									<a href="single-product.html">매콤 양념 순대볶음(2인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">11900원</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="<%=pjName%>/resources/img/product/product8.png" alt="">
+								<img class="card-img" src="/KITEN/resources/upload/23f9cef3-8370-460a-b06b-b8c955e5e5cd_snackfood_list3.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-search"></i>
@@ -328,11 +351,11 @@
 								</ul>
 							</div>
 							<div class="card-body">
-								<p>Kids Toy</p>
+								<p>짱이네분식</p>
 								<h4 class="card-product__title">
-									<a href="#">Charging Car</a>
+									<a href="#">신림동식 백순대볶음(2인)</a>
 								</h4>
-								<p class="card-product__price">$150.00</p>
+								<p class="card-product__price">11900원</p>
 							</div>
 						</div>
 					</div>
@@ -348,9 +371,7 @@
 				<div class="row">
 					<div class="col-xl-5">
 						<div class="offer__content text-center">
-							<h3>Up To 50% Off</h3>
-							<h4>Winter Sale</h4>
-							<p>Him she'd let them sixth saw light</p>
+					
 						</div>
 					</div>
 				</div>
@@ -370,7 +391,7 @@
 				<div class="owl-carousel owl-theme" id="bestSellerCarousel">
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product1.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/24ce6650-b455-4d1a-a3c7-00eea6949173_southeastasian_list3.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -384,17 +405,17 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Accessories</p>
+							<p>민수리아</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Quartz Belt Watch</a>
+								<a href="single-product.html">소고기 볶음 국수</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">13900원</p>
 						</div>
 					</div>
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product2.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/5106a6f9-1897-4e52-a206-c5bf30101f6e_western_list2.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -408,17 +429,17 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Beauty</p>
+							<p>홀리이탈리아	</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Women Freshwash</a>
+								<a href="single-product.html">비프 볼로네제 파스타(2인)</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">8900원</p>
 						</div>
 					</div>
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product3.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/e5419ed0-8525-49aa-8a0b-40decd1972f4_western_list1.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -432,17 +453,17 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Decor</p>
+							<p>비비쿡</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Room Flash Light</a>
+								<a href="single-product.html">불고기 퀘사디아(1-2인)</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">8900원</p>
 						</div>
 					</div>
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product4.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/1b32b1d0-b306-4815-85df-083d47ad7e05_korean_list14.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -456,17 +477,17 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Decor</p>
+							<p>고기챔피언</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Room Flash Light</a>
+								<a href="single-product.html">훈제오리무쌈(2인)</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">10900원</p>
 						</div>
 					</div>
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product1.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/13194688-7e54-40e6-b25d-d17ce6448f1a_western_list11.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -480,17 +501,17 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Accessories</p>
+							<p>인프론트</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Quartz Belt Watch</a>
+								<a href="single-product.html">나혼자 소고기 부채살 스테이크(1인)</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">9900원</p>
 						</div>
 					</div>
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product2.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/fa70a7b1-8383-4c45-a544-7a95e9547e75_korean_list1.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -504,17 +525,17 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Beauty</p>
+							<p>찌개의 제왕</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Women Freshwash</a>
+								<a href="single-product.html">된장찌개 & 캠핑 가니시 밀키트(3-4인)</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">9900원</p>
 						</div>
 					</div>
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product3.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/08ac9a9d-b614-4222-b3be-87bc19eb6ec2_korean_list5.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -528,17 +549,17 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Decor</p>
+							<p>고기챔피언</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Room Flash Light</a>
+								<a href="single-product.html">매콤 쭈꾸미 삼겹살(2인)</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">19900원</p>
 						</div>
 					</div>
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="<%=pjName%>/resources/img/product/product4.png" alt="">
+							<img class="img-fluid" src="/KITEN/resources/upload/e91bcf69-3e52-4a27-aa54-01774b2931d8_snackfood_list1.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-search"></i>
@@ -552,11 +573,11 @@
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Decor</p>
+							<p>미니언즈</p>
 							<h4 class="card-product__title">
-								<a href="single-product.html">Room Flash Light</a>
+								<a href="single-product.html">우정분식 아찔 떡볶잉(2인)</a>
 							</h4>
-							<p class="card-product__price">$150.00</p>
+							<p class="card-product__price">15900원</p>
 						</div>
 					</div>
 				</div>
@@ -565,79 +586,11 @@
 		<!-- ================ Best Selling item  carousel end ================= -->
 
 		<!-- ================ Blog section start ================= -->
-		<section class="blog">
-			<div class="container">
-				<div class="section-intro pb-60px">
-					<p>Popular Item in the market</p>
-					<h2>
-						Latest <span class="section-intro__style">News</span>
-					</h2>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-						<div class="card card-blog">
-							<div class="card-blog__img">
-								<img class="card-img rounded-0" src="<%=pjName%>/resources/img/blog/blog1.png" alt="">
-							</div>
-							<div class="card-body">
-								<ul class="card-blog__info">
-									<li><a href="#">By Admin</a></li>
-									<li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-								</ul>
-								<h4 class="card-blog__title">
-									<a href="single-blog.html">The Richland Center Shooping News and weekly shooper</a>
-								</h4>
-								<p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-								<a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-						<div class="card card-blog">
-							<div class="card-blog__img">
-								<img class="card-img rounded-0" src="<%=pjName%>/resources/img/blog/blog2.png" alt="">
-							</div>
-							<div class="card-body">
-								<ul class="card-blog__info">
-									<li><a href="#">By Admin</a></li>
-									<li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-								</ul>
-								<h4 class="card-blog__title">
-									<a href="single-blog.html">The Shopping News also offers top-quality printing services</a>
-								</h4>
-								<p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-								<a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-						<div class="card card-blog">
-							<div class="card-blog__img">
-								<img class="card-img rounded-0" src="<%=pjName%>/resources/img/blog/blog3.png" alt="">
-							</div>
-							<div class="card-body">
-								<ul class="card-blog__info">
-									<li><a href="#">By Admin</a></li>
-									<li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-								</ul>
-								<h4 class="card-blog__title">
-									<a href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a>
-								</h4>
-								<p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-								<a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		
 		<!-- ================ Blog section end ================= -->
 
 		<!-- ================ Subscribe section start ================= -->
-
+		
 		<!-- ================ Subscribe section end ================= -->
 
 
@@ -646,65 +599,67 @@
 
 	<!--================ Start footer Area  =================-->
 	<footer>
-
+		
 		<div class="footer-area">
-			<hr></hr>
-			<div class="ss">
-				<div class="s1">
-					<h4 class="footer_title large_title">고객행복센터</h4>
-					<table>
-
-						<tr>
+						<hr></hr>
+						<div class= "ss">
+						<div class="s1">
+							<h4 class="footer_title large_title">고객행복센터</h4>
+							<table>
+							
+							<tr>
 							<td class="nav-item"><a class="button button-header" href="#">카톡 문의</a></td>
-							<td><p>월~일요일 | 오전7시~ 오후6시</p></td>
+							<td><p>월~일요일 | 오전7시~ 오후6시 </p></td>
 
-						</tr>
-						<tr>
+							</tr>
+							<tr>
 							<td class="nav-item"><a class="button button-header" href="#">개인 문의 </a></td>
 							<td><p>365일 친절하게 문의 받겠습니다.</p></td>
 
-						</tr>
-						<tr>
+							</tr>
+							<tr>
 							<td class="nav-item"><a class="button button-header" href="#">대량 문의</a></td>
+						
+							
+							<td><p>월~일요일 | 오전9시~ 오후6시 </p></td>
+							
+							</tr>
+							<tr></tr>
+							<tr>
+								
+							<td><p> 비회원문의 : help @ kosmo.com</p></td>
 
+							</tr>
+							<tr>
+							<td><p> 비회원대량문의 : gift @ kosmo.com</p></td>
 
-							<td><p>월~일요일 | 오전9시~ 오후6시</p></td>
+							</tr>
+							</table>
+				
+					</div>
+						
+						<div class="ml-40">
 
-						</tr>
-						<tr></tr>
-						<tr>
-
-							<td><p>비회원문의 : help @ kosmo.com</p></td>
-
-						</tr>
-						<tr>
-							<td><p>비회원대량문의 : gift @ kosmo.com</p></td>
-
-						</tr>
-					</table>
-
+							<ul class="loginul">
+									<li class="loginli"><a class="foot-link" href="">회사소개</a></li>
+									<li class="loginli"><a class="foot-link" href="">인재채용</a></li>
+									<li class="loginli"><a class="foot-link" href="">이용약관</a></li>
+									<li class="loginli"><a class="foot-link" href="">개인정보처리방침</a></li>
+									<li class="loginli"><a class="foot-link" href="">이용안내</a></li>
+									<br></br>
+									</ul>
+							
+								
+								<p>법인명(상호) : 주식회사 키튼 | 사업자 등록번호 : 123-45-67890 사업자정보확인</p>
+								<p>통신판매업 : 제 2022호-경기안양-00000호 | 개인정보보호책임자 : 강민수</p>
+								<p>주소 : 서울특별시 어디구 어디로 133 101동 3층 | 대표이사 : 정지원</p>
+								<p>채용문의 : job@kosmo.com</p>
+								<p>팩스 : 000- 0000 - 0000
+								
+								</p>
+							</div>
+						</div>
 				</div>
-
-				<div class="ml-40">
-
-					<ul class="loginul">
-						<li class="loginli"><a class="foot-link" href="">회사소개</a></li>
-						<li class="loginli"><a class="foot-link" href="">인재채용</a></li>
-						<li class="loginli"><a class="foot-link" href="">이용약관</a></li>
-						<li class="loginli"><a class="foot-link" href="">개인정보처리방침</a></li>
-						<li class="loginli"><a class="foot-link" href="">이용안내</a></li>
-						<br></br>
-					</ul>
-
-
-					<p>법인명(상호) : 주식회사 키튼 | 사업자 등록번호 : 123-45-67890 사업자정보확인</p>
-					<p>통신판매업 : 제 2022호-경기안양-00000호 | 개인정보보호책임자 : 강민수</p>
-					<p>주소 : 서울특별시 어디구 어디로 133 101동 3층 | 대표이사 : 정지원</p>
-					<p>채용문의 : job@kosmo.com</p>
-					<p>팩스 : 000- 0000 - 0000</p>
-				</div>
-			</div>
-		</div>
 
 		<div class="footer-bottom">
 			<div class="container">
@@ -723,6 +678,14 @@
 		</div>
 	</footer>
 	<!--================ End footer Area  =================-->
+	
+	<script type="text/javascript">
+	//<![CDATA[
+	$(document).ready(function(){
+	$('.bxslider').bxSlider();
+	});
+	//]]>
+	</script>
 
 
 
@@ -734,5 +697,6 @@
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
+	<script src="<%=pjName%>/resources/js/home.js"></script>
 </body>
 </html>

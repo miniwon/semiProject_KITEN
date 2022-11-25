@@ -7,21 +7,33 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import semi.kiten.service.CartService;
 import semi.kiten.service.MypageService;
 import semi.kiten.vo.CartVO;
 
 @Controller
 @RequestMapping("my")
 public class MypageController {
-	
+
 	@Autowired
 	private MypageService mypageService;
 	
+	@Autowired
+	private CartService cartService;
+
 	@RequestMapping("cart.do")
 	public void myCart(CartVO cartVO, Model m) {
 		List<CartVO> cartList = mypageService.getCartList(cartVO);
-//		System.out.println(cartVO.getM_number());
 		m.addAttribute("cartList", cartList);
 	}
-	
+
+	@RequestMapping("cartDelete.do")
+	public String cartDelete(CartVO cartVO, Model m) {
+		System.out.println(cartVO.getM_number());
+		cartService.cartDeleteOne(cartVO);
+		List<CartVO> cartList = mypageService.getCartList(cartVO);
+		m.addAttribute("cartList", cartList);
+		return "redirect:/my/cart.do?m_number=" + cartVO.getM_number();
+	}
+
 }
