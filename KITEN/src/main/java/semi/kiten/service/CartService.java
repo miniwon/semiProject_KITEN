@@ -12,4 +12,6 @@ public interface CartService {
 	public int cartDeleteOne(CartVO vo);
 	
 	public int addWish(WishVO vo);
+	
+	public int wishDeleteOne(WishVO vo);
 }

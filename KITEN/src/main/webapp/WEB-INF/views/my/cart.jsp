@@ -110,7 +110,7 @@
 						<thead>
 							<tr>
 
-								<td><input type="checkbox" class="check1" value="check1" checked>&nbsp전체 선택</td>
+								<td><input type="checkbox" class="check1" id="checkAll" name="cartCheckboxAll" checked>전체 선택</td>
 
 							</tr>
 							<tr>
@@ -126,7 +126,7 @@
 									<td>
 										<div class="media">
 											<div class="d-flex">
-												<input type="checkbox" class="check1" value="check1" checked> <img src="<%=pjName%>/resources/upload/${cart.p_list_realfname}" alt="" class="cartImage">
+												<input type="checkbox" class="check1 cartCheckbox" name="cartCheckbox" value="${cart.c_number}" checked> <img src="<%=pjName%>/resources/upload/${cart.p_list_realfname}" alt="" class="cartImage">
 											</div>
 											<div class="media-body">
 												<p>

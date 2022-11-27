@@ -39,8 +39,17 @@ public class MypageController {
 	
 	@RequestMapping("wish.do")
 	public void myWish(WishVO wishVO, Model m) {
-		List<CartVO> wishList = mypageService.getWishList(wishVO);
+		List<WishVO> wishList = mypageService.getWishList(wishVO);
 		m.addAttribute("wishList", wishList);
+	}
+	
+	@RequestMapping("wishDelete.do")
+	public String wishDelete(WishVO wishVO, Model m) {
+		System.out.println(wishVO.getM_number());
+		cartService.wishDeleteOne(wishVO);
+		List<WishVO> wishList = mypageService.getWishList(wishVO);
+		m.addAttribute("wishList", wishList);
+		return "redirect:/my/wish.do?m_number=" + wishVO.getM_number();
 	}
 
 

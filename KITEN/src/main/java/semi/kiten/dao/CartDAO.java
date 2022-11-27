@@ -26,4 +26,7 @@ public interface CartDAO {
 	// 찜 목록에 중복 상품 없을 시 상품 추가
 	public int addWish(WishVO vo);
 	
+	// 찜 목록 페이지에서 상품 삭제
+	public int wishDeleteOne(WishVO vo);
+	
 }

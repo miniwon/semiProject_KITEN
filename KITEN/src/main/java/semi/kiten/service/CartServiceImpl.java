@@ -32,4 +32,8 @@ public class CartServiceImpl implements CartService {
 		if(cartDAO.checkWish(vo) == 1) return 10;
 		else return cartDAO.addWish(vo);
 	}
+	
+	public int wishDeleteOne(WishVO vo) {
+		return cartDAO.wishDeleteOne(vo);
+	}
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="updateRealSumPriceUpdate"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="get"/>
 			<item value="package semi.kiten.controller;"/>
 			<item value="updateRealSumPriceUpdate"/>
 			<item value="htmlSumPrice"/>
@@ -22,7 +23,6 @@
 			<item value="card text-center card-product"/>
 			<item value="#FD9F28"/>
 			<item value="#007bff"/>
-			<item value="sans"/>
 		</list>
 		<list key="replacehistory">
 			<item value="$(this).parent().parent().parent().find(&quot;.sumPrice&quot;)"/>

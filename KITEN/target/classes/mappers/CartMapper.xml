@@ -40,8 +40,8 @@
 		p_number = #{p_number} and w_state = 1;
 
 	</select>
-	
-		<insert id="addWish" parameterType="WishVO">
+
+	<insert id="addWish" parameterType="WishVO">
 
 		INSERT INTO wishlist (
 		m_number,
@@ -56,15 +56,39 @@
 	<select id="getCartList" parameterType="CartVO"
 		resultType="CartVO">
 
-		select c.c_number as c_number, c.m_number as m_number, c.p_number as
-		p_number, c.c_quantity as c_quantity, c.c_state as c_state, c.o_number
-		as o_number, p.p_list_realfname as p_list_realfname, p.p_name as
+		select c.c_number as c_number, c.m_number as m_number,
+		c.p_number as
+		p_number, c.c_quantity as c_quantity, c.c_state as
+		c_state, c.o_number
+		as o_number, p.p_list_realfname as
+		p_list_realfname, p.p_name as
 		p_name, p.p_price as p_price
-		from ( SELECT *
+		from ( SELECT
+		*
 		FROM cart
 		WHERE m_number = #{m_number} and c_state = 1) as c
-		inner join product as p
+		inner join
+		product as p
 		on c.p_number = p.p_number
+
+	</select>
+
+	<select id="getWishList" parameterType="WishVO"
+		resultType="WishVO">
+
+		select w.w_number as w_number, w.m_number as m_number,
+		w.p_number as
+		p_number, w.w_state as w_state,
+		p.p_list_realfname as
+		p_list_realfname, p.p_name as
+		p_name, p.p_price as p_price
+		from ( SELECT
+		*
+		FROM wishlist
+		WHERE m_number = #{m_number} and w_state = 1) as w
+		inner
+		join product as p
+		on w.p_number = p.p_number
 
 	</select>
 
@@ -81,6 +105,14 @@
 		SET c_state
 		= 0
 		WHERE m_number = #{m_number} and p_number = #{p_number} and c_state
+		= 1
+	</update>
+
+	<update id="wishDeleteOne" parameterType="WishVO">
+		UPDATE wishlist
+		SET w_state
+		= 0
+		WHERE m_number = #{m_number} and p_number = #{p_number} and w_state
 		= 1
 	</update>
 

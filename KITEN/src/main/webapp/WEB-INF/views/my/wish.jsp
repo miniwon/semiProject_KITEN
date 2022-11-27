@@ -104,39 +104,42 @@
 		<div class="container">
 			<div class="cart_inner">
 				<div class="table-responsive">
-				<h3>내가 찜한 상품</h3>
-				<br>
+					<h3>내가 찜한 상품</h3>
+					<br>
 					<table class="table">
 						<thead>
 							<tr>
 								<th scope="col" class="cartTh">상품</th>
 								<th scope="col" class="cartTh">가격</th>
 								<th scope="col" class="cartTh">담기</th>
+								<th scope="col" class="cartTh">삭제</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${cartList}" var="cart">
+							<c:forEach items="${wishList}" var="wish">
 								<tr>
 									<td>
 										<div class="media">
 											<div class="d-flex">
-												<img src="<%=pjName%>/resources/upload/${cart.p_list_realfname}" alt="" class="cartImage">
+												<img src="<%=pjName%>/resources/upload/${wish.p_list_realfname}" alt="" class="cartImage">
 											</div>
 											<div class="media-body">
 												<p>
-													<a href="<%=pjName%>/product/getProductDetail.do?p_number=${cart.p_number}">${cart.p_name}</a>
+													<a href="<%=pjName%>/product/getProductDetail.do?p_number=${wish.p_number}">${wish.p_name}</a>
 												</p>
 											</div>
 										</div>
 									</td>
 									<td style="text-align: right;">
 										<h5>
-											<span class="p_price" data-price="${cart.p_price}"></span>원
+											<span class="p_price" data-price="${wish.p_price}"></span>원
 										</h5>
 									</td>
 
 									<td><div class="cupon_text d-flex align-items-center">
-										<a class="btn" href="<%=pjName%>/product/getProductList.do">장바구니에 담기</a> </div></td>
+											<a class="btn addCart" href="#" data-pname="${wish.p_name}" data-user="${sessionScope.userNo}" data-value="${wish.p_number}">장바구니에 담기</a>
+										</div></td>
+										<td align="center"><button class="close wishDelete" onclick="location.href='wishDelete.do?m_number=${sessionScope.userNo}&&p_number=${wish.p_number}'"></button></td>
 
 								</tr>
 							</c:forEach>
@@ -259,7 +262,7 @@
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
-	<script src="<%=pjName%>/resources/js/cartPage.js"></script>
+	<script src="<%=pjName%>/resources/js/wishPage.js"></script>
 
 </body>
 </html>

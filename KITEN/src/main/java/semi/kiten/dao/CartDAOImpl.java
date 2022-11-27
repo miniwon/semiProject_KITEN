@@ -54,5 +54,11 @@ public class CartDAOImpl implements CartDAO {
 		System.out.println("===> Mybatis addWish() 호출");
 		return mybatis.insert("cart.addWish", vo);
 	}
+	
+	// 찜 목록 페이지에서 상품 삭제
+	public int wishDeleteOne(WishVO vo) {
+		System.out.println("===> Mybatis wishDeleteOne() 호출");
+		return mybatis.update("cart.wishDeleteOne", vo);	
+	}
 
 }

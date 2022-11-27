@@ -139,5 +139,10 @@ if ($(".realSumPrice")[0].dataset.realsumprice > 50000) {
 $(".paymentPrice")[0].dataset.paymentprice = $(".shippingFee")[0].dataset.shippingfee*1 + $(".realSumPrice")[0].dataset.realsumprice*1;
 $(".paymentPrice")[0].innerText = ($(".paymentPrice")[0].dataset.paymentprice*1).toLocaleString();
  } // inputShippingFee
-	
+ 
+ // 체크박스 전체 선택 기능
+$("#checkAll").click(function(){
+ alert("클릭");
+}); //#checkAll.click
+
  }); // end of $(function)
