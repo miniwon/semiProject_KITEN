@@ -126,7 +126,8 @@
 									<td>
 										<div class="media">
 											<div class="d-flex">
-												<input type="checkbox" class="check1 cartCheckbox" name="cartCheckbox" value="${cart.c_number}" checked> <img src="<%=pjName%>/resources/upload/${cart.p_list_realfname}" alt="" class="cartImage">
+												<input type="checkbox" class="check1 cartCheckbox" name="cartCheckbox" value="${cart.c_number}" checked> <img src="<%=pjName%>/resources/upload/${cart.p_list_realfname}" alt=""
+													class="cartImage">
 											</div>
 											<div class="media-body">
 												<p>
@@ -170,15 +171,28 @@
 							<tr class="shipping_area">
 								<td class="d-none d-md-block"></td>
 
-								<td></td>
 								<td class="t_name">
+									<p></p>
 									<p>상품 금액</p>
 									<p>배송비</p>
 									<p>결제 예정 금액</p>
 								</td>
 
 								<td class="t_value">
+									<p>선택 상품</p>
+									<p>
+										<span class="realSumPriceSelect" data-realsumprice></span> 원
+									</p>
+									<p>
+										<span class="shippingFeeSelect" data-shippingfee></span> 원
+									</p>
+									<p>
+										<span class="paymentPriceSelect" data-paymentprice></span> 원
+									</p>
 
+								</td>
+								<td class="t_value">
+									<p>전체 상품</p>
 									<p>
 										<span class="realSumPrice" data-realsumprice></span> 원
 									</p>
@@ -199,7 +213,7 @@
 
 								<td>
 									<div class="cupon_text d-flex align-items-center">
-										<a class="btn" href="#">선택주문</a> <a class="primary-btn" href="#" style="float: right">전체주문</a>
+										<a class="btn" href="<%=pjName%>/my/confirmation.do">선택주문</a> <a class="primary-btn" href="<%=pjName%>/my/orderAllCartList.do?m_number=${sessionScope.userNo}" style="float: right">전체주문</a>
 									</div>
 								</td>
 							</tr>

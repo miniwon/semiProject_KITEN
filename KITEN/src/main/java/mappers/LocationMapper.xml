@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="location">
+
+	<select id="locationList" resultType="LocationVO">
+
+		SELECT *
+		FROM location
+		WHERE l_state =1;
+		
+		</select>
+		
+	<insert id="userAddressInsert_ok" parameterType="LocationVO">
+		INSERT INTO location
+		(l_name, l_tel, l_address1, l_address2, m_number)
+		VALUES
+		(#{l_name}, #{l_tel}, #{l_address1}, #{l_address2}, #{m_number})
+	</insert>
+	
+	
+	<update id="userAddressDelete" parameterType="LocationVO">
+
+		UPDATE location
+		SET l_state= 0
+		WHERE m_number = #{m_number} and l_number = #{l_number} and l_state = 1
+
+	</update>	
+
+
+</mapper>

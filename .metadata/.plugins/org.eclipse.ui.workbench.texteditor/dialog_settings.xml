@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value=".confirmation-card tr td:last-child"/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="get"/>
-			<item value="package semi.kiten.controller;"/>
-			<item value="updateRealSumPriceUpdate"/>
-			<item value="htmlSumPrice"/>
-			<item value="a:link"/>
-			<item value=".cart_area a:hover"/>
-			<item value="a:hover"/>
-			<item value=".table td, .table th"/>
-			<item value="imgOverlay"/>
-			<item value="card-product__imgOverlay"/>
-			<item value="card-product"/>
-			<item value=" card-product"/>
-			<item value="card text-center card-product"/>
-			<item value="#FD9F28"/>
-			<item value="#007bff"/>
+			<item value=".confirmation-card tr td:last-child"/>
+			<item value="hr "/>
+			<item value=".cartImage"/>
+			<item value="td"/>
+			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;"/>
+			<item value="#dee2e6"/>
+			<item value="1px solid #dee2e6"/>
+			<item value=".table td"/>
+			<item value="table"/>
+			<item value="#e5ecee"/>
+			<item value=".section-margin--small"/>
+			<item value="margin"/>
+			<item value="box-shadow"/>
+			<item value="#f1f6f7"/>
+			<item value="input"/>
 		</list>
 		<list key="replacehistory">
+			<item value="#fd9f280f"/>
 			<item value="$(this).parent().parent().parent().find(&quot;.sumPrice&quot;)"/>
 			<item value=""/>
 			<item value="c_quantity"/>
@@ -39,12 +40,11 @@
 			<item value="src=&quot;&lt;%=pjName%&gt;/resources/vendors/"/>
 			<item value="href=&quot;&lt;%=pjName%&gt;/resources/vendors/"/>
 			<item value="src=&quot;&lt;%=pjName%&gt;/resources/img"/>
-			<item value="&quot;&lt;%=pjName%&gt;/resources/vendors/"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="819"/>
-		<item key="DIALOG_Y_ORIGIN" value="144"/>
+		<item key="DIALOG_X_ORIGIN" value="-49"/>
+		<item key="DIALOG_Y_ORIGIN" value="98"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="389"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

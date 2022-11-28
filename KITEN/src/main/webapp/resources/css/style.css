@@ -139,7 +139,7 @@ a {
 	width: 100%;
 	z-index: 9999;
 	transition: background 0.4s, all 0.3s linear;
-	box-shadow: 0px 10px 27px 3px rgba(221, 221, 221, 0.3)
+box-shadow: 0px 0px 0px 0px rgba(221, 221, 221, 0.3)
 }
 
 .header_area .navbar {
@@ -952,7 +952,7 @@ a {
 #bestSellerCarousel .owl-prev, #bestSellerCarousel .owl-next {
 	width: 40px;
 	height: 40px;
-	background: #f1f6f7
+	background: #fd9f280f
 }
 
 #bestSellerCarousel .owl-prev i, #bestSellerCarousel .owl-prev span,
@@ -1334,7 +1334,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #f1f6f7;
+	background: #fd9f280f;
 	z-index: -1
 }
 
@@ -1925,7 +1925,7 @@ a {
 
 .section-margin--small .col-xl-3 .cat-list {
 	padding: 30px;
-	background: #f1f6f7;
+	background: #fd9f280f;
 }
 
 .section-margin--small .col-xl-3 .cat-list li {
@@ -2576,7 +2576,7 @@ a {
 
 .filter-bar {
 	padding: 0px 20px 10px 20px;
-	background: #f1f6f7;
+	background: #fd9f280f;
 	margin-bottom: 30px
 }
 
@@ -2651,7 +2651,7 @@ a {
 
 .sidebar-categories .main-categories {
 	padding: 20px 28px;
-	background: #f1f6f7
+	background: #fd9f280f
 }
 
 .sidebar-categories .main-categories .pixel-radio {
@@ -2708,7 +2708,7 @@ a {
 }
 
 .sidebar-filter .common-filter {
-	background: #f1f6f7;
+	background: #fd9f280f;
 	border-bottom: 1px solid #eee;
 	padding-bottom: 25px
 }
@@ -3288,7 +3288,7 @@ absolute
 }
 
 .order-wrapper {
-	background: #f1f6f7;
+	background: #fd9f280f;
 	padding: 25px
 }
 
@@ -3343,7 +3343,7 @@ absolute
 
 .confirmation-card {
 	padding: 38px;
-	background: #f1f6f7
+	background: #fd9f280f
 }
 
 .confirmation-card tr td:last-child {
@@ -3352,7 +3352,7 @@ absolute
 }
 
 .order_details_table {
-	background: #f1f6f7;
+	background: #fd9f280f;
 	padding: 30px;
 	margin-top: 75px
 }
@@ -3493,7 +3493,7 @@ absolute
 	font-size: 15px;
 	font-weight: normal;
 	font-family: "Roboto", sans-serif;
-	background: #f1f6f7;
+	background: #fd9f280f;
 	line-height: 40px !important;
 	padding-left: 30px;
 	margin-bottom: 0px
@@ -4562,7 +4562,7 @@ absolute
 	{
 	display: block;
 	width: 100%;
-	background: #f1f6f7;
+	background: #fd9f280f;
 	border: 1px solid #eeeeee;
 	height: 40px;
 	color: #999999;
@@ -4590,7 +4590,7 @@ absolute
 .cart_inner .table tbody tr.shipping_area .shipping_box input {
 	height: 40px;
 	outline: none;
-	background: #f1f6f7;
+	background: #fd9f280f;
 	border: 1px solid #eeeeee;
 	width: 100%;
 	font-size: 14px;
@@ -4627,7 +4627,7 @@ absolute
 
 .gray_btn {
 	line-height: 38px;
-	background: #f1f6f7;
+	background: #fd9f280f;
 	border: 1px solid #eeeeee;
 	border-radius: 30px;
 	padding: 0px 44px;
@@ -4843,7 +4843,7 @@ absolute
 }
 
 .product_description_area .nav.nav-tabs {
-	background: #f1f6f7;
+	background: #fd9f280f;
 	text-align: center;
 	display: block;
 	border: none;
@@ -4898,7 +4898,7 @@ absolute
 }
 
 .product_description_area .tab-content .total_rate .box_total {
-	background: #f1f6f7;
+	background: #fd9f280f;
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px
