@@ -3,15 +3,18 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product">
 
-	<select id="getProductList" resultType="ProductVO">
+	<select id="getProductList" parameterType="hashMap" resultType="ProductVO">
 
 		SELECT p_number, p_brand,
 		p_name, p_price, p_list_realfname
 		FROM product
-		WHERE p_state = 1
-		ORDER BY
-		p_number desc
-		limit 10 offset 1;
+		WHERE
+		p_state = 1
+		ORDER BY p_number desc
+		limit #{postNum}
+		offset
+		#{displayPost};
+
 
 
 	</select>

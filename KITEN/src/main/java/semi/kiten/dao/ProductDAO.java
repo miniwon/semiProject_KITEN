@@ -23,4 +23,6 @@ public interface ProductDAO {
 	
 	public List<ProductVO> listPage(int displayPost, int postNum);
 	
+	public List<ProductVO> getProductList(int displayPost, int postNum);
+	
 }

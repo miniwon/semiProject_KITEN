@@ -110,7 +110,7 @@ h4 {
 						<ul class="list cat-list">
 							<li><a href="getProductList.do" class="d-flex justify-content-between">
 									<p>전체 보기</p>
-									<p>${wholeCount}</p>
+									<p>${count}</p>
 							</a></li>
 							<c:forEach items="${filterList}" var="filter">
 								<li><a href="getCategoryList.do?categoryname=${filter.categoryname}" class="d-flex justify-content-between">
@@ -157,7 +157,7 @@ h4 {
 					<!-- Start Best Seller -->
 					<section class="lattest-product-area pb-40 category-list">
 						<div class="row">
-							<c:forEach items="${productList}" var="product">
+							<c:forEach items="${List}" var="product">
 								<div class="col-md-6 col-lg-4">
 									<div class="card text-center card-product">
 										<div class="card-product__img">
@@ -186,8 +186,23 @@ h4 {
 							</c:forEach>
 
 						</div>
+						
+							<div class="productPage">
+								<c:if test="${prev}">
+									<span>[ <a href="getProductList.do?num=${startPageNum - 1}">이전</a> ]
+									</span>
+								</c:if>
 
+								<c:forEach begin="${startPageNum}" end="${endPageNum}" var="num">
+									<span> <a href="getProductList.do?num=${num}">${num}</a>
+									</span>
+								</c:forEach>
 
+								<c:if test="${next}">
+									<span>[ <a href="getProductList.do?num=${endPageNum + 1}">다음</a> ]
+									</span>
+								</c:if>
+							</div>
 					</section>
 					<!-- End Best Seller -->
 				</div>

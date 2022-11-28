@@ -52,4 +52,10 @@ public class ProductServiceImpl implements ProductService {
 			return productDAO.listPage(displayPost, postNum);
 		}
 
+		@Override
+		public List<ProductVO> getProductList(int displayPost, int postNum) {
+		
+			return productDAO.getProductList(displayPost, postNum);
+		}
+
 }

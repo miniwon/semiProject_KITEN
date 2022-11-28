@@ -60,7 +60,7 @@
 							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false">쇼핑하기</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do">전체 상품 보기</a></li>
+									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do?num=1">전체 상품 보기</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=한식">한식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=중식">중식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=일식">일식</a></li>
@@ -69,10 +69,10 @@
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=분식">분식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=기타">기타</a></li>
 								</ul></li>
-							<li class="nav-item"><a class="nav-link" href="#">인기 상품</a></li>
+							<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/bestProductList.do?num=1">인기 상품</a></li>
 							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">고객센터</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/notice.do">공지사항</a></li>
 									<li class="nav-item"><a class="nav-link" href="#">일대일 문의</a></li>
 								</ul></li>
 							<!-- 로그아웃 시 출력할 헤더 -->
@@ -89,7 +89,7 @@
 										<li class="nav-item"><a class="nav-link" href="#">배송지 관리</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">나의 문의</a></li>
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userModify.do">회원 정보 수정</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">회원 탈퇴</a></li>
+										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userRemove_before.do">회원 탈퇴</a></li>
 									</ul></li>
 								<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userLogout.do">로그아웃</a></li>
 							</c:if>
@@ -165,14 +165,14 @@
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/b8df79d2-7122-4b0c-a7ab-c5c729d105c8_others_list4.jpg" alt="">
 								<ul class="card-product__imgOverlay">
-									<li><button>
+									<li><a href="product/getProductDetail.do?p_number=111"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="바삭 코코넛 쉬림프(1인)" data-user="${sessionScope.userNo}" data-value="111"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="바삭 코코넛 쉬림프(1인)" data-user="${sessionScope.userNo}" data-value="111"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -189,15 +189,15 @@
 						<div class="card text-center card-product">
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/828cb88b-e03e-480e-aa71-3c545b5e6fc3_others_list3.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
+							<ul class="card-product__imgOverlay">
+									<li><a href="product/getProductDetail.do?p_number=110"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="모짜렐라 뿌링뿌링 치즈볼(1인)" data-user="${sessionScope.userNo}" data-value="110"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="모짜렐라 뿌링뿌링 치즈볼(1인)" data-user="${sessionScope.userNo}" data-value="110"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -210,19 +210,19 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+				<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/55fa6d6a-4ff9-436e-90df-9dd0a749e6a8_others_list2.jpg" alt="">
 								<ul class="card-product__imgOverlay">
-									<li><button>
+									<li><a href="product/getProductDetail.do?p_number=109"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="두툼 벌집껍데기(2인)" data-user="${sessionScope.userNo}" data-value="109"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="두툼 벌집껍데기(2인)" data-user="${sessionScope.userNo}" data-value="109"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -234,20 +234,20 @@
 								<p class="card-product__price">7900원</p>
 							</div>
 						</div>
-					</div>
+					</div>	
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/a0d45d29-f030-41ed-b5c2-8a6e73a2feff_others_list1.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
+									<ul class="card-product__imgOverlay">
+									<li><a href="product/getProductDetail.do?p_number=82"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="굳지않는 가래떡과 쌀로만든 조청(1인)" data-user="${sessionScope.userNo}" data-value="82"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="굳지않는 가래떡과 쌀로만든 조청(1인)" data-user="${sessionScope.userNo}" data-value="82"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -265,14 +265,14 @@
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/37363b51-faad-4651-b77e-82e838f3eda0_snackfood_list5.jpg" alt="">
 								<ul class="card-product__imgOverlay">
-									<li><button>
+									<li><a href="product/getProductDetail.do?p_number=80"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="우정분식 물떡 어묵탕(2인)" data-user="${sessionScope.userNo}" data-value="80"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="우정분식 물떡 어묵탕(2인)" data-user="${sessionScope.userNo}" data-value="80"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -290,14 +290,14 @@
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/01a4b08f-cc8b-4335-8b21-26cf967dee37_japanese_list8.jpg" alt="">
 								<ul class="card-product__imgOverlay">
-									<li><button>
+									<li><a href="product/getProductDetail.do?p_number=62"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="밀푀유나베(2인)" data-user="${sessionScope.userNo}" data-value="62"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="밀푀유나베(2인)" data-user="${sessionScope.userNo}" data-value="62"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -315,14 +315,14 @@
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/f5b470cf-a2c4-4f1c-890d-171da6a58e2c_snackfood_list4.jpg" alt="">
 								<ul class="card-product__imgOverlay">
-									<li><button>
+									<li><a href="product/getProductDetail.do?p_number=79"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="매콤 양념 순대볶음(2인)" data-user="${sessionScope.userNo}" data-value="79"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="매콤 양념 순대볶음(2인)" data-user="${sessionScope.userNo}" data-value="79"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -340,14 +340,14 @@
 							<div class="card-product__img">
 								<img class="card-img" src="/KITEN/resources/upload/23f9cef3-8370-460a-b06b-b8c955e5e5cd_snackfood_list3.jpg" alt="">
 								<ul class="card-product__imgOverlay">
-									<li><button>
+									<li><a href="product/getProductDetail.do?p_number=78"><button>
 											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="신림동식 백순대볶음(2인)" data-user="${sessionScope.userNo}" data-value="78"></i>
 										</button></li>
 									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
+											<i class="ti-heart" data-pname="신림동식 백순대볶음(2인)" data-user="${sessionScope.userNo}" data-value="78"></i>
 										</button></li>
 								</ul>
 							</div>
@@ -394,16 +394,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/24ce6650-b455-4d1a-a3c7-00eea6949173_southeastasian_list3.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=46"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="소고기 볶음 국수" data-user="${sessionScope.userNo}" data-value="46"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart" data-pname="소고기 볶음 국수" data-user="${sessionScope.userNo}" data-value="46"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>민수리아</p>
@@ -418,16 +418,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/5106a6f9-1897-4e52-a206-c5bf30101f6e_western_list2.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=25"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="비프 볼로네제 파스타(2인)" data-user="${sessionScope.userNo}" data-value="25"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart" data-pname="비프 볼로네제 파스타(2인)" data-user="${sessionScope.userNo}" data-value="25"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>홀리이탈리아	</p>
@@ -442,16 +442,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/e5419ed0-8525-49aa-8a0b-40decd1972f4_western_list1.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=24"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="불고기 퀘사디아(1-2인)" data-user="${sessionScope.userNo}" data-value="24"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart" data-pname="불고기 퀘사디아(1-2인)" data-user="${sessionScope.userNo}" data-value="24"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>비비쿡</p>
@@ -466,16 +466,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/1b32b1d0-b306-4815-85df-083d47ad7e05_korean_list14.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=22"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="훈제오리무쌈(2인)" data-user="${sessionScope.userNo}" data-value="22"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart" data-pname="훈제오리무쌈(2인)" data-user="${sessionScope.userNo}" data-value="22"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>고기챔피언</p>
@@ -490,16 +490,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/13194688-7e54-40e6-b25d-d17ce6448f1a_western_list11.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=38"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="나혼자 소고기 부채살 스테이크(1인)" data-user="${sessionScope.userNo}" data-value="38"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart" data-pname="나혼자 소고기 부채살 스테이크(1인)" data-user="${sessionScope.userNo}" data-value="38"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>인프론트</p>
@@ -514,16 +514,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/fa70a7b1-8383-4c45-a544-7a95e9547e75_korean_list1.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=14"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="된장찌개 & 캠핑 가니시 밀키트(3-4인)" data-user="${sessionScope.userNo}" data-value="14"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart" data-pname="된장찌개 & 캠핑 가니시 밀키트(3-4인)" data-user="${sessionScope.userNo}" data-value="14"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>찌개의 제왕</p>
@@ -538,16 +538,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/08ac9a9d-b614-4222-b3be-87bc19eb6ec2_korean_list5.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=2"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="매콤 쭈꾸미 삼겹살(2인)" data-user="${sessionScope.userNo}" data-value="2"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart" data-pname="매콤 쭈꾸미 삼겹살(2인)" data-user="${sessionScope.userNo}" data-value="2"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>고기챔피언</p>
@@ -562,16 +562,16 @@
 						<div class="card-product__img">
 							<img class="img-fluid" src="/KITEN/resources/upload/e91bcf69-3e52-4a27-aa54-01774b2931d8_snackfood_list1.jpg" alt="">
 							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-search"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
+									<li><a href="product/getProductDetail.do?p_number=2"><button>
+											<i class="ti-search"></i>
+										</button></a></li>
+									<li><button>
+											<i class="ti-shopping-cart" data-pname="우정분식 아찔 떡볶잉(2인)" data-user="${sessionScope.userNo}" data-value="61"></i>
+										</button></li>
+									<li><button>	
+											<i class="ti-heart" data-pname="우정분식 아찔 떡볶잉(2인)" data-user="${sessionScope.userNo}" data-value="61"></i>
+										</button></li>
+								</ul>
 						</div>
 						<div class="card-body">
 							<p>미니언즈</p>
@@ -699,5 +699,6 @@
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
 	<script src="<%=pjName%>/resources/js/home.js"></script>
+	<script src="<%=pjName%>/resources/js/addCart.js"></script>
 </body>
 </html>

@@ -61,4 +61,14 @@ public class ProductDAOImpl implements ProductDAO {
 		  
 		 return mybatis.selectList("product.listPage", data);
 	}
+
+	@Override
+	public List<ProductVO> getProductList(int displayPost, int postNum) {
+		HashMap data = new HashMap();
+		  
+		 data.put("displayPost", displayPost);
+		 data.put("postNum", postNum);
+		  
+		 return mybatis.selectList("product.getProductList", data);
+	}
 }

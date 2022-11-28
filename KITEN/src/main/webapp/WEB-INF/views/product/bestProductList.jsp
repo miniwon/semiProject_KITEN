@@ -23,6 +23,7 @@
 
 <link rel="stylesheet" href="<%=pjName%>/resources/css/stylej.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
+
 <style type="text/css">
 h4 {
 	margin-bottom: 0;
@@ -42,9 +43,9 @@ h4 {
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-							<li class="nav-item submenu dropdown"><a href="<%=pjName%>/product/getProductDetail.do" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								aria-expanded="false">쇼핑하기</a>
+							<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">쇼핑하기</a>
 								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getProductList.do">전체 상품 보기</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=한식">한식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=중식">중식</a></li>
 									<li class="nav-item"><a class="nav-link" href="<%=pjName%>/product/getCategoryList.do?categoryname=일식">일식</a></li>
@@ -66,7 +67,7 @@ h4 {
 							</c:if>
 							<!-- 로그인 시 출력할 헤더 -->
 							<c:if test="${not empty sessionScope.userId}">
-								<li class="nav-item active submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
+								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="#">주문 내역</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">찜한 상품</a></li>
@@ -80,6 +81,9 @@ h4 {
 						</ul>
 
 						<ul class="nav-shop">
+							<c:if test="${not empty sessionScope.userId}">
+								<li class="nav-item">${sessionScope.userId}님</li>
+							</c:if>
 							<li class="nav-item"><button>
 									<i class="ti-location-pin"></i>
 								</button></li>
@@ -104,10 +108,10 @@ h4 {
 					<h4 class="widget_title">카테고리</h4>
 					<div class="common-filter">
 						<ul class="list cat-list">
-						<li><a href="getProductList.do" class="d-flex justify-content-between">
-										<p>전체 보기</p>
-										<p>${wholeCount}</p>
-								</a></li> 
+							<li><a href="getProductList.do" class="d-flex justify-content-between">
+									<p>전체 보기</p>
+									<p>${count}</p>
+							</a></li>
 							<c:forEach items="${filterList}" var="filter">
 								<li><a href="getCategoryList.do?categoryname=${filter.categoryname}" class="d-flex justify-content-between">
 										<p>${filter.categoryname}</p>
@@ -117,35 +121,6 @@ h4 {
 						</ul>
 					</div>
 					<div class="br"></div>
-					<div class="sidebar-filter">
-						<div class="top-filter-head">상품 필터</div>
-						<div class="common-filter">
-							<div class="head">브랜드</div>
-							<form action="#">
-								<ul>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">이름1<span>(수량)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">이름2<span>(수량)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
-								</ul>
-							</form>
-						</div>
-						<div class="common-filter">
-							<div class="head">가격</div>
-							<div class="price-range-area">
-								<div id="price-range"></div>
-								<div class="value-wrapper d-flex">
-									<div class="price"></div>
-									<div id="lower-value"></div>
-									<span>원</span>
-									<div class="to">~</div>
-									<div id="upper-value"></div>
-									<span>원</span>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 				<div class="col-xl-9 col-lg-8 col-md-7">
 					<!-- Start Filter Bar -->
@@ -209,10 +184,26 @@ h4 {
 									</div>
 								</div>
 							</c:forEach>
+								
 
 						</div>
+						
+							<div class="productPage">
+								<c:if test="${prev}">
+									<span>[ <a href="getProductList.do?num=${startPageNum - 1}">이전</a> ]
+									</span>
+								</c:if>
 
+								<c:forEach begin="${startPageNum}" end="${endPageNum}" var="num">
+									<span> <a href="getProductList.do?num=${num}">${num}</a>
+									</span>
+								</c:forEach>
 
+								<c:if test="${next}">
+									<span>[ <a href="getProductList.do?num=${endPageNum + 1}">다음</a> ]
+									</span>
+								</c:if>
+							</div>
 					</section>
 					<!-- End Best Seller -->
 				</div>
@@ -222,67 +213,62 @@ h4 {
 	<!-- ================ category section end ================= -->
 	<!--================ Start footer Area  =================-->
 	<footer>
+
 		<div class="footer-area">
-			<div class="container">
-				<div class="row section_gap">
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title large_title">Our Mission</h4>
-							<p>So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved us lan Gathering thing us land years living.</p>
-							<p>So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved</p>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Quick Links</h4>
-							<ul class="list">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Product</a></li>
-								<li><a href="#">Brand</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget instafeed">
-							<h4 class="footer_title">Gallery</h4>
-							<ul class="list instafeed d-flex flex-wrap">
-								<li><img src="<%=pjName%>/resources/img/gallery/r1.jpg" alt=""></li>
-								<li><img src="<%=pjName%>/resources/img/gallery/r2.jpg" alt=""></li>
-								<li><img src="<%=pjName%>/resources/img/gallery/r3.jpg" alt=""></li>
-								<li><img src="<%=pjName%>/resources/img/gallery/r5.jpg" alt=""></li>
-								<li><img src="<%=pjName%>/resources/img/gallery/r7.jpg" alt=""></li>
-								<li><img src="<%=pjName%>/resources/img/gallery/r8.jpg" alt=""></li>
-							</ul>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Contact Us</h4>
-							<div class="ml-40">
-								<p class="sm-head">
-									<span class="fa fa-location-arrow"></span> Head Office
-								</p>
-								<p>123, Main Street, Your City</p>
+			<hr></hr>
+			<div class="ss">
+				<div class="s1">
+					<h4 class="footer_title large_title">고객행복센터</h4>
+					<table>
 
-								<p class="sm-head">
-									<span class="fa fa-phone"></span> Phone Number
-								</p>
-								<p>
-									+123 456 7890 <br> +123 456 7890
-								</p>
+						<tr>
+							<td class="nav-item"><a class="button button-header" href="#">카톡 문의</a></td>
+							<td><p>월~일요일 | 오전7시~ 오후6시</p></td>
 
-								<p class="sm-head">
-									<span class="fa fa-envelope"></span> Email
-								</p>
-								<p>
-									free@infoexample.com <br> www.infoexample.com
-								</p>
-							</div>
-						</div>
-					</div>
+						</tr>
+						<tr>
+							<td class="nav-item"><a class="button button-header" href="#">개인 문의 </a></td>
+							<td><p>365일 친절하게 문의 받겠습니다.</p></td>
+
+						</tr>
+						<tr>
+							<td class="nav-item"><a class="button button-header" href="#">대량 문의</a></td>
+
+
+							<td><p>월~일요일 | 오전9시~ 오후6시</p></td>
+
+						</tr>
+						<tr></tr>
+						<tr>
+
+							<td><p>비회원문의 : help @ kosmo.com</p></td>
+
+						</tr>
+						<tr>
+							<td><p>비회원대량문의 : gift @ kosmo.com</p></td>
+
+						</tr>
+					</table>
+
+				</div>
+
+				<div class="ml-40">
+
+					<ul class="loginul">
+						<li class="loginli"><a class="foot-link" href="">회사소개</a></li>
+						<li class="loginli"><a class="foot-link" href="">인재채용</a></li>
+						<li class="loginli"><a class="foot-link" href="">이용약관</a></li>
+						<li class="loginli"><a class="foot-link" href="">개인정보처리방침</a></li>
+						<li class="loginli"><a class="foot-link" href="">이용안내</a></li>
+						<br></br>
+					</ul>
+
+
+					<p>법인명(상호) : 주식회사 키튼 | 사업자 등록번호 : 123-45-67890 사업자정보확인</p>
+					<p>통신판매업 : 제 2022호-경기안양-00000호 | 개인정보보호책임자 : 강민수</p>
+					<p>주소 : 서울특별시 어디구 어디로 133 101동 3층 | 대표이사 : 정지원</p>
+					<p>채용문의 : job@kosmo.com</p>
+					<p>팩스 : 000- 0000 - 0000</p>
 				</div>
 			</div>
 		</div>

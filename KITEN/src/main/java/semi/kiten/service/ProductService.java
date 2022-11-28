@@ -12,7 +12,7 @@ public interface ProductService {
 	List<ProductVO> getProductList();
 	List<ProductVO> getProductList(String search);
 	ProductVO getProductDetail(ProductVO vo);
-	
+	List<ProductVO> getProductList(int displayPost, int postNum);
 	// 필터의 이름과 해당 상품 개수 출력
 	List<FilterVO> getFilterCount();
 	
