@@ -85,8 +85,8 @@
 								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="#">주문 내역</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">찜한 상품</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">배송지 관리</a></li>
+										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}">찜한 상품</a></li>
+										<li class="nav-item"><a class="nav-link" onclick="window.open('<%=pjName%>/user/userAddress.do?m_number=${sessionScope.userNo}','배송지 관리','resizable=no width=800 height=800')">배송지 관리</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">나의 문의</a></li>
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userModify.do">회원 정보 수정</a></li>
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userRemove_before.do">회원 탈퇴</a></li>
@@ -98,7 +98,7 @@
 						<ul class="nav-shop">
 							<c:if test="${not empty sessionScope.userId}">
 								<li class="nav-item">${sessionScope.userId}님</li>
-							<li class="nav-item"><button>
+							<li class="nav-item"><button onclick="window.open('<%=pjName%>/user/userAddress.do?m_number=${sessionScope.userNo}','배송지 관리','resizable=no width=800 height=800')">
 									<i class="ti-location-pin"></i>
 								</button></li>
 							<li class="nav-item"><a href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}"><button>

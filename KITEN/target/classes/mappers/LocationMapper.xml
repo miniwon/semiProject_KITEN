@@ -3,29 +3,61 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="location">
 
-	<select id="locationList" resultType="LocationVO">
+	<select id="getDefaultLocation" parameterType="LocationVO"
+		resultType="LocationVO">
+		SELECT *
+		FROM location
+		WHERE m_number = #{m_number} and
+		l_state = 0;
+	</select>
+
+	<select id="getLocationList" parameterType="LocationVO"
+		resultType="LocationVO">
 
 		SELECT *
 		FROM location
-		WHERE l_state =1;
-		
-		</select>
-		
+		WHERE
+		m_number = #{m_number} and
+		l_state = 1;
+
+	</select>
+
 	<insert id="userAddressInsert_ok" parameterType="LocationVO">
-		INSERT INTO location
-		(l_name, l_tel, l_address1, l_address2, m_number)
+		INSERT INTO
+		location
+		(l_name, l_tel, l_address1, l_address2, m_number , l_state)
 		VALUES
-		(#{l_name}, #{l_tel}, #{l_address1}, #{l_address2}, #{m_number})
+		(#{l_name}, #{l_tel}, #{l_address1}, #{l_address2}, #{m_number},
+		1)
 	</insert>
-	
-	
+
+
 	<update id="userAddressDelete" parameterType="LocationVO">
 
 		UPDATE location
-		SET l_state= 0
-		WHERE m_number = #{m_number} and l_number = #{l_number} and l_state = 1
+		SET
+		l_state = 2
+		WHERE l_number = #{l_number} and l_state = 1
 
-	</update>	
+	</update>
+
+	<update id="defaultLocationUpdate" parameterType="MemberVO">
+
+		UPDATE location
+		SET l_name = #{m_name}, l_tel = #{m_tel}, l_address1 = #{m_address1}, l_address2 = #{m_address2}
+		WHERE m_number = #{m_number} and l_state = 0
+
+	</update>
+
+	<update id="userSelectLocation" parameterType="LocationVO">
+
+		UPDATE member
+		SET
+		m_address1= #{l_address1},m_address2= #{l_address2}
+		WHERE m_number =
+		#{m_number}
+
+	</update>
 
 
 </mapper>

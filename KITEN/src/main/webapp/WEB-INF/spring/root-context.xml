@@ -46,6 +46,7 @@
 				<value>semi.kiten.vo.CartVO</value>
 				<value>semi.kiten.vo.WishVO</value>
 				<value>semi.kiten.vo.OrderVO</value>
+				<value>semi.kiten.vo.LocationVO</value>
 			</list>
 		</property>
 	</bean>

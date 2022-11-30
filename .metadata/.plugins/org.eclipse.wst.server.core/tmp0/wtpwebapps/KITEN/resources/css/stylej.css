@@ -4054,12 +4054,12 @@ absolute
 .login_form .form-group input {
 	height: 40px;
 	border: none;
-	border-bottom: 1px solid #cccccc;
+	background-color: white;
 	border-radius: 0px;
 	outline: none;
 	box-shadow: none;
 	font-size: 14px;
-	color: #999999
+
 }
 
 .login_form .form-group input.placeholder {

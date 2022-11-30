@@ -28,7 +28,7 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	public void DeleteMember(MemberVO vo) {
-		mybatis.selectList("admin.DeleteMember", vo);
+		mybatis.update("admin.DeleteMember", vo);
 	}
 
 	public List<ProductVO> productList() {

@@ -59,10 +59,10 @@ public class AdminController {
 	}
 	
 	@RequestMapping("memberDelete.do")
-	public String deleteBoard(MemberVO vo) {
+	public String deleteMember(MemberVO vo) {
 		System.out.println(vo);
 	adminService.deleteMember(vo);
-	return "redirect:/admin/memberTable.do";
+	return "/admin/memberTable";
 
 	}
 	
@@ -79,29 +79,10 @@ public class AdminController {
 	public String deleteProduct(ProductVO vo) {
 		System.out.println(vo);
 	adminService.deleteProduct(vo);
-	return "redirect:/admin/productTable.do";
+	return "/admin/productDelete";
 
 	}
 	
-	@RequestMapping("memberModify.do")
-	public ModelAndView memberModify(MemberVO vo) {
-
-		
-		String message = "수정 성공";
-
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("admin/productTable");
-		mv.addObject("message", message);
-
-		int result = adminService.memberModify(vo);
-		return mv;
-		
-
-
-
-	
-
-}
 	
 	
 	

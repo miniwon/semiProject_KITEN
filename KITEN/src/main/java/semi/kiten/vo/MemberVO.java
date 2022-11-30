@@ -10,6 +10,9 @@ public class MemberVO {
 	private String	m_address1;
 	private String	m_address2;
 	private String	m_email;
+	private int 	m_state;
+	
+	
 	
 	public int getM_number() {
 		return m_number;
@@ -59,6 +62,13 @@ public class MemberVO {
 	public void setM_email(String m_email) {
 		this.m_email = m_email;
 	}
+	public int getM_state() {
+		return m_state;
+	}
+	public void setM_state(int m_state) {
+		this.m_state = m_state;
+	}
+	
 	
 
 }

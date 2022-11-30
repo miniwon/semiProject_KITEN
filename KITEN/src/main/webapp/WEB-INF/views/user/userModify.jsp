@@ -23,8 +23,7 @@ request.setCharacterEncoding("UTF-8");
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
-
-<link rel="stylesheet" href="<%=pjName%>/resources/css/stylej.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/styleUserJoin.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
 </head>
 <body>
@@ -163,6 +162,7 @@ request.setCharacterEncoding("UTF-8");
 								<input type="text" class="form-control" id="m_address2" name="m_address2" value ='${member.m_address2}' placeholder="상세 주소를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '상세 주소를 입력해 주세요'">
 								<div class="form-button"></div>
 							</div>
+							<input type="hidden" id="m_number" name="m_number" value ='${member.m_number}'>
 							
 							<div class="col-md-12 form-group">
 								<button type="button" value="submit" class="button button-register w-100" id="m_confirm">수정하기</button>

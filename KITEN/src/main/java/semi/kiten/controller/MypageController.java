@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import semi.kiten.service.CartService;
 import semi.kiten.service.MypageService;
 import semi.kiten.vo.CartVO;
+import semi.kiten.vo.MemberVO;
 import semi.kiten.vo.OrderVO;
 import semi.kiten.vo.WishVO;
 
@@ -56,7 +57,6 @@ public class MypageController {
 	@RequestMapping("orderForm.do")
 	public void orderForm() {}
 
-	
 	@RequestMapping("confirmation.do")
 	public void confirmation() {}
 	
@@ -64,11 +64,10 @@ public class MypageController {
 	public String orderAllCartList(OrderVO orderVO, Model m) {
 		System.out.println("모든 상품 주문" + orderVO.getM_number());
 		List<CartVO> cartlist = mypageService.getCartList(orderVO);
-		m.addAttribute("cartlist", cartlist);
+		m.addAttribute("cartList", cartlist);
+		MemberVO member = mypageService.getOrdererInformation(orderVO);
+		m.addAttribute("member", member);
 		return "/my/orderForm";
 	}
-	
-	
-
 
 }

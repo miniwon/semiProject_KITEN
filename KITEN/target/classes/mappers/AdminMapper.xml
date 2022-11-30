@@ -36,11 +36,13 @@
 	</select>
 	
 	<!-- 회원 정보 삭제 -->
-	<delete id="DeleteMember" parameterType="MemberVO">
-	DELETE FROM member
+	<update id="DeleteMember" parameterType="MemberVO">
+
+		UPDATE member SET
+		m_state = 0
 		WHERE m_number = #{m_number}
-	
-	</delete>
+		
+	</update>
 	
 	<!-- 회원 정보 수정  -->
 	<update id="memberModify" parameterType="MemberVO">
@@ -54,19 +56,24 @@
 		WHERE m_number = #{m_number}
 
 	</update>
-	
+
 	<!-- 상품 정보 조회 -->
 	<select id="productList" resultType="ProductVO">
-	SELECT *
-	FROM product
-	ORDER BY p_number
+		SELECT *
+		FROM product
+		ORDER BY p_number
 	</select>
-	
+
 	<!-- 회원 정보 삭제 -->
 	<delete id="DeleteProduct" parameterType="ProductVO">
-	DELETE FROM product
-		WHERE p_number = #{p_number}
-	
+		UPDATE member SET
+		m_id = #{m_id},
+		m_tel = #{m_tel},
+		m_address1 = #{m_address1},
+		m_address2 = #{m_address2},
+		m_email = #{m_email}	
+		WHERE m_number = #{m_number}
+
 	</delete>
 
 </mapper>

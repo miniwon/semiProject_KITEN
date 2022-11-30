@@ -1,10 +1,7 @@
 package semi.kiten.service;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import semi.kiten.dao.MemberDAOImpl;
 import semi.kiten.vo.MemberVO;
@@ -34,9 +31,8 @@ public class MemberServiceImpl implements MemberService {
 
 	
 	@Override
-	public MemberVO idSelect(String userId) {
-		
-		return memberDAO.idSelect(userId);
+	public MemberVO idSelect(Integer userNo) {
+		return memberDAO.idSelect(userNo);
 	}
 
 	@Override
@@ -51,8 +47,8 @@ public class MemberServiceImpl implements MemberService {
 	
 
 	@Override
-	public int remove(String m_id) {
-		return memberDAO.remove(m_id);
+	public int remove(MemberVO vo) {
+		return memberDAO.remove(vo);
 	}
 
 	@Override

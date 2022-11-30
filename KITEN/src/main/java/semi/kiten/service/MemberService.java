@@ -16,11 +16,11 @@ public interface MemberService {
 	
 	public int userUpdate(MemberVO vo);
 
-	public MemberVO idSelect(String userId);
+	public MemberVO idSelect(Integer userNo);
 
 	public int userUpdate2(MemberVO vo);
 	
-	public int remove(String m_id);
+	public int remove(MemberVO vo);
 
 	public boolean passChk(String m_id, String m_password);
 	

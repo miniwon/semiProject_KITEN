@@ -213,7 +213,7 @@
 
 								<td>
 									<div class="cupon_text d-flex align-items-center">
-										<a class="btn" href="<%=pjName%>/my/confirmation.do">선택주문</a> <a class="primary-btn" href="<%=pjName%>/my/orderAllCartList.do?m_number=${sessionScope.userNo}" style="float: right">전체주문</a>
+										<a class="btn" href="<%=pjName%>/my/confirmation.do">선택 주문</a> <a class="primary-btn" href="<%=pjName%>/my/orderAllCartList.do?m_number=${sessionScope.userNo}" style="float: right">전체 주문</a>
 									</div>
 								</td>
 							</tr>

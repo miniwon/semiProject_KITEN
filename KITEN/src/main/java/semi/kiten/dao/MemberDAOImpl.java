@@ -18,9 +18,11 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int memberInsert(MemberVO vo) {
 		System.out.println("===>  MemberMapper userInsert() 호출");
+		vo.setM_number(mybatis.selectOne("user.userInsert", vo));
+		System.out.println("===>  MemberMapper locationInsert() 호출");
+		return mybatis.insert("user.locationInsert", vo);
 		// Mapper.xml로 가서 확인
 		// ("namespace.id", parameter)
-		return mybatis.insert("user.userInsert", vo);
 	}
 	
 	@Override
@@ -32,16 +34,17 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public int memberupdate(MemberVO vo) {
-		System.out.println("===> MemberMapper update() 호출");
-		return mybatis.update("user.userUpdate",vo);
-		
-		
+		System.out.println("===> MemberMapper userUpdate() 호출");
+		mybatis.update("user.userUpdate",vo);
+		System.out.println("===> MemberMapper defaultLocationUpdate() 호출");
+		return mybatis.update("location.defaultLocationUpdate", vo);
 	}
 
 	@Override
-	public MemberVO idSelect(String userId) {
+	public MemberVO idSelect(Integer userNo) {
 		System.out.println("===> MemberMapper select()호출");
-		return  mybatis.selectOne("user.idSelect", userId);
+		
+		return  mybatis.selectOne("user.idSelect", userNo);
 	}
 
 	@Override
@@ -51,8 +54,8 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public int remove(String m_id) {
-		return mybatis.delete("user.remove",m_id);
+	public int remove(MemberVO vo) {
+		return mybatis.update("user.userRemove",vo);
 		
 	}
 

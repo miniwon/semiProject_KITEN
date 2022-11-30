@@ -144,41 +144,33 @@
 						</tr>
 					</tbody>
 				</table>
-				<br /> <br /> <br />
+				<br />
 			</div>
 		</div>
 
 		<div class="container">
-
 			<div class="check_title"></div>
-
 			<div class="confirmation-card">
 				<h3 class="billing-title">주문자 정보</h3>
 				<hr />
 				<table class="order-rable">
 					<tr>
 						<td>보내는 분</td>
-						<td></td>
-						<td></td>
+						<td>　</td>
+						<td>${member.m_name}</td>
 					</tr>
 					<tr>
 						<td>휴대 전화</td>
-						<td></td>
-						<td></td>
+						<td>　</td>
+						<td>${member.m_tel}</td>
 					</tr>
 					<tr>
 						<td>이메일</td>
-						<td></td>
-						<td></td>
-
+						<td>　</td>
+						<td>${member.m_email}</td>
 					</tr>
-
 				</table>
-
-
 			</div>
-
-
 		</div>
 		<div class="container">
 

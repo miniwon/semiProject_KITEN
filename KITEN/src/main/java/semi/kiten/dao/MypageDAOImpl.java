@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import semi.kiten.vo.CartVO;
+import semi.kiten.vo.MemberVO;
 import semi.kiten.vo.OrderVO;
 import semi.kiten.vo.WishVO;
 
@@ -38,5 +39,11 @@ public class MypageDAOImpl implements MypageDAO {
 	public List<CartVO> getCartList(OrderVO vo) {
 		System.out.println("===> Mybatis getCartList() 호출");
 		return mybatis.selectList("order.getCartList", vo);
+	}
+	
+	// (주문서) 유저 number로 주문자 정보 출력
+	public MemberVO getOrdererInformation(OrderVO vo) {
+		System.out.println("===> Mybatis getOrdererInformation() 호출");
+		return mybatis.selectOne("order.getOrdererInformation", vo);
 	}
 }

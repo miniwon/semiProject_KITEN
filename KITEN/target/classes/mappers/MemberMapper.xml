@@ -4,14 +4,28 @@
 <mapper namespace="user">
 
 
-	<!-- 회원가입 시 정보 DB에 넣기 -->
-	<insert id="userInsert" parameterType="MemberVO">
+	<!-- 회원가입 시 정보 멤버 DB에 넣기 -->
+	<select id="userInsert" parameterType="MemberVO" resultType="int">
 		INSERT INTO member
-		(m_id,
-		m_password, m_name, m_tel, m_address1, m_address2, m_email)
+		(m_number, m_id,
+		m_password, m_name, m_tel, m_address1,
+		m_address2, m_email, m_state)
 		VALUES
-		(#{m_id}, #{m_password}, #{m_name}, #{m_tel}, #{m_address1},
-		#{m_address2}, #{m_email})
+		(nextval('seq_m_number'::regclass), #{m_id}, #{m_password}, #{m_name},
+		#{m_tel}, #{m_address1},
+		#{m_address2}, #{m_email}, 1)
+		
+		returning m_number
+	</select>
+
+	<!-- 회원가입 시 기본 정보 로케이션 DB에 넣기 -->
+	<insert id="locationInsert" parameterType="MemberVO">
+		INSERT INTO location
+		(m_number, l_name, l_tel, l_address1, l_address2, l_state)
+		VALUES
+		(#{m_number}, #{m_name}, #{m_tel},
+		#{m_address1},
+		#{m_address2}, 0)
 	</insert>
 
 	<!-- id 중복 검사 / 로그인용 아이디 확인 -->
@@ -22,44 +36,65 @@
 		WHERE m_id = #{m_id}
 		<if test="m_password != null">
 			AND m_password = #{m_password}
+			AND m_state = 1
 		</if>
 	</select>
-	
-	
+
+
 	<!-- id 정보 통해 다른 정보 가져오기 -->
-	<select id="idSelect" parameterType="string"
+	<select id="idSelect" parameterType="int"
 		resultType="MemberVO">
 		SELECT *
 		FROM member
-		WHERE m_id = #{m_id}
-		
+		WHERE m_number = #{m_number}
+
 	</select>
-	
-	
-	<!-- 회원 정보 수정  -->
+
+
+	<!-- 회원 정보 수정 -->
 	<update id="userUpdate" parameterType="MemberVO">
 
 		UPDATE member SET
-		M_TEL = #{m_tel},
+		M_TEL =
+		#{m_tel},
 		M_address1 = #{m_address1},
 		m_address2 = #{m_address2},
-		m_email = #{m_email}	
+		m_email = #{m_email}
 		WHERE m_id = #{m_id}
 
 	</update>
-	
+
 	<update id="userUpdate2" parameterType="MemberVO">
 
 		UPDATE member SET
-		
+
 		m_password = #{m_password},
 		m_tel = #{m_tel},
-		m_address1 = #{m_address1},
+		m_address1 =
+		#{m_address1},
 		m_address2 = #{m_address2},
-		m_email = #{m_email}	
+		m_email = #{m_email}
+		WHERE
+		m_id = #{m_id}
+
+	</update>
+
+	<update id="userRemove" parameterType="MemberVO">
+
+		UPDATE member SET
+		m_state =
+		0
 		WHERE m_id = #{m_id}
 
 	</update>
+
+	<select id="passChk" parameterType="MemberVO" resultType="int">
+		SELECT
+		count(*)
+		FROM member
+		WHERE m_id = #{m_id} AND m_password = #{m_password}
+
+	</select>
 
 
 </mapper>

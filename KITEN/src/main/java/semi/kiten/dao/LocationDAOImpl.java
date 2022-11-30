@@ -15,10 +15,15 @@ public class LocationDAOImpl implements LocationDAO {
 
 	@Autowired
 	SqlSessionTemplate mybatis;
-
-	@Override
-	public List<LocationVO> locationList() {
-		return mybatis.selectList("location.locationList");
+	
+	// m_number로 기본 배송지 조회
+	public LocationVO getDefaultLocation(LocationVO vo) {
+		return mybatis.selectOne("location.getDefaultLocation", vo);
+	}
+	
+	// m_number로 배송지 목록 조회
+	public List<LocationVO> getLocationList(LocationVO vo){
+		return mybatis.selectList("location.getLocationList", vo);
 	}
 
 	@Override
@@ -26,9 +31,16 @@ public class LocationDAOImpl implements LocationDAO {
 		return mybatis.insert("location.userAddressInsert_ok", vo);
 	}
 
+	// 배송지 삭제
 	@Override
 	public int userAddressDelete(LocationVO vo) {
 		return mybatis.update("location.userAddressDelete", vo);	
+	}
+
+	@Override
+	public int userSelectLocation(LocationVO vo) {
+		
+		return mybatis.update("location.userSelectLocation", vo);	
 	}
 
 	

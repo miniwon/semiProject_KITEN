@@ -1,7 +1,5 @@
 package semi.kiten.dao;
 
-import org.springframework.ui.Model;
-
 import semi.kiten.vo.MemberVO;
 
 public interface MemberDAO {
@@ -21,11 +19,11 @@ public interface MemberDAO {
 	 */
 	public int memberupdate(MemberVO vo) ;
 
-	MemberVO idSelect(String userId);
+	MemberVO idSelect(Integer userNo);
 	
 	public int memberupdate2(MemberVO vo) ;
 	
-	public int remove(String m_id);
+	public int remove(MemberVO vo);
 	
 	public boolean passChk(String m_id, String m_password);
 	

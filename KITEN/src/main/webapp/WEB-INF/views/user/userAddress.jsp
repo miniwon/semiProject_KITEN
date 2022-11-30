@@ -3,8 +3,6 @@
 <%
 	String pjName = "/KITEN";
 request.setCharacterEncoding("UTF-8");
-
-
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +10,10 @@ request.setCharacterEncoding("UTF-8");
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>KITEN - 회원 정보 수정</title>
+<title>KITEN - 배송지 관리</title>
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
 
-<link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrapAddress.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/linericon/style.css">
@@ -29,7 +27,7 @@ request.setCharacterEncoding("UTF-8");
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
-	
+
 	<!--================ End Header Menu Area =================-->
 	<!--================Login Box Area =================-->
 	<section class="login_box_area section-margin">
@@ -38,95 +36,67 @@ request.setCharacterEncoding("UTF-8");
 				<div class="col-lg-1"></div>
 				<div class="col-lg-10">
 					<div class="login_form_inner register_form_inner">
-						<h3>배송지</h3>
-						<form class="row login_form" action="userAddressDelete.do" id="usermodify" name="usermodify" method="post">
-							<div class="col-md-12 form-group">
-							   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-							   <thead>
-								  <tr>
-                                            <th>선택</th>
-                                            <th>배송정보</th>
-                                            <th>수정</th>
-                                        </tr>
-                                        
-                                        </thead>
-                                        <tbody>
-                                        <c:forEach items="${list}" var="list">
-                                        <tr>
-                                        	<td>
-										<div class="media">
-											<div class="d-flex">
-												<input type="checkbox" class="check1 cartCheckbox" name="cartCheckbox" >
-											</div>
-											<div class="media-body">
-												
-											</div>
-										</div>
-									</td>
-									<td>
-									<p>${list.l_address1}${list.l_address2}</p>
-									<input type="hidden" value= "${list.l_number}"  id= "l_number" name="l_number">
-									<input type="hidden" value="${sessionScope.userNo}" id= "m_number" name="m_number">
-									</td>
-									<td>
-										<input value= "X" type= "submit" class="close locationDelete" onclick="location.href='userAddressDelete.do'"></button>
-									</td>
+						<h3>${defaultLocation.l_name}님의 배송지 목록</h3>
+						<div class="col-md-12 form-group">
+							<table class="table table-bordered" id="dataTable">
+								<thead>
+									<tr>
+										<th>수신인</th>
+										<th>전화번호</th>
+										<th>주소</th>
+										<th>삭제</th>
 									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<%-- 											<td>
+												<div class="media">
+													<div class="d-flex">
+														<input type="checkbox" class="locationCheckbox" name="cartCheckbox" data-locationnumber="${defaultLocation.l_number}" data-add1="${defaultLocation.l_address1}" data-add2="${defaultLocation.l_address2}">
+													</div>
+													<div class="media-body"></div>
+												</div>
+										</td> --%>
+										<td style="vertical-align: middle;">${defaultLocation.l_name}</td>
+										<td style="vertical-align: middle;">${defaultLocation.l_tel}</td>
+										<td style="text-align: left; vertical-align: middle;">${defaultLocation.l_address1}<br>${defaultLocation.l_address2}
+										</td>
+										<td style="vertical-align: middle;">기본</td>
+									</tr>
+
+									<c:forEach items="${locationList}" var="list">
+										<tr>
+											<td style="vertical-align: middle;">${list.l_name}</td>
+											<td style="vertical-align: middle;">${list.l_tel}</td>
+											<td style="text-align: left; vertical-align: middle;">${list.l_address1}<br>${list.l_address2}
+											</td>
+											<td style="vertical-align: middle;">
+												<button type="button" class="btn btn-light locationDelete" data-locationnumber="${list.l_number}" data-mnumber="${list.m_number}">×</button>
+											</td>
+										</tr>
 									</c:forEach>
-									
-                                        
-                                        
-                                        </tbody>
-                                        </table>
-								
-<!-- 							<div class="col-md-12 form-group"> -->
-<!-- 								<div class="form-label-div"> -->
-<!-- 									<label class="form-label" for="address1">주소</label> -->
-<!-- 								</div> -->
-<%-- 								<input type="text" class="form-control" id="m_address1" value = '${member.m_address1}' name="m_address1" placeholder="주소 검색을 위해 클릭해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '주소 검색을 위해 클릭해 주세요'"> --%>
-<!-- 								<div class="form-button"></div> -->
-<!-- 							</div> -->
+								</tbody>
+							</table>
 							<div class="col-md-12 form-group">
-								<button type="button" onClick="location.href='userAddressInsert.do'" class="button button-register w-100" >배송지 추가하기 </button>
+								<button type="button" onClick="location.href='userAddressInsert.do?m_number=${sessionScope.userNo}'" class="button button-register w-100">배송지 추가하기</button>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--================End Login Box Area =================-->
-		
+
 
 
 	<!--================ Start footer Area  =================-->
-	
+
 	<!--================ End footer Area  =================-->
 
 
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script>
-		window.onload = function() {
-			document
-					.getElementById("m_address1")
-					.addEventListener(
-							"click",
-							function() { //주소입력칸을 클릭하면
-								//카카오 지도 발생
-								new daum.Postcode(
-										{
-											oncomplete : function(data) { //선택시 입력값 세팅
-												document
-														.getElementById("m_address1").value = data.address; // 주소 넣기
-												document
-														.querySelector(
-																"input[name=m_address2]")
-														.focus(); //상세입력 포커싱
-											}
-										}).open();
-							});
-		}
-	</script>
+
 	<script src="<%=pjName%>/resources/vendors/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/skrollr.min.js"></script>
@@ -135,7 +105,7 @@ request.setCharacterEncoding("UTF-8");
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
-	<script src="<%=pjName%>/resources/js/userModify.js"></script>
+	<script src="<%=pjName%>/resources/js/userAddress.js"></script>
 
 </body>
 </html>

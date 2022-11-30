@@ -272,6 +272,18 @@ ul.bxslider {
   font-size: .85em;
   padding: 10px;
 }
+
+.locationCheckbox{
+	margin-left: 18px;
+	color:orange;
+	
+}
+
+.locationDelete{
+	background-color: white;
+	border: 0px;
+	
+}
 	
 
 

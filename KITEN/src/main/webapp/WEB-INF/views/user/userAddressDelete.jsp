@@ -38,7 +38,10 @@ request.setCharacterEncoding("UTF-8");
 		<p>${list.m_number}${list.l_number}</p>
 	</section>
 	<!--================End Login Box Area =================-->
-		
+		<script type="text/javascript"> 
+	alert("저장되었습니다.")
+	
+	window.close();</script>
 
 
 	<!--================ Start footer Area  =================-->

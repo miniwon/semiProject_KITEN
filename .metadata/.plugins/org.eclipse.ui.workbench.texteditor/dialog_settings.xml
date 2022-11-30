@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=".confirmation-card tr td:last-child"/>
+		<item key="selection" value=".login_form .form-group input"/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
+			<item value=".login_form .form-group input"/>
+			<item value="none"/>
+			<item value=".table"/>
+			<item value="data"/>
+			<item value=".login_form .form-group input&#x09;"/>
+			<item value="9%"/>
+			<item value=".confirmation-card"/>
 			<item value=".confirmation-card tr td:last-child"/>
 			<item value="hr "/>
 			<item value=".cartImage"/>
@@ -15,14 +23,6 @@
 			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;"/>
 			<item value="#dee2e6"/>
 			<item value="1px solid #dee2e6"/>
-			<item value=".table td"/>
-			<item value="table"/>
-			<item value="#e5ecee"/>
-			<item value=".section-margin--small"/>
-			<item value="margin"/>
-			<item value="box-shadow"/>
-			<item value="#f1f6f7"/>
-			<item value="input"/>
 		</list>
 		<list key="replacehistory">
 			<item value="#fd9f280f"/>
