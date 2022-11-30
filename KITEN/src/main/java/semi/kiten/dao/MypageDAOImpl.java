@@ -61,4 +61,27 @@ public class MypageDAOImpl implements MypageDAO {
 		System.out.println("===>  OderMapper insertOrderNumber() 호출");
 		return mybatis.update("order.insertOrderNumber", vo);
 	}
+	
+	// (주문 내역) 유저 number로 주문 내역 출력
+	public List<OrderVO> getOrderList(OrderVO vo){
+		System.out.println("===> Mybatis getOrderList() 호출");
+		return mybatis.selectList("order.getOrderList", vo);
+	}
+	
+	// (주문 내역 상세 보기) 주문 번호로 주문 정보 출력
+	public OrderVO getOrderInformation(OrderVO vo) {
+		System.out.println("===> Mybatis getOrderInformation() 호출");
+		return mybatis.selectOne("order.getOrderInformation", vo);
+	}
+	
+	// (주문 내역 상세 보기) 주문 번호로 배송지 정보 출력
+	public LocationVO getLocationInformation(OrderVO vo) {
+		int l_number = mybatis.selectOne("order.getLocationNumber", vo);
+		return mybatis.selectOne("order.getLocationInformation", l_number);
+	}
+	
+	// (주문 내역 상세 보기) 주문 번호로 상품 상세 정보 출력
+	public List<CartVO> getOrderedCartList(OrderVO vo) {
+		return mybatis.selectList("order.getOrderedCartList", vo);
+	}
 }

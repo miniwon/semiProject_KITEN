@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="body"/>
+		<item key="selection" value="h4"/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="h4"/>
+			<item value="g4"/>
+			<item value="ㅗ4"/>
+			<item value=".order_details_table .table tbody tr td h5"/>
+			<item value=".order_details_table .table tbody tr td h4"/>
+			<item value=".order_details_table .table thead tr th"/>
+			<item value=".order_details_table"/>
+			<item value=".confirmation-card tr td:last-child"/>
+			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;"/>
 			<item value="body"/>
 			<item value=".body"/>
 			<item value="a:not([href]):not([tabindex])"/>
 			<item value=".button-paypal"/>
 			<item value="l_number"/>
 			<item value=".login_form .form-group input"/>
-			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
-			<item value="none"/>
-			<item value=".table"/>
-			<item value="data"/>
-			<item value=".login_form .form-group input&#x09;"/>
-			<item value="9%"/>
-			<item value=".confirmation-card"/>
-			<item value=".confirmation-card tr td:last-child"/>
-			<item value="hr "/>
 		</list>
 		<list key="replacehistory">
 			<item value="#fd9f280f"/>
@@ -43,8 +43,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="968"/>
-		<item key="DIALOG_Y_ORIGIN" value="146"/>
+		<item key="DIALOG_X_ORIGIN" value="1211"/>
+		<item key="DIALOG_Y_ORIGIN" value="143"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="389"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

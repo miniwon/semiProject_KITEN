@@ -64,9 +64,9 @@
 							<c:if test="${not empty sessionScope.userId}">
 								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="#">주문 내역</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">찜한 상품</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">배송지 관리</a></li>
+										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/my/orderHistory.do?m_number=${sessionScope.userNo}">주문 내역</a></li>
+										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}">찜한 상품</a></li>
+										<li class="nav-item"><a class="nav-link" onclick="window.open('<%=pjName%>/user/userAddress.do?m_number=${sessionScope.userNo}','배송지 관리','resizable=no width=800 height=800')">배송지 관리</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">나의 문의</a></li>
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userModify.do">회원 정보 수정</a></li>
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userRemove_before.do">회원 탈퇴</a></li>
@@ -74,11 +74,10 @@
 								<li class="nav-item"><a class="nav-link" href="<%=pjName%>/user/userLogout.do">로그아웃</a></li>
 							</c:if>
 						</ul>
-
 						<ul class="nav-shop">
 							<c:if test="${not empty sessionScope.userId}">
 								<li class="nav-item">${sessionScope.userId}님</li>
-								<li class="nav-item"><button>
+								<li class="nav-item"><button onclick="window.open('<%=pjName%>/user/userAddress.do?m_number=${sessionScope.userNo}','배송지 관리','resizable=no width=800 height=800')">
 										<i class="ti-location-pin"></i>
 									</button></li>
 								<li class="nav-item"><a href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}"><button>
@@ -96,9 +95,6 @@
 	</header>
 	<!--================ End Header Menu Area =================-->
 	<!--================Checkout Area =================-->
-
-
-
 	<section class="checkout_area section-margin--small">
 		<h3 align="center">주문서</h3>
 
@@ -236,12 +232,8 @@
 	</section>
 
 	<!--================End Checkout Area =================-->
-
-
-
 	<!--================ Start footer Area  =================-->
 	<footer>
-
 		<div class="footer-area">
 			<hr></hr>
 			<div class="ss">
@@ -255,42 +247,29 @@
 						<tr>
 							<td class="nav-item"><a class="button button-header" href="#">개인 문의 </a></td>
 							<td><p>365일 친절하게 문의 받겠습니다.</p></td>
-
 						</tr>
 						<tr>
 							<td class="nav-item"><a class="button button-header" href="#">대량 문의</a></td>
-
-
 							<td><p>월~일요일 | 오전9시~ 오후6시</p></td>
-
 						</tr>
 						<tr></tr>
 						<tr>
-
 							<td><p>비회원문의 : help @ kosmo.com</p></td>
-
 						</tr>
 						<tr>
 							<td><p>비회원대량문의 : gift @ kosmo.com</p></td>
-
 						</tr>
 					</table>
-
 				</div>
-
 				<div class="ml-40">
-
 					<ul class="loginul">
 						<li class="loginli"><a class="foot-link" href="">회사소개</a></li>
 						<li class="loginli"><a class="foot-link" href="">인재채용</a></li>
 						<li class="loginli"><a class="foot-link" href="">이용약관</a></li>
 						<li class="loginli"><a class="foot-link" href="">개인정보처리방침</a></li>
 						<li class="loginli"><a class="foot-link" href="">이용안내</a></li>
-						<br>
-						<br>
+						<br></br>
 					</ul>
-
-
 					<p>법인명(상호) : 주식회사 키튼 | 사업자 등록번호 : 123-45-67890 사업자정보확인</p>
 					<p>통신판매업 : 제 2022호-경기안양-00000호 | 개인정보보호책임자 : 강민수</p>
 					<p>주소 : 서울특별시 어디구 어디로 133 101동 3층 | 대표이사 : 정지원</p>
@@ -299,7 +278,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row d-flex">
@@ -317,9 +295,6 @@
 		</div>
 	</footer>
 	<!--================ End footer Area  =================-->
-
-
-
 	<script src="<%=pjName%>/resources/vendors/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/skrollr.min.js"></script>

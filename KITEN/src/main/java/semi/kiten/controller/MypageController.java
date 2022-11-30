@@ -64,10 +64,6 @@ public class MypageController {
 	public void orderForm() {
 	}
 
-	@RequestMapping("confirmation.do")
-	public void confirmation() {
-	}
-
 	@RequestMapping("orderAllCartList.do")
 	public String orderAllCartList(OrderVO orderVO, Model m) {
 		System.out.println("모든 상품 주문" + orderVO.getM_number());
@@ -99,6 +95,26 @@ public class MypageController {
 		mv.setViewName("my/order_ok");
 		mv.addObject("message", message);
 		return mv;
+	}
+	
+	@RequestMapping("orderHistory.do")
+	public void orderHistory(OrderVO orderVO, Model m) {
+		List<OrderVO> orderList = mypageService.getOrderList(orderVO);
+		m.addAttribute("orderList", orderList);
+	}
+	
+	@RequestMapping("getOrderHistoryDetail.do")
+	public void getOrderHistoryDetail(OrderVO orderVO, Model m) {
+		// 주문 정보 가져오기
+		OrderVO order = mypageService.getOrderInformation(orderVO);
+		m.addAttribute("order", order);
+		// 주문자 정보 가져오기
+		MemberVO member = mypageService.getOrdererInformation(orderVO);
+		m.addAttribute("member", member);
+		LocationVO location = mypageService.getLocationInformation(orderVO);
+		m.addAttribute("location", location);
+		List<CartVO> cartlist = mypageService.getOrderedCartList(orderVO);
+		m.addAttribute("cartList", cartlist);
 	}
 
 }

@@ -3004,9 +3004,9 @@ absolute
 }
 
 .order_details_table {
-	background: #fd9f280f;
-	padding: 30px;
-	margin-top: 75px
+    padding: 38px;
+    background: #fd9f280f;
+	margin-top: 75px;
 }
 
 @media ( min-width : 767px) {

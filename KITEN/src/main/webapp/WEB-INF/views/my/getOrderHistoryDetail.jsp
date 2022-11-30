@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-	String pjName = "/KITEN";
-%>
+<% String pjName = "/KITEN"; %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>KITEN - 회원 가입</title>
+<title>Aroma Shop</title>
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
 
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrap.min.css">
@@ -21,8 +19,7 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
 
-<link rel="stylesheet" href="<%=pjName%>/resources/css/styleUserJoin.css">
-<link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/styleGetOrderHistory.css" />
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
@@ -61,7 +58,7 @@
 							</c:if>
 							<!-- 로그인 시 출력할 헤더 -->
 							<c:if test="${not empty sessionScope.userId}">
-								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
+								<li class="nav-item active submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/my/orderHistory.do?m_number=${sessionScope.userNo}">주문 내역</a></li>
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}">찜한 상품</a></li>
@@ -93,95 +90,148 @@
 		</div>
 	</header>
 	<!--================ End Header Menu Area =================-->
-	<!--================Login Box Area =================-->
-	<section class="login_box_area section-margin">
+	<!--================Order Details Area =================-->
+	<section class="order_details section-margin--small">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-1"></div>
-				<div class="col-lg-10">
-					<div class="login_form_inner register_form_inner">
-						<h3>회원가입</h3>
-						<form class="row login_form" action="userInsert.do" id="userinput" name="userinput">
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="id">아이디</label>
-								</div>
-								<input type="text" class="form-control" id="m_id" name="m_id" placeholder="아이디를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '아이디를 입력해 주세요'">
-								<div class="form-button">
-									<button type="button" value="중복 확인" class="button button-login" id="m_check">중복 확인</button>
-								</div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="password">비밀번호</label>
-								</div>
-								<input type="password" class="form-control" id="m_password" name="m_password" placeholder="비밀번호를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '비밀번호를 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="confirmPassword">비밀번호 확인</label>
-								</div>
-								<input type="password" class="form-control" id="m_confirmPassword" name="m_confirmPassword" placeholder="비밀번호를 한 번 더 입력해 주세요" onfocus="this.placeholder = ''"
-									onblur="this.placeholder = '비밀번호를 한 번 더 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="name">이름</label>
-								</div>
-								<input type="text" class="form-control" id="m_name" name="m_name" placeholder="이름을 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '이름을 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="email">이메일</label>
-								</div>
-								<input type="email" class="form-control" id="m_email" name="m_email" placeholder="예: mealkit@kiten.com" onfocus="this.placeholder = ''" onblur="this.placeholder = '예: mealkit@kiten.com'">
-								<div class="form-button">
-									<!-- 								<button type="submit" value="submit" class="button button-login">중복 확인</button> -->
-								</div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="tel">전화번호</label>
-								</div>
-								<input type="text" class="form-control" id="m_tel" name="m_tel" placeholder="-을 제외한 숫자만 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '-을 제외한 숫자만 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="address1">주소</label>
-								</div>
-								<input type="text" class="form-control" id="m_address1" name="m_address1" placeholder="주소 검색을 위해 클릭해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '주소 검색을 위해 클릭해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="address2">상세 주소</label>
-								</div>
-								<input type="text" class="form-control" id="m_address2" name="m_address2" placeholder="상세 주소를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '상세 주소를 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div" id="agree">
-									<label class="form-label">이용약관 동의</label>
-								</div>
-								<div class="creat_account">
-									<input type="checkbox" id="m_agree" name="m_agree"> <label for="m_agree">이용 약관입니다 (필수)</label><br>
-								</div>
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<button type="button" value="submit" class="button button-register w-100" id="m_confirm">가입하기</button>
-							</div>
-						</form>
+		<h3 align="center" style="margin-bottom: 50px;">주문 내역 상세 보기</h3>
+			<div class="row mb-5">
+				<div class="col-md-3">
+					<div class="confirmation-card">
+						<h3 class="billing-title">주문 정보</h3>
+						<table class="order-rable">
+							<tr>
+								<td>주문 번호</td>
+								<td>${order.o_number}</td>
+							</tr>
+							<tr>
+								<td>보내는 분</td>
+								<td>${member.m_name}</td>
+							</tr>
+							<tr>
+								<td>주문 상태</td>
+								<td><c:if test="${order.o_state eq 1}">
+									결제 완료
+									</c:if> <c:if test="${order.o_state eq 2}">
+									배송 중
+									</c:if> <c:if test="${order.o_state eq 3}">
+									배송 완료
+									</c:if> <c:if test="${order.o_state eq 4}">
+									주문 취소
+									</c:if></td>
+							</tr>
+							<tr>
+								<td>구매 일자</td>
+								<td>${order.o_date}</td>
+							</tr>
+						</table>
 					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="confirmation-card">
+						<h3 class="billing-title">배송 정보</h3>
+						<table class="order-rable">
+							<tr>
+								<td>받는 분</td>
+								<td>${location.l_name}</td>
+							</tr>
+							<tr>
+								<td>전화번호</td>
+								<td>${location.l_tel}</td>
+							</tr>
+							<tr>
+								<td>주소</td>
+								<td>${location.l_address1}</td>
+							</tr>
+							<tr>
+								<td>상세 주소</td>
+								<td>${location.l_address2}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="confirmation-card">
+						<h3 class="billing-title">결제 정보</h3>
+						<table class="order-rable">
+							<tr>
+								<td>상품 금액</td>
+								<td><span id="o_sumprice" data-sumprice="${order.o_sumprice}">${order.o_sumprice}</span>원</td>
+							</tr>
+							<tr>
+								<td>배송비</td>
+								<td><span id="o_shippingfee" data-shippingfee="${order.o_shippingfee}">${order.o_shippingfee}</span>원</td>
+							</tr>
+							<tr>
+								<td>결제 금액</td>
+								<td><span id="o_payment" data-payment="${order.o_payment}">${order.o_payment}</span>원</td>
+							</tr>
+							<tr>
+								<td>결제 수단</td>
+								<td>${order.o_method}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="order_details_table">
+				<h2>상세 주문서</h2>
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">상품</th>
+								<th scope="col">수량</th>
+								<th scope="col">합계</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach items="${cartList}" var="cart">
+							<tr>
+								<td>
+									<p>${cart.p_name}</p>
+								</td>
+								<td>${cart.c_quantity}개</td>
+								<td>
+									<p><span class="p_sumprice" data-price="${cart.p_price}" data-quantity="${cart.c_quantity}"></span>원</p>
+								</td>
+							</tr>
+							</c:forEach>
+							<tr style="border-top: 1px solid #ddd;">
+								<td>총 상품 금액</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p><span id="o_sumprice2" data-sumprice="${order.o_sumprice}">${order.o_sumprice}</span>원</p>
+								</td>
+							</tr>
+							<tr>
+								<td>배송비</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p><span id="o_shippingfee2" data-shippingfee="${order.o_shippingfee}">${order.o_shippingfee}</span>원</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h4>결제 금액</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<h4><span id="o_payment2" data-payment="${order.o_payment}">${order.o_payment}</span>원</h4>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--================End Login Box Area =================-->
+	<!--================End Order Details Area =================-->
 	<!--================ Start footer Area  =================-->
 	<footer>
 		<div class="footer-area">
@@ -247,28 +297,7 @@
 	<!--================ End footer Area  =================-->
 
 
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script>
-		window.onload = function() {
-			document
-					.getElementById("m_address1")
-					.addEventListener(
-							"click",
-							function() { //주소입력칸을 클릭하면
-								//카카오 지도 발생
-								new daum.Postcode(
-										{
-											oncomplete : function(data) { //선택시 입력값 세팅
-												document
-														.getElementById("m_address1").value = data.address; // 주소 넣기
-												document.querySelector(
-														"input[name=m_address2]")
-														.focus(); //상세입력 포커싱
-											}
-										}).open();
-							});
-		}
-	</script>
+
 	<script src="<%=pjName%>/resources/vendors/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/skrollr.min.js"></script>
@@ -277,7 +306,6 @@
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
-	<script src="<%=pjName%>/resources/js/userInput.js"></script>
-
+	<script src="<%=pjName%>/resources/js/orderHistoryDetailPage.js"></script>
 </body>
 </html>

@@ -54,16 +54,81 @@
 		#{o_shippingfee}, #{o_method},
 		#{o_sumprice})
 
-		returning o_number
+		returning
+		o_number
 	</select>
 
 	<!-- OrderVO에 결제 정보 저장시 해당 cart의 레코드에 o_number 입력 / c_state 변경 -->
 	<update id="insertOrderNumber" parameterType="OrderVO">
 		UPDATE cart SET
 		o_number = #{o_number}, c_state = 2
-		WHERE m_number = #{m_number} and c_state = 1
+		WHERE m_number = #{m_number} and
+		c_state = 1
 	</update>
 
+	<!-- (주문 내역) 주문 내역 화면에서 출력할 전체 주문 목록 -->
+	<select id="getOrderList" parameterType="OrderVO"
+		resultType="OrderVO">
+
+		SELECT o.o_number, o.m_number, o.o_date, o.o_payment,
+		o.o_state, o.l_number,
+		o.o_shippingfee, o.o_method, o.o_sumprice,
+		c.o_count, pn.p_number,
+		p.p_name, p.p_list_realfname
+		FROM productorder
+		as o
+		left join (select count(*) as o_count, o_number
+		from cart
+		group by
+		o_number) as c on o.o_number = c.o_number
+		left join (select
+		max(p_number) as p_number, o_number from cart group by
+		o_number) as pn
+		on o.o_number = pn.o_number
+		left join (select p_name, p_list_realfname,
+		p_number from product) as p on
+		p.p_number = pn.p_number
+		where m_number =
+		#{m_number}
+		order by o.o_number desc
+
+	</select>
+
+	<!-- (주문 내역 상세 보기) 주문 번호로 주문 정보 출력 -->
+	<select id="getOrderInformation" parameterType="OrderVO"
+		resultType="OrderVO">
+		SELECT *
+		FROM productorder
+		WHERE o_number = #{o_number}
+	</select>
+
+	<!-- (주문 내역 상세 보기) 주문 번호로 배송지 번호 가져오기 -->
+	<select id="getLocationNumber" parameterType="OrderVO"
+		resultType="int">
+		SELECT l_number
+		FROM productorder
+		WHERE o_number =
+		#{o_number}
+	</select>
+
+	<!-- (주문 내역 상세 보기) 배송지 번호로 배송지 정보 가져오기 -->
+	<select id="getLocationInformation" parameterType="int"
+		resultType="LocationVO">
+		SELECT *
+		FROM location
+		WHERE l_number = #{l_number}
+	</select>
+
+	<!-- (주문 내역 상세 보기) 주문 번호로 상품 상세 정보 가져오기 -->
+	<select id="getOrderedCartList" parameterType="OrderVO"
+		resultType="CartVO">
+		SELECT c.c_number, c.m_number, c.p_number, c.c_quantity, c.c_state,
+		c.o_number, p.p_name, p.p_price
+		FROM cart as c
+		left join (select p_number, p_name, p_price from product) as p on
+		c.p_number = p.p_number
+		WHERE o_number = #{o_number}
+	</select>
 
 
 </mapper>

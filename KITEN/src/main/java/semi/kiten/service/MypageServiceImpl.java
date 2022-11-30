@@ -52,5 +52,25 @@ public class MypageServiceImpl implements MypageService {
 	public int orderFormSubmit(OrderVO vo) {
 		return mypageDAO.orderFormSubmit(vo);
 	}
+	
+	// (주문 내역) 유저 number로 주문 내역 출력
+	public List<OrderVO> getOrderList(OrderVO vo){
+		return mypageDAO.getOrderList(vo);
+	}
+	
+	// (주문 내역 상세 보기) 주문 번호로 주문 정보 출력
+	public OrderVO getOrderInformation(OrderVO vo) {
+		return mypageDAO.getOrderInformation(vo);
+	}
+	
+	// (주문 내역 상세 보기) 주문 번호로 배송지 정보 출력
+	public LocationVO getLocationInformation(OrderVO vo) {
+		return mypageDAO.getLocationInformation(vo);
+	}
+	
+	// (주문 내역 상세 보기) 주문 번호로 상품 상세 정보 출력
+	public List<CartVO> getOrderedCartList(OrderVO vo) {
+		return mypageDAO.getOrderedCartList(vo);
+	}
 
 }

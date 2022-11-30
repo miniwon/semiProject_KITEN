@@ -3,16 +3,17 @@
 	String pjName = "/KITEN";
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>KITEN - 회원 가입</title>
+<title>KITEN - 주문 내역 조회</title>
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
 
-<link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/orderFormBbootstrap.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/linericon/style.css">
@@ -21,7 +22,7 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
 
-<link rel="stylesheet" href="<%=pjName%>/resources/css/styleUserJoin.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/styleorderHistory.css" />
 <link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
 </head>
 <body>
@@ -61,7 +62,7 @@
 							</c:if>
 							<!-- 로그인 시 출력할 헤더 -->
 							<c:if test="${not empty sessionScope.userId}">
-								<li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
+								<li class="nav-item active submenu dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">마이 페이지</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/my/orderHistory.do?m_number=${sessionScope.userNo}">주문 내역</a></li>
 										<li class="nav-item"><a class="nav-link" href="<%=pjName%>/my/wish.do?m_number=${sessionScope.userNo}">찜한 상품</a></li>
@@ -93,95 +94,76 @@
 		</div>
 	</header>
 	<!--================ End Header Menu Area =================-->
-	<!--================Login Box Area =================-->
-	<section class="login_box_area section-margin">
+	<!--================Checkout Area =================-->
+	<section class="checkout_area section-margin--small">
+		<h3 align="center" style="margin-bottom: 3.0rem;">나의 주문 내역</h3>
+		<c:forEach items="${orderList}" var="list">
+			<div class="container">
+				<div class="check_title"></div>
+				<div class="confirmation-card">
+					<h3 class="billing-title">${list.o_date}</h3>
+					<hr />
+					<table class="order-rable">
+ 						<colgroup>
+							<col style="width: 10%">
+							<col style="width: 15%">
+							<col style="width: 55%">
+							<col style="width: 20%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td rowspan="4"><img src="<%=pjName%>/resources/upload/${list.p_list_realfname}" alt="" class="cartImage"></td>
+								<td><small>상품명</small></td>
+								<c:if test="${list.o_count ne 1}">
+									<td>${list.p_name} 외 ${list.o_count -1}건</td>
+								</c:if>
+								<c:if test="${list.o_count eq 1}">
+									<td>${list.p_name}</td>
+								</c:if>
+								<td style="text-align: center;" rowspan="3"><h5>
+										<c:if test="${list.o_state eq 1}">
+									결제 완료
+									</c:if>
+										<c:if test="${list.o_state eq 2}">
+									배송 중
+									</c:if>
+										<c:if test="${list.o_state eq 3}">
+									배송 완료
+									</c:if>
+										<c:if test="${list.o_state eq 4}">
+									주문 취소
+									</c:if>
+									</h5></td>
+							</tr>
+							<tr>
+								<td><small>주문 번호</small></td>
+								<td>${list.o_number}</td>
+							</tr>
+							<tr>
+								<td><small>결제 방법</small></td>
+								<td>${list.o_method}</td>
+							</tr>
+							<tr>
+								<td><small>결제 금액</small></td>
+								<td><span class="o_payment" data-payment="${list.o_payment}">${list.o_payment}</span>원</td>
+								<td style="text-align: center;"><h6><a href="getOrderHistoryDetail.do?o_number=${list.o_number}&&m_number=${sessionScope.userNo}">주문 상세 보기</a></h6></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</c:forEach>
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-1"></div>
-				<div class="col-lg-10">
-					<div class="login_form_inner register_form_inner">
-						<h3>회원가입</h3>
-						<form class="row login_form" action="userInsert.do" id="userinput" name="userinput">
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="id">아이디</label>
-								</div>
-								<input type="text" class="form-control" id="m_id" name="m_id" placeholder="아이디를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '아이디를 입력해 주세요'">
-								<div class="form-button">
-									<button type="button" value="중복 확인" class="button button-login" id="m_check">중복 확인</button>
-								</div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="password">비밀번호</label>
-								</div>
-								<input type="password" class="form-control" id="m_password" name="m_password" placeholder="비밀번호를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '비밀번호를 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="confirmPassword">비밀번호 확인</label>
-								</div>
-								<input type="password" class="form-control" id="m_confirmPassword" name="m_confirmPassword" placeholder="비밀번호를 한 번 더 입력해 주세요" onfocus="this.placeholder = ''"
-									onblur="this.placeholder = '비밀번호를 한 번 더 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="name">이름</label>
-								</div>
-								<input type="text" class="form-control" id="m_name" name="m_name" placeholder="이름을 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '이름을 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="email">이메일</label>
-								</div>
-								<input type="email" class="form-control" id="m_email" name="m_email" placeholder="예: mealkit@kiten.com" onfocus="this.placeholder = ''" onblur="this.placeholder = '예: mealkit@kiten.com'">
-								<div class="form-button">
-									<!-- 								<button type="submit" value="submit" class="button button-login">중복 확인</button> -->
-								</div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="tel">전화번호</label>
-								</div>
-								<input type="text" class="form-control" id="m_tel" name="m_tel" placeholder="-을 제외한 숫자만 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '-을 제외한 숫자만 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="address1">주소</label>
-								</div>
-								<input type="text" class="form-control" id="m_address1" name="m_address1" placeholder="주소 검색을 위해 클릭해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '주소 검색을 위해 클릭해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div">
-									<label class="form-label" for="address2">상세 주소</label>
-								</div>
-								<input type="text" class="form-control" id="m_address2" name="m_address2" placeholder="상세 주소를 입력해 주세요" onfocus="this.placeholder = ''" onblur="this.placeholder = '상세 주소를 입력해 주세요'">
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="form-label-div" id="agree">
-									<label class="form-label">이용약관 동의</label>
-								</div>
-								<div class="creat_account">
-									<input type="checkbox" id="m_agree" name="m_agree"> <label for="m_agree">이용 약관입니다 (필수)</label><br>
-								</div>
-								<div class="form-button"></div>
-							</div>
-							<div class="col-md-12 form-group">
-								<button type="button" value="submit" class="button button-register w-100" id="m_confirm">가입하기</button>
-							</div>
-						</form>
-					</div>
+			<div class="check_title"></div>
+			<div class="confirmation-card" style="padding: 9%;">
+				<div class="text-center col-md-12">
+					<a class="button button-paypal" id="orderFormSubmit" href="<%=pjName%>/home.do">홈으로</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--================End Login Box Area =================-->
+
+	<!--================End Checkout Area =================-->
 	<!--================ Start footer Area  =================-->
 	<footer>
 		<div class="footer-area">
@@ -245,30 +227,6 @@
 		</div>
 	</footer>
 	<!--================ End footer Area  =================-->
-
-
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script>
-		window.onload = function() {
-			document
-					.getElementById("m_address1")
-					.addEventListener(
-							"click",
-							function() { //주소입력칸을 클릭하면
-								//카카오 지도 발생
-								new daum.Postcode(
-										{
-											oncomplete : function(data) { //선택시 입력값 세팅
-												document
-														.getElementById("m_address1").value = data.address; // 주소 넣기
-												document.querySelector(
-														"input[name=m_address2]")
-														.focus(); //상세입력 포커싱
-											}
-										}).open();
-							});
-		}
-	</script>
 	<script src="<%=pjName%>/resources/vendors/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/skrollr.min.js"></script>
@@ -277,7 +235,6 @@
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
-	<script src="<%=pjName%>/resources/js/userInput.js"></script>
-
+	<script src="<%=pjName%>/resources/js/orderHistoryPage.js"></script>
 </body>
 </html>

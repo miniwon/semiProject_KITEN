@@ -1,7 +1,8 @@
 package semi.kiten.vo;
 
 public class OrderVO {
-
+	
+	// productorder 테이블의 컬럼들
 	private int		m_number;			// 해당 상품을 구매한 회원 번호
 	private int		o_number;			// 구매 후 할당되는 주문 번호
 	private String	o_date;				// 구매 날짜
@@ -11,6 +12,12 @@ public class OrderVO {
 	private int		o_state;			// 주문 상태 - 1: 결제 완료 / 2: 배송 중 / 3: 배송 완료 / 4: 주문 취소
 	private int		l_number;			// 배송지 번호
 	private String	o_method;			// 결제 수단
+	
+	// 주문 내역 출력을 위한 변수
+	private int		o_count;			// 총 주문 상품 개수
+	private int		p_number;			// 대표 상품 번호
+	private String	p_name;				// 대표 상품 이름
+	private String	p_list_realfname;	// 대표 상품 이미지
 	
 	
 	public int getM_number() {
@@ -67,8 +74,29 @@ public class OrderVO {
 	public void setO_method(String o_method) {
 		this.o_method = o_method;
 	}
-	
-	
-	
+	public int getO_count() {
+		return o_count;
+	}
+	public void setO_count(int o_count) {
+		this.o_count = o_count;
+	}
+	public int getP_number() {
+		return p_number;
+	}
+	public void setP_number(int p_number) {
+		this.p_number = p_number;
+	}
+	public String getP_name() {
+		return p_name;
+	}
+	public void setP_name(String p_name) {
+		this.p_name = p_name;
+	}
+	public String getP_list_realfname() {
+		return p_list_realfname;
+	}
+	public void setP_list_realfname(String p_list_realfname) {
+		this.p_list_realfname = p_list_realfname;
+	}
 	
 }

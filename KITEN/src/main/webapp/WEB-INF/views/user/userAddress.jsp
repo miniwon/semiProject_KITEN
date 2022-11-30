@@ -26,9 +26,6 @@ request.setCharacterEncoding("UTF-8");
 <link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
 </head>
 <body>
-	<!--================ Start Header Menu Area =================-->
-
-	<!--================ End Header Menu Area =================-->
 	<!--================Login Box Area =================-->
 	<section class="login_box_area section-margin">
 		<div class="container">
@@ -79,13 +76,6 @@ request.setCharacterEncoding("UTF-8");
 		</div>
 	</section>
 	<!--================End Login Box Area =================-->
-
-
-
-	<!--================ Start footer Area  =================-->
-
-	<!--================ End footer Area  =================-->
-
 
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 

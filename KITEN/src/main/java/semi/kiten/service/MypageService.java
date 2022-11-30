@@ -31,6 +31,16 @@ public interface MypageService {
 	
 	// (결제) 결제 정보 DB에 저장
 	int orderFormSubmit(OrderVO vo);
+	
+	// (주문 내역) 유저 number로 주문 내역 출력
+	List<OrderVO> getOrderList(OrderVO vo);
 
-
+	// (주문 내역 상세 보기) 주문 번호로 주문 정보 출력
+	OrderVO getOrderInformation(OrderVO vo);
+	
+	// (주문 내역 상세 보기) 주문 번호로 배송지 정보 출력
+	LocationVO getLocationInformation(OrderVO vo);
+	
+	// (주문 내역 상세 보기) 주문 번호로 상품 상세 정보 출력
+	List<CartVO> getOrderedCartList(OrderVO vo);
 }
