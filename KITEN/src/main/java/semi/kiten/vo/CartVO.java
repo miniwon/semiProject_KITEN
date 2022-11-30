@@ -6,7 +6,7 @@ public class CartVO {
 	private int		m_number;			// 장바구니에 넣은 회원 번호
 	private int		p_number;			// 장바구니에 담은 상품 번호
 	private int		c_quantity;			// 담은 수량
-	private int		c_state;			// 장바구니 상태 - 1: 구매 전 / 2: 구매 완료
+	private int		c_state;			// 장바구니 상태 - 1: 구매 전 / 2: 구매 완료 / 3: 탈퇴한 회원
 	private int		o_number;			// 구매 후 할당되는 주문 번호
 	private String	p_list_realfname;	// 장바구니에 출력할 이미지
 	private String	p_name;				// 장바구니에 출력할 제품명

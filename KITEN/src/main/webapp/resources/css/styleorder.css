@@ -13,10 +13,16 @@
 }
 
 .checkout_area hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid black;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	border-top: 1px solid black;
+}
+
+tr td .locationChange {
+	width: 70px;
+	height: 35px;
+	padding: 0px 20px;
 }
 
 .confirmation-card .table td {
@@ -25,7 +31,10 @@
 	border-top: 0px;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
-.confirmation-card .media{	align-items: center;}
+
+.confirmation-card .media {
+	align-items: center;
+}
 
 @font-face {
 	font-family: 'SLEIGothicTTF';
@@ -46,7 +55,6 @@
 }
 
 body {
-	color: #777;
 	font-family: 'SLEIGothicTTF';
 	font-size: 15px;
 	font-weight: 400;
@@ -1264,8 +1272,8 @@ body {
 }
 
 .button-paypal {
-	width: 100%;
-	padding: 8px 30px
+	width: 25%;
+	padding: 8px 30px;
 }
 
 .button-account {
@@ -2692,9 +2700,13 @@ body {
 
 
 
+
+
 %
 {
 transform
+
+
 
 
 
@@ -2704,7 +2716,11 @@ transform
 
 
 
+
+
 translate
+
+
 
 
 (
@@ -2712,12 +2728,18 @@ translate
 
 
 
+
+
 -50
+
+
 
 
 %
 ,
 -50
+
+
 
 
 %
@@ -2726,10 +2748,16 @@ translate
 
 
 
+
+
 scale
 
 
+
+
 (
+
+
 
 
 
@@ -2739,7 +2767,11 @@ scale
 
 
 
+
+
 )
+
+
 
 
 ;
@@ -2748,12 +2780,18 @@ opacity
 
 
 
+
+
 :
 
 
 
 
+
+
 0
+
+
 
 
 ;
@@ -2762,12 +2800,18 @@ top
 
 
 
+
+
 :
 
 
 
 
+
+
 50
+
+
 
 
 %;
@@ -2776,12 +2820,18 @@ left
 
 
 
+
+
 :
 
 
 
 
+
+
 50
+
+
 
 
 %;
@@ -2790,12 +2840,18 @@ position
 
 
 
+
+
 :
 
 
 
 
+
+
 absolute
+
+
 
 
 
@@ -2816,9 +2872,13 @@ absolute
 
 
 
+
+
 %
 {
 transform
+
+
 
 
 
@@ -2828,7 +2888,11 @@ transform
 
 
 
+
+
 translate
+
+
 
 
 (
@@ -2836,12 +2900,18 @@ translate
 
 
 
+
+
 -50
+
+
 
 
 %
 ,
 -50
+
+
 
 
 %
@@ -2850,10 +2920,16 @@ translate
 
 
 
+
+
 scale
 
 
+
+
 (
+
+
 
 
 
@@ -2863,7 +2939,11 @@ scale
 
 
 
+
+
 )
+
+
 
 
 ;
@@ -2872,12 +2952,18 @@ opacity
 
 
 
+
+
 :
 
 
 
 
+
+
 0
+
+
 
 
 ;
@@ -2886,12 +2972,18 @@ top
 
 
 
+
+
 :
 
 
 
 
+
+
 50
+
+
 
 
 %;
@@ -2900,12 +2992,18 @@ left
 
 
 
+
+
 :
 
 
 
 
+
+
 50
+
+
 
 
 %;
@@ -2914,12 +3012,18 @@ position
 
 
 
+
+
 :
 
 
 
 
+
+
 absolute
+
+
 
 
 
@@ -2940,9 +3044,13 @@ keyframes click-wave { 0%{
 
 
 
+
+
 %
 {
 transform
+
+
 
 
 
@@ -2952,7 +3060,11 @@ transform
 
 
 
+
+
 translate
+
+
 
 
 (
@@ -2960,12 +3072,18 @@ translate
 
 
 
+
+
 -50
+
+
 
 
 %
 ,
 -50
+
+
 
 
 %
@@ -2974,10 +3092,16 @@ translate
 
 
 
+
+
 scale
 
 
+
+
 (
+
+
 
 
 
@@ -2987,7 +3111,11 @@ scale
 
 
 
+
+
 )
+
+
 
 
 ;
@@ -2996,12 +3124,18 @@ opacity
 
 
 
+
+
 :
 
 
 
 
+
+
 0
+
+
 
 
 ;
@@ -3010,12 +3144,18 @@ top
 
 
 
+
+
 :
 
 
 
 
+
+
 50
+
+
 
 
 %;
@@ -3024,12 +3164,18 @@ left
 
 
 
+
+
 :
 
 
 
 
+
+
 50
+
+
 
 
 %;
@@ -3038,12 +3184,18 @@ position
 
 
 
+
+
 :
 
 
 
 
+
+
 absolute
+
+
 
 
 

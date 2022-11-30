@@ -32,5 +32,38 @@
 		WHERE m_number = #{m_number}
 	</select>
 
+	<!-- 주문서에 출력할 기본 배송지 정보 -->
+	<select id="getDefaultLocation" parameterType="OrderVO"
+		resultType="LocationVO">
+		SELECT *
+		FROM location
+		WHERE m_number = #{m_number} and
+		l_state = 0;
+	</select>
+
+	<!-- OrderVO에 결제 정보 저장 -->
+	<select id="orderFormSubmit" parameterType="OrderVO"
+		resultType="int">
+		INSERT INTO productorder
+		(o_number, m_number, o_payment,
+		l_number, o_shippingfee,
+		o_method, o_sumprice)
+		VALUES
+		(nextval('seq_o_number'::regclass), #{m_number}, #{o_payment},
+		#{l_number},
+		#{o_shippingfee}, #{o_method},
+		#{o_sumprice})
+
+		returning o_number
+	</select>
+
+	<!-- OrderVO에 결제 정보 저장시 해당 cart의 레코드에 o_number 입력 / c_state 변경 -->
+	<update id="insertOrderNumber" parameterType="OrderVO">
+		UPDATE cart SET
+		o_number = #{o_number}, c_state = 2
+		WHERE m_number = #{m_number} and c_state = 1
+	</update>
+
+
 
 </mapper>

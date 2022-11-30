@@ -3,6 +3,7 @@ package semi.kiten.service;
 import java.util.List;
 
 import semi.kiten.vo.CartVO;
+import semi.kiten.vo.LocationVO;
 import semi.kiten.vo.MemberVO;
 import semi.kiten.vo.OrderVO;
 import semi.kiten.vo.WishVO;
@@ -24,6 +25,12 @@ public interface MypageService {
 	
 	// (주문서) 유저 number로 주문자 정보 출력
 	MemberVO getOrdererInformation(OrderVO vo);
+	
+	// (주문서) 유저 number로 기본 배송지 정보 출력
+	LocationVO getDefaultLocation(OrderVO vo);
+	
+	// (결제) 결제 정보 DB에 저장
+	int orderFormSubmit(OrderVO vo);
 
 
 }

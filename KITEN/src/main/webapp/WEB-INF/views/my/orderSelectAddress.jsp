@@ -10,7 +10,7 @@ request.setCharacterEncoding("UTF-8");
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>KITEN - 배송지 관리</title>
+<title>KITEN - 배송지 선택</title>
 <link rel="icon" href="<%=pjName%>/resources/img/Fevicon.png" type="image/png">
 
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/bootstrap/bootstrapAddress.min.css">
@@ -41,37 +41,46 @@ request.setCharacterEncoding("UTF-8");
 							<table class="table table-bordered" id="dataTable">
 								<thead>
 									<tr>
+									<th>선택</th>
 										<th>수신인</th>
 										<th>전화번호</th>
 										<th>주소</th>
-										<th>삭제</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
+										<td style="vertical-align: middle;">
+												<div class="media">
+													<div class="d-flex">
+														<input type="checkbox" class="locationCheckbox" name="locationCheckbox" data-locationnumber="${defaultLocation.l_number}" data-add1="${defaultLocation.l_address1}" data-add2="${defaultLocation.l_address2}" data-name="${defaultLocation.l_name}" data-tel="${defaultLocation.l_tel}">
+													</div>
+													<div class="media-body"></div>
+												</div>
+										</td>
 										<td style="vertical-align: middle;">${defaultLocation.l_name}</td>
 										<td style="vertical-align: middle;">${defaultLocation.l_tel}</td>
-										<td style="text-align: left; vertical-align: middle;">${defaultLocation.l_address1}<br>${defaultLocation.l_address2}
+										<td style="text-align: left; vertical-align: middle;">(기본) ${defaultLocation.l_address1}<br>${defaultLocation.l_address2}
 										</td>
-										<td style="vertical-align: middle;">기본</td>
 									</tr>
 
 									<c:forEach items="${locationList}" var="list">
 										<tr>
+										<td style="vertical-align: middle;">
+												<div class="media">
+													<div class="d-flex">
+														<input type="checkbox" class="locationCheckbox" name="locationCheckbox" data-locationnumber="${list.l_number}" data-add1="${list.l_address1}" data-add2="${list.l_address2}" data-name="${list.l_name}" data-tel="${list.l_tel}">
+													</div>
+													<div class="media-body"></div>
+												</div>
+										</td>
 											<td style="vertical-align: middle;">${list.l_name}</td>
 											<td style="vertical-align: middle;">${list.l_tel}</td>
 											<td style="text-align: left; vertical-align: middle;">${list.l_address1}<br>${list.l_address2}
-											</td>
-											<td style="vertical-align: middle;">
-												<button type="button" class="btn btn-light locationDelete" data-locationnumber="${list.l_number}" data-mnumber="${list.m_number}">×</button>
 											</td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
-							<div class="col-md-12 form-group">
-								<button type="button" onClick="location.href='userAddressInsert.do?m_number=${sessionScope.userNo}'" class="button button-register w-100">배송지 추가하기</button>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -97,7 +106,7 @@ request.setCharacterEncoding("UTF-8");
 	<script src="<%=pjName%>/resources/vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="<%=pjName%>/resources/vendors/mail-script.js"></script>
 	<script src="<%=pjName%>/resources/js/main.js"></script>
-	<script src="<%=pjName%>/resources/js/userAddress.js"></script>
+	<script src="<%=pjName%>/resources/js/orderAddress.js"></script>
 
 </body>
 </html>

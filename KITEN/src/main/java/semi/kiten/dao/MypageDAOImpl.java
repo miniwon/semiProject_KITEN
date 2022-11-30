@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import semi.kiten.vo.CartVO;
+import semi.kiten.vo.LocationVO;
 import semi.kiten.vo.MemberVO;
 import semi.kiten.vo.OrderVO;
 import semi.kiten.vo.WishVO;
@@ -45,5 +46,19 @@ public class MypageDAOImpl implements MypageDAO {
 	public MemberVO getOrdererInformation(OrderVO vo) {
 		System.out.println("===> Mybatis getOrdererInformation() 호출");
 		return mybatis.selectOne("order.getOrdererInformation", vo);
+	}
+	
+	// (주문서) 유저 number로 기본 배송지 정보 출력
+	public LocationVO getDefaultLocation(OrderVO vo) {
+		System.out.println("===> Mybatis getDefaultLocation() 호출");
+		return mybatis.selectOne("order.getDefaultLocation", vo);
+	}
+	
+	// (결제) 결제 정보 DB에 저장
+	public int orderFormSubmit(OrderVO vo) {
+		System.out.println("===>  OrderMapper orderFormSubmit() 호출");
+		vo.setO_number(mybatis.selectOne("order.orderFormSubmit", vo));
+		System.out.println("===>  OderMapper insertOrderNumber() 호출");
+		return mybatis.update("order.insertOrderNumber", vo);
 	}
 }

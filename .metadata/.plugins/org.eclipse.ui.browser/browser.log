@@ -42,3 +42,130 @@
 11월 28, 2022 09:52:06.132 NEW SESSION
 11월 28, 2022 09:52:06.132 [7560:980:1128/095206.131:ERROR:device_event_log_impl.cc(215)] [09:52:06.131] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 11월 28, 2022 09:52:57.127 [7560:14248:1128/095257.126:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+11월 30, 2022 15:13:26.244 NEW SESSION
+11월 30, 2022 15:13:26.244 [26700:17892:1130/151326.243:ERROR:device_event_log_impl.cc(215)] [15:13:26.242] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 30, 2022 15:14:23.810 [26700:192:1130/151423.809:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+11월 30, 2022 15:28:47.423 [14188:24504:1130/152847.422:ERROR:device_event_log_impl.cc(215)] [15:28:47.422] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 30, 2022 15:29:44.208 [14188:12880:1130/152944.207:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+11월 30, 2022 16:54:36.206 [14188:9688:1130/165436.206:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:54:36.207 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:54:36.207 ERROR: Failed parsing Certificate
+11월 30, 2022 16:54:36.207 
+11월 30, 2022 16:56:26.365 [14188:24684:1130/165626.364:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:56:26.365 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:56:26.366 ERROR: Failed parsing Certificate
+11월 30, 2022 16:56:26.366 
+11월 30, 2022 16:56:36.318 [14188:19500:1130/165636.318:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:56:36.318 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:56:36.318 ERROR: Failed parsing Certificate
+11월 30, 2022 16:56:36.319 
+11월 30, 2022 16:56:36.599 [14188:2808:1130/165636.599:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:56:36.600 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:56:36.600 ERROR: Failed parsing Certificate
+11월 30, 2022 16:56:36.600 
+11월 30, 2022 16:56:36.819 [14188:2808:1130/165636.819:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:56:36.819 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:56:36.820 ERROR: Failed parsing Certificate
+11월 30, 2022 16:56:36.820 
+11월 30, 2022 16:57:33.869 [14188:19500:1130/165733.869:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:57:33.869 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:57:33.870 ERROR: Failed parsing Certificate
+11월 30, 2022 16:57:33.870 
+11월 30, 2022 16:57:33.978 [14188:19500:1130/165733.978:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:57:33.979 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:57:33.979 ERROR: Failed parsing Certificate
+11월 30, 2022 16:57:33.979 
+11월 30, 2022 16:57:34.100 [14188:19500:1130/165734.100:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 16:57:34.101 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 16:57:34.101 ERROR: Failed parsing Certificate
+11월 30, 2022 16:57:34.101 
+11월 30, 2022 17:27:03.733 [14188:17312:1130/172703.733:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 17:27:03.734 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 17:27:03.734 ERROR: Failed parsing Certificate
+11월 30, 2022 17:27:03.734 
+11월 30, 2022 17:27:28.537 [14188:20740:1130/172728.537:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 17:27:28.537 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 17:27:28.537 ERROR: Failed parsing Certificate
+11월 30, 2022 17:27:28.538 
+11월 30, 2022 17:28:43.685 [14188:16024:1130/172843.685:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 17:28:43.685 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 17:28:43.686 ERROR: Failed parsing Certificate
+11월 30, 2022 17:28:43.686 
+11월 30, 2022 17:28:43.835 [14188:16024:1130/172843.835:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 17:28:43.835 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 17:28:43.836 ERROR: Failed parsing Certificate
+11월 30, 2022 17:28:43.836 
+11월 30, 2022 17:29:14.352 [14188:11152:1130/172914.352:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 17:29:14.352 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 17:29:14.353 ERROR: Failed parsing Certificate
+11월 30, 2022 17:29:14.353 
+11월 30, 2022 17:33:21.108 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 30, 2022 18:27:36.906 [14188:25260:1130/182736.906:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 18:27:36.907 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 18:27:36.907 ERROR: Failed parsing Certificate
+11월 30, 2022 18:27:36.907 
+11월 30, 2022 18:40:41.137 [14188:17204:1130/184041.137:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 18:40:41.137 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 18:40:41.138 ERROR: Failed parsing Certificate
+11월 30, 2022 18:40:41.138 
+11월 30, 2022 18:40:41.165 [14188:17204:1130/184041.165:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 18:40:41.165 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 18:40:41.166 ERROR: Failed parsing Certificate
+11월 30, 2022 18:40:41.166 
+11월 30, 2022 18:41:26.723 [14188:25880:1130/184126.722:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 18:41:26.724 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 18:41:26.725 ERROR: Failed parsing Certificate
+11월 30, 2022 18:41:26.726 
+11월 30, 2022 18:57:40.353 [14188:13020:1130/185740.352:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 18:57:40.353 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 18:57:40.353 ERROR: Failed parsing Certificate
+11월 30, 2022 18:57:40.354 
+11월 30, 2022 18:58:36.853 [14188:16720:1130/185836.853:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 18:58:36.853 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 18:58:36.853 ERROR: Failed parsing Certificate
+11월 30, 2022 18:58:36.854 
+11월 30, 2022 19:29:36.926 [14188:17288:1130/192936.925:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 19:29:36.926 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 19:29:36.926 ERROR: Failed parsing Certificate
+11월 30, 2022 19:29:36.927 
+11월 30, 2022 20:00:36.870 [14188:26748:1130/200036.870:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:00:36.871 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:00:36.871 ERROR: Failed parsing Certificate
+11월 30, 2022 20:00:36.871 
+11월 30, 2022 20:01:22.621 [14188:26684:1130/200122.620:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:01:22.621 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:01:22.622 ERROR: Failed parsing Certificate
+11월 30, 2022 20:01:22.623 
+11월 30, 2022 20:01:23.498 [14188:26684:1130/200123.498:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:01:23.498 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:01:23.498 ERROR: Failed parsing Certificate
+11월 30, 2022 20:01:23.499 
+11월 30, 2022 20:01:24.214 [14188:13624:1130/200124.213:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:01:24.214 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:01:24.214 ERROR: Failed parsing Certificate
+11월 30, 2022 20:01:24.214 
+11월 30, 2022 20:01:24.393 [14188:13624:1130/200124.393:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:01:24.394 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:01:24.394 ERROR: Failed parsing Certificate
+11월 30, 2022 20:01:24.394 
+11월 30, 2022 20:01:38.769 [14188:3384:1130/200138.769:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:01:38.770 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:01:38.771 ERROR: Failed parsing Certificate
+11월 30, 2022 20:01:38.772 
+11월 30, 2022 20:02:02.183 [14188:26748:1130/200202.183:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:02:02.183 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:02:02.184 ERROR: Failed parsing Certificate
+11월 30, 2022 20:02:02.184 
+11월 30, 2022 20:02:03.206 [14188:27492:1130/200203.205:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:02:03.206 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:02:03.206 ERROR: Failed parsing Certificate
+11월 30, 2022 20:02:03.207 
+11월 30, 2022 20:02:03.409 [14188:27492:1130/200203.409:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:02:03.409 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:02:03.409 ERROR: Failed parsing Certificate
+11월 30, 2022 20:02:03.410 
+11월 30, 2022 20:02:04.731 [14188:27492:1130/200204.730:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 30, 2022 20:02:04.732 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 30, 2022 20:02:04.733 ERROR: Failed parsing Certificate
+11월 30, 2022 20:02:04.735 

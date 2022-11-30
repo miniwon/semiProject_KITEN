@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import semi.kiten.dao.MypageDAOImpl;
 import semi.kiten.vo.CartVO;
+import semi.kiten.vo.LocationVO;
 import semi.kiten.vo.MemberVO;
 import semi.kiten.vo.OrderVO;
 import semi.kiten.vo.WishVO;
@@ -40,6 +41,16 @@ public class MypageServiceImpl implements MypageService {
 	// (주문서) 유저 number로 주문자 정보 출력
 	public MemberVO getOrdererInformation(OrderVO vo) {
 		return mypageDAO.getOrdererInformation(vo);
+	}
+	
+	// (주문서) 유저 number로 기본 배송지 정보 출력
+	public LocationVO getDefaultLocation(OrderVO vo) {
+		return mypageDAO.getDefaultLocation(vo);
+	}
+	
+	// (결제) 결제 정보 DB에 저장
+	public int orderFormSubmit(OrderVO vo) {
+		return mypageDAO.orderFormSubmit(vo);
 	}
 
 }

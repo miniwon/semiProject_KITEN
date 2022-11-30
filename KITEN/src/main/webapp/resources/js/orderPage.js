@@ -21,80 +21,43 @@ for( let i=0; i<$(".sumPrice").length ; i++){
 realSumPrice += $(".sumPrice")[i].dataset.sumprice * 1;}
 $(".realSumPrice")[0].dataset.realsumprice = realSumPrice;
 $(".realSumPrice")[0].innerText = (realSumPrice*1).toLocaleString();
-
+$("#o_sumprice").val(realSumPrice);
+ 
 if ($(".realSumPrice")[0].dataset.realsumprice > 50000) {
 	$(".shippingFee")[0].dataset.shippingfee = 0;
 	$(".shippingFee")[0].innerText = ($(".shippingFee")[0].dataset.shippingfee*1).toLocaleString();
+	$("#o_shippingfee").val("0");
  } else {
  	$(".shippingFee")[0].dataset.shippingfee = 3000;
 	$(".shippingFee")[0].innerText = ($(".shippingFee")[0].dataset.shippingfee*1).toLocaleString();
+	$("#o_shippingfee").val("3000");
  }
 $(".paymentPrice")[0].dataset.paymentprice = $(".shippingFee")[0].dataset.shippingfee*1 + $(".realSumPrice")[0].dataset.realsumprice*1;
 $(".paymentPrice")[0].innerText = ($(".paymentPrice")[0].dataset.paymentprice*1).toLocaleString();
- 
+$("#o_payment").val($(".shippingFee")[0].dataset.shippingfee*1 + $(".realSumPrice")[0].dataset.realsumprice*1);
 }
 
-let realSumPriceSelect = 0;      
-// 선택 상품 합계 금액 구하기
-function realSumPriceSelectUpdate(){  
-realSumPriceSelect = 0;  
-for( let i=0; i<$(".sumPrice").length ; i++){
-realSumPriceSelect += $(".sumPrice")[i].dataset.sumprice * 1;}
-$(".realSumPriceSelect")[0].dataset.realsumprice = realSumPriceSelect;
-$(".realSumPriceSelect")[0].innerText = (realSumPriceSelect*1).toLocaleString();
-
-if ($(".realSumPriceSelect")[0].dataset.realsumprice > 50000) {
-	$(".shippingFeeSelect")[0].dataset.shippingfee = 0;
-	$(".shippingFeeSelect")[0].innerText = ($(".shippingFeeSelect")[0].dataset.shippingfee*1).toLocaleString();
- } else {
- 	$(".shippingFeeSelect")[0].dataset.shippingfee = 3000;
-	$(".shippingFeeSelect")[0].innerText = ($(".shippingFeeSelect")[0].dataset.shippingfee*1).toLocaleString();
- }
-$(".paymentPriceSelect")[0].dataset.paymentprice = $(".shippingFeeSelect")[0].dataset.shippingfee*1 + $(".realSumPriceSelect")[0].dataset.realsumprice*1;
-$(".paymentPriceSelect")[0].innerText = ($(".paymentPriceSelect")[0].dataset.paymentprice*1).toLocaleString();
- 
-}
 
 $(function(){
-
-let changedRealSumPrice = 0;      
-// 전체 상품!! 화면 최하단에 출력되는 총 상품 금액 합계를 변경하는 메서드
-function updateRealSumPriceUpdate(){  
-changedRealSumPrice = 0;  
-
-//for( let i=0; i<$(".sumPrice").length ; i++){
-//changedRealSumPrice += $(".sumPrice")[i].dataset.sumprice * 1;
-
-$('.sumPrice').each(function(){
-	changedRealSumPrice += $(this).data('sumprice');
-});
-
-$(".realSumPrice")[0].dataset.realsumprice = changedRealSumPrice;
-$(".realSumPrice")[0].innerText = (changedRealSumPrice*1).toLocaleString();
-
-if ($(".realSumPrice")[0].dataset.realsumprice > 50000) {
-	$(".shippingFee")[0].dataset.shippingfee = 0;
-	$(".shippingFee")[0].innerText = ($(".shippingFee")[0].dataset.shippingfee*1).toLocaleString();
- } else {
- 	$(".shippingFee")[0].dataset.shippingfee = 3000;
-	$(".shippingFee")[0].innerText = ($(".shippingFee")[0].dataset.shippingfee*1).toLocaleString();
- }
- $(".paymentPrice")[0].dataset.paymentprice = $(".shippingFee")[0].dataset.shippingfee*1 + $(".realSumPrice")[0].dataset.realsumprice*1;
-$(".paymentPrice")[0].innerText = ($(".paymentPrice")[0].dataset.paymentprice*1).toLocaleString();
-} // end of updateRealSumPrice
+	// orderForm 입력 여부 확인
+		$('#orderFormSubmit').click(function(){
+			
+		if($('input:radio[name=o_method]').is(':checked') == false){
+		alert("결제 수단을 선택해 주세요");
+		return;
+		}
+			
+     	if($('#o_agree').is(':checked') == false){
+  		alert("결제 필수 약관에 동의해 주세요");
+    		return;
+    	}
+    	
+        // 모든 검사 통과시 자료 전송
+        document.orderForm.submit();   	
+	});
+	
 
 
-// 총 상품 금액이 50000원 이하이면 배송비 3000원 / 이상이면 배송비 0원
-function inputShippingFee (){
-if ($(".realSumPrice")[0].dataset.realsumprice > 50000) {
-	$(".shippingFee")[0].dataset.shippingfee = 0;
-	$(".shippingFee")[0].innerText = ($(".shippingFee")[0].dataset.shippingfee*1).toLocaleString();
- } else {
- 	$(".shippingFee")[0].dataset.shippingfee = 3000;
-	$(".shippingFee")[0].innerText = ($(".shippingFee")[0].dataset.shippingfee*1).toLocaleString();
- } 
-$(".paymentPrice")[0].dataset.paymentprice = $(".shippingFee")[0].dataset.shippingfee*1 + $(".realSumPrice")[0].dataset.realsumprice*1;
-$(".paymentPrice")[0].innerText = ($(".paymentPrice")[0].dataset.paymentprice*1).toLocaleString();
- } // inputShippingFee
-
- }); // end of $(function)
+}); // function()
+ 
+ // ------------------------------------------------------ 까지 기본 화면 출력

@@ -1,9 +1,5 @@
 package semi.kiten.service;
 
-import javax.servlet.http.HttpSession;
-
-import org.springframework.ui.Model;
-
 import semi.kiten.vo.MemberVO;
 
 public interface MemberService {
