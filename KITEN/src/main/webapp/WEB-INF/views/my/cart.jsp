@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="<%=pjName%>/resources/css/stylem.css">
+<link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->

@@ -106,7 +106,7 @@
 							<a href="<%=pjName%>/home.do"><button type="button" value="홈으로" class="button button-login">홈으로 가기</button></a>
 						</div>
 												<div class="form-button">
-							<a href="<%=pjName%>/user/userLogin.do"><button type="button" value="내 주문 내역 보기" class="button button-login">내 주문 내역 보기</button></a>
+							<a href="<%=pjName%>/my/orderHistory.do?m_number=${sessionScope.userNo}"><button type="button" value="내 주문 내역 보기" class="button button-login">내 주문 내역 보기</button></a>
 						</div>
 					</div>
 				</div>

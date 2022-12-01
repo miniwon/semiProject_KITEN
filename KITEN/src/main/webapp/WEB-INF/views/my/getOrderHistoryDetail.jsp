@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="<%=pjName%>/resources/vendors/nouislider/nouislider.min.css">
 
 <link rel="stylesheet" href="<%=pjName%>/resources/css/styleGetOrderHistory.css" />
+<link rel="stylesheet" href="<%=pjName%>/resources/css/footer.css">
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
